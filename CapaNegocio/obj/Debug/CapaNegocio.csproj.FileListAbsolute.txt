@@ -1,0 +1,11 @@
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\workspace1\AlmacenSeguridadIndustrial\CapaNegocio\obj\Debug\CapaNegocio.pdb

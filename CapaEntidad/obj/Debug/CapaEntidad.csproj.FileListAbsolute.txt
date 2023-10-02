@@ -1,0 +1,6 @@
+C:\workspace1\AlmacenSeguridadIndustrial\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\workspace1\AlmacenSeguridadIndustrial\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\workspace1\AlmacenSeguridadIndustrial\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\workspace1\AlmacenSeguridadIndustrial\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\workspace1\AlmacenSeguridadIndustrial\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\workspace1\AlmacenSeguridadIndustrial\CapaEntidad\obj\Debug\CapaEntidad.pdb
