@@ -35,7 +35,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Unidad>();
+                    Console.WriteLine(ex.Message);
                 }
 
             }
@@ -66,6 +66,7 @@ namespace CapaDatos
             {
                 idUnidadGenerado = 0;
                 Mensaje = ex.Message;
+                Console.WriteLine(Mensaje);
             }
 
             return idUnidadGenerado;
@@ -98,7 +99,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                unidad = new Unidad();
+                Console.WriteLine(ex.Message);
             }
            return unidad;
         }

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Cargo.cs" />
+    <Compile Include="CN_Producto.cs" />
     <Compile Include="CN_PuestoDeTrabajo.cs" />
+    <Compile Include="CN_Talla.cs" />
     <Compile Include="CN_Unidad.cs" />
     <Compile Include="CN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

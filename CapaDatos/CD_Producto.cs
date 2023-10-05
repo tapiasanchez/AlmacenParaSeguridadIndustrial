@@ -1,0 +1,83 @@
+﻿using CapaEntidad;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaDatos
+{
+    public class CD_Producto
+    {
+        public List<Producto> Listar()
+        {
+
+            List<Producto> lista = new List<Producto>();
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select  p.IDProducto,p.Codigo, p.NombreProducto, p.Descripcion,p.Cantidad, t.NombreTalla from Product p");
+                    query.AppendLine("inner join Talla t on t.IDTalla = p.IdTalla ");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.CommandType = CommandType.Text;
+                    oconexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Producto()
+                            {
+
+                                IdProducto = Convert.ToInt32(reader["IDProducto"]),
+                                Codigo = reader["Codigo"].ToString(),
+                                NombreProducto = reader["NombreProducto"].ToString(),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                Cantidad = Convert.ToInt32(reader["Cantidad"]),
+                                Talla = new Talla() { Nombre = reader["NombreTalla"].ToString() },
+                                //Fecha = reader["Fecha"]
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return lista;
+        }
+
+        public void Registrar(Producto obj)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARPRODUCTO", oconexion);
+                    cmd.Parameters.AddWithValue("codigo", obj.Codigo);
+                    cmd.Parameters.AddWithValue("nombreProducto", obj.NombreProducto);
+                    cmd.Parameters.AddWithValue("descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("cantidad", obj.Cantidad);
+                    cmd.Parameters.AddWithValue("idTalla", obj.Talla.IdTalla);
+                    cmd.Parameters.AddWithValue("fecha", obj.Fecha);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}

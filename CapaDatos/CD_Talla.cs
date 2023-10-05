@@ -1,21 +1,22 @@
 ﻿using CapaEntidad;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
+using System;
 
 namespace CapaDatos
 {
-    public class CD_PuestoDeTrabajo
+    public class CD_Talla
     {
-        public List<PuestoDeTrabajo> Listar()
+        public List<Talla> Listar()
         {
-            List<PuestoDeTrabajo> lista = new List<PuestoDeTrabajo>();
+            List<Talla> lista = new List<Talla>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    string query = "select * from PuestoDeTrabajo";
+                    string query = "select * from Talla";
+
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -23,10 +24,10 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            lista.Add(new PuestoDeTrabajo()
+                            lista.Add(new Talla()
                             {
-                                IdPuestoDeTrabajo = Convert.ToInt32(reader["IDPuestoDeTrabajo"]),
-                                Nombre = reader["NombrePuesto"].ToString(),
+                                IdTalla = Convert.ToInt32(reader["IDTalla"]),
+                                Nombre = reader["NombreTalla"].ToString(),
 
                             });
                         }
@@ -37,70 +38,70 @@ namespace CapaDatos
                 {
                     Console.WriteLine(ex.Message);
                 }
+
             }
             return lista;
         }
 
-        public int Registrar(PuestoDeTrabajo obj, out string Mensaje)
+        public int Registrar(Talla obj, out string Mensaje)
         {
-            int idPuestoDeTrabajoGenerado = 0;
+            int idTallaGenerado = 0;
             Mensaje = string.Empty;
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_REGISTRARPUESTODETRABAJO", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARTALLA", oconexion);
                     cmd.Parameters.AddWithValue("nombre", obj.Nombre);
-                    cmd.Parameters.Add("idPuestoDeTrabajoResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("idTallaResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
-                    idPuestoDeTrabajoGenerado = Convert.ToInt32(cmd.Parameters["idPuestoDeTrabajoResultado"].Value);
+                    idTallaGenerado = Convert.ToInt32(cmd.Parameters["idTallaResultado"].Value);
 
                 }
             }
             catch (Exception ex)
             {
-                idPuestoDeTrabajoGenerado = 0;
+                idTallaGenerado = 0;
                 Mensaje = ex.Message;
                 Console.WriteLine(Mensaje);
             }
 
-            return idPuestoDeTrabajoGenerado;
-
+            return idTallaGenerado;
         }
-        public PuestoDeTrabajo GetPuestoDeTrabajo(String nombre)
+
+        public Talla GetId(String nombre)
         {
-            PuestoDeTrabajo puesto = new PuestoDeTrabajo();
+            Talla talla = new Talla();
+
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_GETPUESTODETRABAJO", oconexion);
-                    cmd.Parameters.AddWithValue("nombrePuesto", nombre);
+                    SqlCommand cmd = new SqlCommand("SP_GETTALLA", oconexion);
+                    cmd.Parameters.AddWithValue("nombre", nombre);
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            puesto.IdPuestoDeTrabajo = Convert.ToInt32(reader["IDPuestoDeTrabajo"]);
-                            puesto.Nombre = reader["NombrePuesto"].ToString();
+                            talla.IdTalla = Convert.ToInt32(reader["IDTalla"]);
+                            talla.Nombre = reader["NombreTalla"].ToString();
                         }
-
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
-                Console.WriteLine (ex.Message);
+                Console.WriteLine(ex.Message);
             }
-            return puesto;
+            return talla;
         }
-
     }
 }
+

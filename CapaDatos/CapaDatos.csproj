@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Cargo.cs" />
+    <Compile Include="CD_Producto.cs" />
     <Compile Include="CD_PuestoDeTrabajo.cs" />
+    <Compile Include="CD_Talla.cs" />
     <Compile Include="CD_Unidad.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="Conexion.cs" />

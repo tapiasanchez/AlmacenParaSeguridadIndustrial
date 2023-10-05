@@ -28,3 +28,5 @@ C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\bin\Debug\System.IO.Pa
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormCargo.resources
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormPuestoDeTrabajo.resources
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormUnidad.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormTallas.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormProducto.resources
