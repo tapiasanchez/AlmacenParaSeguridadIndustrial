@@ -45,7 +45,7 @@ namespace CapaDatos
 
                 }catch (Exception ex)
                 {
-                    lista = new List<Usuario>();
+                    Console.WriteLine(ex.Message);
                 }
             }
             return lista;
@@ -78,6 +78,7 @@ namespace CapaDatos
             catch (Exception ex) {
                 idUsuarioGenerado = 0;
                 Mensaje = ex.Message;
+                Console.WriteLine(ex.Message);
             }
 
             return idUsuarioGenerado;

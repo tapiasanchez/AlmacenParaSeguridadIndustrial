@@ -82,11 +82,23 @@
     <Compile Include="FormModalUsuario.Designer.cs">
       <DependentUpon>FormModalUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducto.Designer.cs">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPuestoDeTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPuestoDeTrabajo.Designer.cs">
       <DependentUpon>FormPuestoDeTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTallas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTallas.Designer.cs">
+      <DependentUpon>FormTallas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUnidad.cs">
       <SubType>Form</SubType>
@@ -115,8 +127,14 @@
     <EmbeddedResource Include="FormModalUsuario.resx">
       <DependentUpon>FormModalUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProducto.resx">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPuestoDeTrabajo.resx">
       <DependentUpon>FormPuestoDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTallas.resx">
+      <DependentUpon>FormTallas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUnidad.resx">
       <DependentUpon>FormUnidad.cs</DependentUpon>

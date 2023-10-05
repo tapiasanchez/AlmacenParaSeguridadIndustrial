@@ -14,22 +14,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
-        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             if (MenuActivo != null)
@@ -73,6 +57,16 @@ namespace CapaPresentacion
         private void subMenuPuestoDeTrabajo_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuAjustes, new FormPuestoDeTrabajo());
+        }
+
+        private void subMenuTalla_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuTalla, new FormTallas());
+        }
+
+        private void iconMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuRegistro, new FormProducto());
         }
     }
 }

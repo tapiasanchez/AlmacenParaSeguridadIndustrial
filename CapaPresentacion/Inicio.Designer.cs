@@ -34,10 +34,12 @@
             this.subMenuCargo = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuUnidad = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuPuestoDeTrabajo = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItem4 = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItem5 = new FontAwesome.Sharp.IconMenuItem();
+            this.menuAlmacen = new FontAwesome.Sharp.IconMenuItem();
+            this.subMenuTalla = new FontAwesome.Sharp.IconMenuItem();
+            this.subMenuRegistro = new FontAwesome.Sharp.IconMenuItem();
+            this.menuDotacion = new FontAwesome.Sharp.IconMenuItem();
+            this.menuCambio = new FontAwesome.Sharp.IconMenuItem();
+            this.menuHistorico = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
@@ -49,16 +51,15 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Usuarios,
             this.menuAjustes,
-            this.iconMenuItem2,
-            this.iconMenuItem3,
-            this.iconMenuItem4,
-            this.iconMenuItem5});
+            this.menuAlmacen,
+            this.menuDotacion,
+            this.menuCambio,
+            this.menuHistorico});
             this.menuStrip1.Location = new System.Drawing.Point(0, 48);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 73);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // Usuarios
             // 
@@ -98,7 +99,7 @@
             this.subMenuCargo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCargo.IconSize = 60;
             this.subMenuCargo.Name = "subMenuCargo";
-            this.subMenuCargo.Size = new System.Drawing.Size(180, 22);
+            this.subMenuCargo.Size = new System.Drawing.Size(168, 22);
             this.subMenuCargo.Text = "Cargo";
             this.subMenuCargo.Click += new System.EventHandler(this.subMenuCargo_Click);
             // 
@@ -109,7 +110,7 @@
             this.subMenuUnidad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuUnidad.IconSize = 60;
             this.subMenuUnidad.Name = "subMenuUnidad";
-            this.subMenuUnidad.Size = new System.Drawing.Size(180, 22);
+            this.subMenuUnidad.Size = new System.Drawing.Size(168, 22);
             this.subMenuUnidad.Text = "Unidad";
             this.subMenuUnidad.Click += new System.EventHandler(this.subMenuUnidad_Click);
             // 
@@ -120,61 +121,84 @@
             this.subMenuPuestoDeTrabajo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuPuestoDeTrabajo.IconSize = 60;
             this.subMenuPuestoDeTrabajo.Name = "subMenuPuestoDeTrabajo";
-            this.subMenuPuestoDeTrabajo.Size = new System.Drawing.Size(180, 22);
+            this.subMenuPuestoDeTrabajo.Size = new System.Drawing.Size(168, 22);
             this.subMenuPuestoDeTrabajo.Text = "Puesto de Trabajo";
             this.subMenuPuestoDeTrabajo.Click += new System.EventHandler(this.subMenuPuestoDeTrabajo_Click);
             // 
-            // iconMenuItem2
+            // menuAlmacen
             // 
-            this.iconMenuItem2.AutoSize = false;
-            this.iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.Store;
-            this.iconMenuItem2.IconColor = System.Drawing.Color.Black;
-            this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem2.IconSize = 50;
-            this.iconMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItem2.Name = "iconMenuItem2";
-            this.iconMenuItem2.Size = new System.Drawing.Size(80, 69);
-            this.iconMenuItem2.Text = "Almacen";
-            this.iconMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuAlmacen.AutoSize = false;
+            this.menuAlmacen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subMenuTalla,
+            this.subMenuRegistro});
+            this.menuAlmacen.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.menuAlmacen.IconColor = System.Drawing.Color.Black;
+            this.menuAlmacen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuAlmacen.IconSize = 50;
+            this.menuAlmacen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuAlmacen.Name = "menuAlmacen";
+            this.menuAlmacen.Size = new System.Drawing.Size(80, 69);
+            this.menuAlmacen.Text = "Almacen";
+            this.menuAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // iconMenuItem3
+            // subMenuTalla
             // 
-            this.iconMenuItem3.AutoSize = false;
-            this.iconMenuItem3.IconChar = FontAwesome.Sharp.IconChar.TableList;
-            this.iconMenuItem3.IconColor = System.Drawing.Color.Black;
-            this.iconMenuItem3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem3.IconSize = 50;
-            this.iconMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItem3.Name = "iconMenuItem3";
-            this.iconMenuItem3.Size = new System.Drawing.Size(80, 69);
-            this.iconMenuItem3.Text = "Dotacion";
-            this.iconMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.subMenuTalla.IconChar = FontAwesome.Sharp.IconChar.Paste;
+            this.subMenuTalla.IconColor = System.Drawing.Color.Black;
+            this.subMenuTalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.subMenuTalla.Name = "subMenuTalla";
+            this.subMenuTalla.Size = new System.Drawing.Size(190, 22);
+            this.subMenuTalla.Text = "Tallas";
+            this.subMenuTalla.Click += new System.EventHandler(this.subMenuTalla_Click);
             // 
-            // iconMenuItem4
+            // subMenuRegistro
             // 
-            this.iconMenuItem4.AutoSize = false;
-            this.iconMenuItem4.IconChar = FontAwesome.Sharp.IconChar.Stream;
-            this.iconMenuItem4.IconColor = System.Drawing.Color.Black;
-            this.iconMenuItem4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem4.IconSize = 50;
-            this.iconMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItem4.Name = "iconMenuItem4";
-            this.iconMenuItem4.Size = new System.Drawing.Size(80, 69);
-            this.iconMenuItem4.Text = "Cambio";
-            this.iconMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.subMenuRegistro.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            this.subMenuRegistro.IconColor = System.Drawing.Color.Black;
+            this.subMenuRegistro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.subMenuRegistro.Name = "subMenuRegistro";
+            this.subMenuRegistro.Size = new System.Drawing.Size(190, 22);
+            this.subMenuRegistro.Text = "Registro de Productos";
+            this.subMenuRegistro.Click += new System.EventHandler(this.iconMenuItem1_Click);
             // 
-            // iconMenuItem5
+            // menuDotacion
             // 
-            this.iconMenuItem5.AutoSize = false;
-            this.iconMenuItem5.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
-            this.iconMenuItem5.IconColor = System.Drawing.Color.Black;
-            this.iconMenuItem5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem5.IconSize = 50;
-            this.iconMenuItem5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItem5.Name = "iconMenuItem5";
-            this.iconMenuItem5.Size = new System.Drawing.Size(80, 69);
-            this.iconMenuItem5.Text = "Historico";
-            this.iconMenuItem5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuDotacion.AutoSize = false;
+            this.menuDotacion.IconChar = FontAwesome.Sharp.IconChar.TableList;
+            this.menuDotacion.IconColor = System.Drawing.Color.Black;
+            this.menuDotacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuDotacion.IconSize = 50;
+            this.menuDotacion.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuDotacion.Name = "menuDotacion";
+            this.menuDotacion.Size = new System.Drawing.Size(80, 69);
+            this.menuDotacion.Text = "Dotacion";
+            this.menuDotacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // menuCambio
+            // 
+            this.menuCambio.AutoSize = false;
+            this.menuCambio.IconChar = FontAwesome.Sharp.IconChar.Stream;
+            this.menuCambio.IconColor = System.Drawing.Color.Black;
+            this.menuCambio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuCambio.IconSize = 50;
+            this.menuCambio.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuCambio.Name = "menuCambio";
+            this.menuCambio.Size = new System.Drawing.Size(80, 69);
+            this.menuCambio.Text = "Cambio";
+            this.menuCambio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // menuHistorico
+            // 
+            this.menuHistorico.AutoSize = false;
+            this.menuHistorico.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
+            this.menuHistorico.IconColor = System.Drawing.Color.Black;
+            this.menuHistorico.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuHistorico.IconSize = 50;
+            this.menuHistorico.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuHistorico.Name = "menuHistorico";
+            this.menuHistorico.Size = new System.Drawing.Size(80, 69);
+            this.menuHistorico.Text = "Historico";
+            this.menuHistorico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // menuTitulo
             // 
@@ -198,7 +222,6 @@
             this.label1.Size = new System.Drawing.Size(261, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Sistema de Almacen";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // contenedor
             // 
@@ -235,13 +258,15 @@
         private FontAwesome.Sharp.IconMenuItem Usuarios;
         private System.Windows.Forms.Panel contenedor;
         private FontAwesome.Sharp.IconMenuItem menuAjustes;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem4;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem5;
+        private FontAwesome.Sharp.IconMenuItem menuDotacion;
+        private FontAwesome.Sharp.IconMenuItem menuCambio;
+        private FontAwesome.Sharp.IconMenuItem menuHistorico;
         private FontAwesome.Sharp.IconMenuItem subMenuCargo;
         private FontAwesome.Sharp.IconMenuItem subMenuUnidad;
         private FontAwesome.Sharp.IconMenuItem subMenuPuestoDeTrabajo;
+        private FontAwesome.Sharp.IconMenuItem menuAlmacen;
+        private FontAwesome.Sharp.IconMenuItem subMenuTalla;
+        private FontAwesome.Sharp.IconMenuItem subMenuRegistro;
     }
 }
 

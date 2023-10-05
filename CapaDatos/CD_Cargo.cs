@@ -36,7 +36,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Cargo>();
+                    Console.WriteLine(ex.Message);
                 }
 
             }
@@ -67,6 +67,7 @@ namespace CapaDatos
             {
                 idCargoGenerado = 0;
                 Mensaje = ex.Message;
+                Console.WriteLine(Mensaje);
             }
 
             return idCargoGenerado;
@@ -96,7 +97,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    cargo = new Cargo();
+                    Console.WriteLine(ex.Message);
                 }
              return cargo;
         }
