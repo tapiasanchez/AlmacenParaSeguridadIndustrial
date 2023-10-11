@@ -5,6 +5,7 @@ using CapaNegocio;
 using CapaEntidad;
 using SpreadsheetLight;
 using CapaPresentacion.Utilidades;
+using System.Linq;
 
 namespace CapaPresentacion
 {
@@ -35,7 +36,7 @@ namespace CapaPresentacion
 
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void BtnRegistrar_Click(object sender, EventArgs e)
         {
             FormModalUsuario formModalUsuario = new FormModalUsuario();
             formModalUsuario.ShowDialog();
@@ -43,52 +44,71 @@ namespace CapaPresentacion
 
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void BtnCargar_Click(object sender, EventArgs e)
         {
-            List<Usuario> listaPersonas = leerDatosDeExel();
+            List<Usuario> listaPersonas = LeerDatosDeExel;
             foreach(Usuario item in listaPersonas)
             {
-                string mensaje = String.Empty;
                 item.NombreCargo.IdCargo = new CN_Cargo().GetId(item.NombreCargo.Nombre).IdCargo;
                 item.NombreUnidad.IdUnidad = new CN_Unidad().GetUnidad(item.NombreUnidad.Nombre).IdUnidad;
                 item.NombrePuesto.IdPuestoDeTrabajo = new CN_PuestoDeTrabajo().GetPuestoDeTrabajo(item.NombrePuesto.Nombre).IdPuestoDeTrabajo;
-                int idUsuarioGenerado = new CN_Usuario().Registrar(item, out mensaje);
-               
+                int idUsuarioGenerado = new CN_Usuario().Registrar(item, out string mensaje);
+
             }
             FormUsuario_Load(sender, e);
         }
-        public List<Usuario> leerDatosDeExel() {
-            string rutaArchivo = string.Empty;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+        public List<Usuario> LeerDatosDeExel
+        {
+            get
             {
-                rutaArchivo = openFileDialog.FileName;
-                SLDocument documento = new SLDocument(rutaArchivo);
-                int indiceRow = 2;
-                List<Usuario> listUsuario = new List<Usuario>();
+                OpenFileDialog openFileDialog = new OpenFileDialog();
 
-                while (!string.IsNullOrEmpty(documento.GetCellValueAsString(indiceRow, 1)))
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Usuario persona = new Usuario();
-                    persona.Item = documento.GetCellValueAsString(indiceRow, 1);
-                    persona.Ci = documento.GetCellValueAsString(indiceRow, 2);
-                    persona.Nombre = documento.GetCellValueAsString(indiceRow, 3);
-                    persona.Apellido = documento.GetCellValueAsString(indiceRow, 4);
-                    persona.NombreCargo = new Cargo() { Nombre = documento.GetCellValueAsString(indiceRow, 5)};
-                    persona.NombreUnidad = new Unidad() { Nombre = documento.GetCellValueAsString(indiceRow, 6) };
-                    persona.NombrePuesto = new PuestoDeTrabajo() { Nombre = documento.GetCellValueAsString(indiceRow, 7) };
+                    string rutaArchivo = openFileDialog.FileName;
+                    SLDocument documento = new SLDocument(rutaArchivo);
+                    int indiceRow = 2;
+                    List<Usuario> listUsuario = new List<Usuario>();
 
-                    listUsuario.Add(persona);
-                    indiceRow++;
+                    while (!string.IsNullOrEmpty(documento.GetCellValueAsString(indiceRow, 1)))
+                    {
+                        Usuario persona = new Usuario
+                        {
+                            Item = documento.GetCellValueAsString(indiceRow, 1),
+                            Ci = documento.GetCellValueAsString(indiceRow, 2),
+                            Nombre = documento.GetCellValueAsString(indiceRow, 3),
+                            Apellido = documento.GetCellValueAsString(indiceRow, 4),
+                            NombreCargo = new Cargo() { Nombre = documento.GetCellValueAsString(indiceRow, 5) },
+                            NombreUnidad = new Unidad() { Nombre = documento.GetCellValueAsString(indiceRow, 6) },
+                            NombrePuesto = new PuestoDeTrabajo() { Nombre = documento.GetCellValueAsString(indiceRow, 7) }
+                        };
+
+                        listUsuario.Add(persona);
+                        indiceRow++;
+                    }
+                    return listUsuario;
                 }
-                return listUsuario;
+                return null;
             }
-            return null;
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            string columFiltro = ((OpcionCombo)comboBoxBuscar.SelectedItem).Valor.ToString();
+            if (dGVData.Rows.Count > 0)
+            {
+                foreach(DataGridViewRow row in dGVData.Rows)
+                {
+                    if (row.Cells[columFiltro].Value.ToString().Trim().ToUpper().Contains(textBuscar.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;    
+                    }
+                }
+            }
             foreach (DataGridViewRow row in dGVData.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)

@@ -38,6 +38,8 @@
             this.subMenuTalla = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuRegistro = new FontAwesome.Sharp.IconMenuItem();
             this.menuDotacion = new FontAwesome.Sharp.IconMenuItem();
+            this.subMenuListaDotacion = new FontAwesome.Sharp.IconMenuItem();
+            this.subMenuDotacion = new FontAwesome.Sharp.IconMenuItem();
             this.menuCambio = new FontAwesome.Sharp.IconMenuItem();
             this.menuHistorico = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
@@ -164,6 +166,9 @@
             // menuDotacion
             // 
             this.menuDotacion.AutoSize = false;
+            this.menuDotacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subMenuListaDotacion,
+            this.subMenuDotacion});
             this.menuDotacion.IconChar = FontAwesome.Sharp.IconChar.TableList;
             this.menuDotacion.IconColor = System.Drawing.Color.Black;
             this.menuDotacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -173,6 +178,28 @@
             this.menuDotacion.Size = new System.Drawing.Size(80, 69);
             this.menuDotacion.Text = "Dotacion";
             this.menuDotacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // subMenuListaDotacion
+            // 
+            this.subMenuListaDotacion.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.subMenuListaDotacion.IconColor = System.Drawing.Color.Black;
+            this.subMenuListaDotacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.subMenuListaDotacion.IconSize = 28;
+            this.subMenuListaDotacion.Name = "subMenuListaDotacion";
+            this.subMenuListaDotacion.Size = new System.Drawing.Size(180, 22);
+            this.subMenuListaDotacion.Text = "Listas de Dotacion";
+            this.subMenuListaDotacion.Click += new System.EventHandler(this.subMenuListaDotacion_Click);
+            // 
+            // subMenuDotacion
+            // 
+            this.subMenuDotacion.IconChar = FontAwesome.Sharp.IconChar.ListCheck;
+            this.subMenuDotacion.IconColor = System.Drawing.Color.Black;
+            this.subMenuDotacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.subMenuDotacion.IconSize = 28;
+            this.subMenuDotacion.Name = "subMenuDotacion";
+            this.subMenuDotacion.Size = new System.Drawing.Size(180, 22);
+            this.subMenuDotacion.Text = "Dotacion";
+            this.subMenuDotacion.Click += new System.EventHandler(this.subMenuDotacion_Click);
             // 
             // menuCambio
             // 
@@ -267,6 +294,8 @@
         private FontAwesome.Sharp.IconMenuItem menuAlmacen;
         private FontAwesome.Sharp.IconMenuItem subMenuTalla;
         private FontAwesome.Sharp.IconMenuItem subMenuRegistro;
+        private FontAwesome.Sharp.IconMenuItem subMenuListaDotacion;
+        private FontAwesome.Sharp.IconMenuItem subMenuDotacion;
     }
 }
 

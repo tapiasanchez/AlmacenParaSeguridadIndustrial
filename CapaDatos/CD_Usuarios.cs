@@ -50,7 +50,6 @@ namespace CapaDatos
             }
             return lista;
         }
-
         public int Registrar(Usuario obj,out string Mensaje){
             int idUsuarioGenerado = 0;
             Mensaje = string.Empty;
@@ -80,9 +79,46 @@ namespace CapaDatos
                 Mensaje = ex.Message;
                 Console.WriteLine(ex.Message);
             }
-
             return idUsuarioGenerado;
+        }
+        public Usuario GetByIdAndName(string ci, string nombre)
+        {
+            Usuario usuario = new Usuario();
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select  us.IDUsuario, us.CI, us.Nombre,us.Apellido, c.NombreCargo, u.NombreUnidad, p.NombrePuesto from Usuario us ");
+                    query.AppendLine("inner join Cargo c on c.IDCargo = us.IdCargo ");
+                    query.AppendLine("inner join Unidad u on u.IDUnidad = us.IdUnidad");
+                    query.AppendLine("inner join PuestoDeTrabajo p on p.IDPuestoDeTrabajo = us.IdPuestoDeTrabajo");
+                    query.AppendLine("where us.CI ='" + ci + "'");
+                    query.AppendLine("and us.Nombre ='" + nombre + "'");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.CommandType = CommandType.Text;
+                    oconexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usuario.IdUsuario = Convert.ToInt32(reader["IDUsuario"]);
+                            usuario.Ci = reader["CI"].ToString();
+                            usuario.Nombre = reader["Nombre"].ToString();
+                            usuario.Apellido = reader["Apellido"].ToString();
+                            usuario.NombreCargo = new Cargo() { Nombre = reader["NombreCargo"].ToString() };
+                            usuario.NombreUnidad = new Unidad() { Nombre = reader["NombreUnidad"].ToString() };
+                            usuario.NombrePuesto = new PuestoDeTrabajo() { Nombre = reader["NombrePuesto"].ToString() };
+                        }
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return usuario;
         }
     }
 }

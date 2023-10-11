@@ -76,6 +76,18 @@
     <Compile Include="FormCargo.Designer.cs">
       <DependentUpon>FormCargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDotacion.Designer.cs">
+      <DependentUpon>FormDotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaDotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaDotacion.Designer.cs">
+      <DependentUpon>FormListaDotacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModalUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     <Compile Include="Utilidades\OpcionCombo.cs" />
     <EmbeddedResource Include="FormCargo.resx">
       <DependentUpon>FormCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDotacion.resx">
+      <DependentUpon>FormDotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaDotacion.resx">
+      <DependentUpon>FormListaDotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormModalUsuario.resx">
       <DependentUpon>FormModalUsuario.cs</DependentUpon>

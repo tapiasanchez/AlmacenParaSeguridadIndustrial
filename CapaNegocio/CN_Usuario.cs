@@ -17,5 +17,10 @@ namespace CapaNegocio
         {
             return objcd_usuario.Registrar(obj, out Mensaje);
         }
+
+        public Usuario GetByCiAndNombre(string ci, string nombre)
+        {
+            return objcd_usuario.GetByIdAndName(ci, nombre);
+        }
     }
 }

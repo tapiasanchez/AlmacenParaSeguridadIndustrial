@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cargo.cs" />
+    <Compile Include="DetalleDotacion.cs" />
+    <Compile Include="Dotacion.cs" />
+    <Compile Include="ListaDotacion.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuestoDeTrabajo.cs" />

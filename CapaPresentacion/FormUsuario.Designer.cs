@@ -64,7 +64,7 @@
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // btnCargar
             // 
@@ -84,7 +84,7 @@
             this.btnCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCargar.UseVisualStyleBackColor = false;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            this.btnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
             // 
             // dGVData
             // 
@@ -165,7 +165,6 @@
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(153, 21);
             this.comboBoxBuscar.TabIndex = 5;
-            this.comboBoxBuscar.Visible = false;
             // 
             // textBuscar
             // 
@@ -186,7 +185,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(61, 29);
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // FormUsuario
             // 
