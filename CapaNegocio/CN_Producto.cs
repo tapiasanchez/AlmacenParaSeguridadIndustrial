@@ -1,10 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
@@ -19,6 +15,16 @@ namespace CapaNegocio
         public void Registrar(Producto obj)
         {
             objcd_producto.Registrar(obj);
+        }
+
+        public Producto GetByID(int id)
+        {
+            return objcd_producto.GetByID(id);
+        }
+
+        public void UpdateStock(Producto obj)
+        {
+            objcd_producto.UpdateStock(obj);
         }
     }
 }

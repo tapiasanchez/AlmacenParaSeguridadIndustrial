@@ -72,7 +72,6 @@ namespace CapaDatos
 
             return idTallaGenerado;
         }
-
         public Talla GetId(String nombre)
         {
             Talla talla = new Talla();
@@ -104,4 +103,3 @@ namespace CapaDatos
         }
     }
 }
-

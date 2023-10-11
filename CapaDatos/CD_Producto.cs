@@ -3,9 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -40,7 +38,7 @@ namespace CapaDatos
                                 Descripcion = reader["Descripcion"].ToString(),
                                 Cantidad = Convert.ToInt32(reader["Cantidad"]),
                                 Talla = new Talla() { Nombre = reader["NombreTalla"].ToString() },
-                                //Fecha = reader["Fecha"]
+                                //Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                             });
                         }
                     }
@@ -78,6 +76,66 @@ namespace CapaDatos
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+        public Producto GetByID(int id)
+        {
+            Producto obj = new Producto();
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("Select * from Product ");
+                    query.AppendLine("Where IDProducto = '" + id + "'");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.CommandType = CommandType.Text;
+                    oconexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            obj.IdProducto = Convert.ToInt32(reader["IDProducto"]);
+                            obj.Codigo = reader["Codigo"].ToString();
+                            obj.NombreProducto = reader["NombreProducto"].ToString();
+                            obj.Descripcion = reader["Descripcion"].ToString();
+                            obj.Cantidad = Convert.ToInt32(reader["Cantidad"]);
+                            obj.Talla = new Talla() { Nombre = reader["NombreTalla"].ToString() };
+                            obj.Fecha = DateTime.Parse(reader["Fecha"].ToString());
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return obj;
+        }
+        public void UpdateStock(Producto obj)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_ACTUALIZARSTOCK", oconexion);
+                    cmd.Parameters.AddWithValue("idProducto", obj.IdProducto);
+                    cmd.Parameters.AddWithValue("NuevoCantidad", obj.Cantidad);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            
+            }
+
         }
     }
 }

@@ -68,5 +68,14 @@ namespace CapaPresentacion
         {
             AbrirFormulario(subMenuRegistro, new FormProducto());
         }
+        private void subMenuListaDotacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuListaDotacion, new FormListaDotacion());
+        }
+
+        private void subMenuDotacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuDotacion, new FormDotacion());
+        }
     }
 }

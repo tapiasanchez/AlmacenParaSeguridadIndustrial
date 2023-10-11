@@ -30,3 +30,5 @@ C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresenta
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormUnidad.resources
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormTallas.resources
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormProducto.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormDotacion.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormListaDotacion.resources

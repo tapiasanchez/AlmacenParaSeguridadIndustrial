@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Cargo.cs" />
+    <Compile Include="CN_DetalleDotacion.cs" />
+    <Compile Include="CN_Dotacion.cs" />
+    <Compile Include="CN_ListaDotacion.cs" />
     <Compile Include="CN_Producto.cs" />
     <Compile Include="CN_PuestoDeTrabajo.cs" />
     <Compile Include="CN_Talla.cs" />

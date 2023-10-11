@@ -41,7 +41,6 @@ namespace CapaDatos
             }
             return lista;
         }
-
         public int Registrar(Unidad obj, out string Mensaje)
         {
             int idUnidadGenerado = 0;
@@ -105,5 +104,3 @@ namespace CapaDatos
         }
     }
 }
-
-
