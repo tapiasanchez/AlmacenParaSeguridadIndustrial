@@ -120,7 +120,7 @@
             this.iconButton1.Text = "Buscar";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // infoUsuario
             // 
@@ -149,7 +149,7 @@
             this.comboBoxPuesto.Name = "comboBoxPuesto";
             this.comboBoxPuesto.Size = new System.Drawing.Size(157, 23);
             this.comboBoxPuesto.TabIndex = 9;
-            this.comboBoxPuesto.SelectedIndexChanged += new System.EventHandler(this.comboBoxPuesto_SelectedIndexChanged);
+            this.comboBoxPuesto.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPuesto_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -184,7 +184,7 @@
             this.iconButton2.Text = "Guardar";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.Click += new System.EventHandler(this.IconButton2_Click);
             // 
             // iconButton3
             // 
@@ -200,6 +200,7 @@
             this.iconButton3.Text = "Imprimir";
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.IconButton3_Click);
             // 
             // dgvListaDotacion
             // 

@@ -2,6 +2,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections.Generic;
 
 namespace CapaDatos
 {
@@ -28,6 +29,46 @@ namespace CapaDatos
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+        public List<DetalleDotacion> GetListaDotacionById(int id)
+        {
+            List<DetalleDotacion> lista = new List<DetalleDotacion>();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_GETLISTADOTACION", oconexion);
+                    cmd.Parameters.AddWithValue("idDotacion", id);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new DetalleDotacion() { 
+                                producto = new Producto()
+                                {
+                                    NombreProducto = reader["NombreProducto"].ToString(),
+                                    Talla = new Talla()
+                                    {
+                                        Nombre = reader["NombreTalla"].ToString()
+                                    }
+                                } ,
+                            Cantidad = Convert.ToInt32(reader["Cantidad"]),
+                        });
+                           
+                        }
+
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return lista;
         }
     }
 }

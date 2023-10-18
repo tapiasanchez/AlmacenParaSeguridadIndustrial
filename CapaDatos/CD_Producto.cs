@@ -19,7 +19,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select  p.IDProducto,p.Codigo, p.NombreProducto, p.Descripcion,p.Cantidad, t.NombreTalla from Product p");
+                    query.AppendLine("select  p.IDProducto,p.Codigo, p.NombreProducto, p.Color, p.Unidad, p.Descripcion,p.Cantidad, t.NombreTalla from Product p");
                     query.AppendLine("inner join Talla t on t.IDTalla = p.IdTalla ");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
@@ -35,6 +35,8 @@ namespace CapaDatos
                                 IdProducto = Convert.ToInt32(reader["IDProducto"]),
                                 Codigo = reader["Codigo"].ToString(),
                                 NombreProducto = reader["NombreProducto"].ToString(),
+                                Color = reader["Color"].ToString(),
+                                Unidad = reader["Unidad"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 Cantidad = Convert.ToInt32(reader["Cantidad"]),
                                 Talla = new Talla() { Nombre = reader["NombreTalla"].ToString() },
@@ -62,6 +64,8 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARPRODUCTO", oconexion);
                     cmd.Parameters.AddWithValue("codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("nombreProducto", obj.NombreProducto);
+                    cmd.Parameters.AddWithValue("color", obj.Color);
+                    cmd.Parameters.AddWithValue("unidad", obj.Unidad);
                     cmd.Parameters.AddWithValue("descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("cantidad", obj.Cantidad);
                     cmd.Parameters.AddWithValue("idTalla", obj.Talla.IdTalla);
@@ -99,6 +103,8 @@ namespace CapaDatos
                             obj.IdProducto = Convert.ToInt32(reader["IDProducto"]);
                             obj.Codigo = reader["Codigo"].ToString();
                             obj.NombreProducto = reader["NombreProducto"].ToString();
+                            obj.Color = reader["Color"].ToString();
+                            obj.Unidad = reader["Unidad"].ToString();
                             obj.Descripcion = reader["Descripcion"].ToString();
                             obj.Cantidad = Convert.ToInt32(reader["Cantidad"]);
                             obj.Talla = new Talla() { Nombre = reader["NombreTalla"].ToString() };

@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class CN_Usuario
     {
-        private CD_Usuarios objcd_usuario = new CD_Usuarios();
+        private readonly CD_Usuarios objcd_usuario = new CD_Usuarios();
 
         public List<Usuario> Listar()
         {
@@ -21,6 +21,10 @@ namespace CapaNegocio
         public Usuario GetByCiAndNombre(string ci, string nombre)
         {
             return objcd_usuario.GetByIdAndName(ci, nombre);
+        }
+        public Usuario GetByIdUsuario(int id)
+        {
+            return objcd_usuario.GetByIdUsuario(id);
         }
     }
 }
