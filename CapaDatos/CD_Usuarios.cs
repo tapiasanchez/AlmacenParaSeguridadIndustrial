@@ -21,9 +21,11 @@ namespace CapaDatos
                     query.AppendLine("inner join Cargo c on c.IDCargo = us.IdCargo ");
                     query.AppendLine("inner join Unidad u on u.IDUnidad = us.IdUnidad");
                     query.AppendLine("inner join PuestoDeTrabajo p on p.IDPuestoDeTrabajo = us.IdPuestoDeTrabajo");
-                    
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.CommandType = CommandType.Text;
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
                     oconexion.Open();
                     using(SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -95,8 +97,10 @@ namespace CapaDatos
                     query.AppendLine("inner join PuestoDeTrabajo p on p.IDPuestoDeTrabajo = us.IdPuestoDeTrabajo");
                     query.AppendLine("where us.CI ='" + ci + "'");
                     query.AppendLine("and us.Nombre ='" + nombre + "'");
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
                     oconexion.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -117,6 +121,44 @@ namespace CapaDatos
                 {
                     Console.WriteLine(ex.Message);
                 }
+            }
+            return usuario;
+        }
+        public Usuario GetByIdUsuario(int id)
+        {
+            Usuario usuario = new Usuario();
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select  us.IDUsuario,us.Item, us.CI, us.Nombre,us.Apellido, c.NombreCargo, u.NombreUnidad, p.NombrePuesto from Usuario us ");
+                    query.AppendLine("inner join Cargo c on c.IDCargo = us.IdCargo ");
+                    query.AppendLine("inner join Unidad u on u.IDUnidad = us.IdUnidad");
+                    query.AppendLine("inner join PuestoDeTrabajo p on p.IDPuestoDeTrabajo = us.IdPuestoDeTrabajo");
+                    query.AppendLine("where us.IDUsuario ='" + id + "'");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
+                    oconexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usuario.IdUsuario = Convert.ToInt32(reader["IDUsuario"]);
+                            usuario.Item = reader["Item"].ToString();
+                            usuario.Ci = reader["CI"].ToString();
+                            usuario.Nombre = reader["Nombre"].ToString();
+                            usuario.Apellido = reader["Apellido"].ToString();
+                            usuario.NombreCargo = new Cargo() { Nombre = reader["NombreCargo"].ToString() };
+                            usuario.NombreUnidad = new Unidad() { Nombre = reader["NombreUnidad"].ToString() };
+                            usuario.NombrePuesto = new PuestoDeTrabajo() { Nombre = reader["NombrePuesto"].ToString() };
+                        }
+                    }
+                }
+                catch (Exception ex) { Console.WriteLine(ex.Message); }
+
             }
             return usuario;
         }

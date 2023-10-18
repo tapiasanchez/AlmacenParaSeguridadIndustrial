@@ -46,7 +46,7 @@ namespace CapaPresentacion
             List<Producto> listaProducto = cn_Producto.Listar();
             foreach (Producto item in listaProducto)
             {
-                dgvProducto.Rows.Add(item.Codigo, item.NombreProducto, item.Descripcion, item.Cantidad, item.Talla.Nombre);
+                dgvProducto.Rows.Add(item.Codigo, item.NombreProducto, item.Color, item.Unidad, item.Descripcion, item.Cantidad, item.Talla.Nombre);
             }
         }
 
@@ -55,6 +55,8 @@ namespace CapaPresentacion
             producto.Codigo = textCodigo.Text;
             producto.NombreProducto = textProducto.Text;
             producto.Descripcion = textDescripcion.Text;
+            producto.Color = textColor.Text;
+            producto.Unidad = textUnidad.Text;
             producto.Cantidad = Convert.ToInt32(textCantidad.Text);
             producto.Talla = new Talla() { IdTalla = Convert.ToInt32(((OpcionCombo)comboBoxTalla.SelectedItem).Valor) };
             producto.Fecha = dtpRegistro.Value;
@@ -68,6 +70,8 @@ namespace CapaPresentacion
             textProducto.Text = "";
             textDescripcion.Text = "";
             textCantidad.Text = "";
+            textColor.Text = "";
+            textUnidad.Text = "";
         }
     }
 }

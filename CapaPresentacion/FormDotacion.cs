@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidad;
 using CapaPresentacion.Utilidades;
-
+using CapaPresentacion.Reportes;
 
 namespace CapaPresentacion
 {
@@ -16,7 +16,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             string ci = textCi.Text;
             string nombre = textNombre.Text;
@@ -51,7 +51,7 @@ namespace CapaPresentacion
 
         }
 
-        private void comboBoxPuesto_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
             string puesto = ((OpcionCombo)comboBoxPuesto.SelectedItem).Texto;
             dgvListaDotacion.Rows.Clear();
@@ -64,7 +64,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
             RegistrarDotacion();
             RegistrarDetalleDotacion();
@@ -74,10 +74,12 @@ namespace CapaPresentacion
         private void RegistrarDotacion()
         {
             Usuario usuario = new CN_Usuario().GetByCiAndNombre(textCi.Text, textNombre.Text);
-            Dotacion dotacion = new Dotacion();
-            dotacion.usuario = new Usuario() { IdUsuario = usuario.IdUsuario };
-            dotacion.Comentario = textBoxComentario.Text;
-            dotacion.FechaDotacion = dtpDotacion.Value;
+            Dotacion dotacion = new Dotacion
+            {
+                usuario = new Usuario() { IdUsuario = usuario.IdUsuario },
+                Comentario = textBoxComentario.Text,
+                FechaDotacion = dtpDotacion.Value
+            };
             new CN_Dotacion().Registrar(dotacion);
 
         }
@@ -88,10 +90,12 @@ namespace CapaPresentacion
                 if(row.Cells["checkList"].Value != null && (bool)row.Cells["checkList"].Value)
                 {
                     Dotacion dotacion = new CN_Dotacion().GetUltimaDotacion();
-                    DetalleDotacion detalle = new DetalleDotacion();
-                    detalle.dotacion = dotacion;
-                    detalle.producto = new Producto() { IdProducto = (int)row.Cells["idProducto"].Value };
-                    detalle.Cantidad = Convert.ToInt32(row.Cells["textboxCantidad"].Value);
+                    DetalleDotacion detalle = new DetalleDotacion
+                    {
+                        dotacion = dotacion,
+                        producto = new Producto() { IdProducto = (int)row.Cells["idProducto"].Value },
+                        Cantidad = Convert.ToInt32(row.Cells["textboxCantidad"].Value)
+                    };
                     new CN_DetalleDotacion().Registrar(detalle);
                     ActualizarStockProducto(detalle);
                 }
@@ -101,7 +105,7 @@ namespace CapaPresentacion
         private void ActualizarStockProducto(DetalleDotacion detalle)
         {
             Producto producto = new CN_Producto().GetByID(detalle.producto.IdProducto);
-            producto.Cantidad = producto.Cantidad - detalle.Cantidad;
+            producto.Cantidad -= detalle.Cantidad;
             new CN_Producto().UpdateStock(producto);
         }
         private void LimpiarFormDotacion(object sender, EventArgs e)
@@ -112,6 +116,13 @@ namespace CapaPresentacion
             comboBoxPuesto.Text = "";
             dgvListaDotacion.Rows.Clear();
             textBoxComentario.Text = "";
+        }
+
+        private void IconButton3_Click(object sender, EventArgs e)
+        {
+            Report_Dotacion report = new Report_Dotacion();
+
+            report.ShowDialog();
         }
     }
 }

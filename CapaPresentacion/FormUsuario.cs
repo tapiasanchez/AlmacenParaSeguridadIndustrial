@@ -52,7 +52,7 @@ namespace CapaPresentacion
                 item.NombreCargo.IdCargo = new CN_Cargo().GetId(item.NombreCargo.Nombre).IdCargo;
                 item.NombreUnidad.IdUnidad = new CN_Unidad().GetUnidad(item.NombreUnidad.Nombre).IdUnidad;
                 item.NombrePuesto.IdPuestoDeTrabajo = new CN_PuestoDeTrabajo().GetPuestoDeTrabajo(item.NombrePuesto.Nombre).IdPuestoDeTrabajo;
-                int idUsuarioGenerado = new CN_Usuario().Registrar(item, out string mensaje);
+                _ = new CN_Usuario().Registrar(item, out _);
 
             }
             FormUsuario_Load(sender, e);
