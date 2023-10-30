@@ -202,6 +202,7 @@
             // 
             // dtpRegistro
             // 
+            this.dtpRegistro.Enabled = false;
             this.dtpRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpRegistro.Location = new System.Drawing.Point(76, 19);
             this.dtpRegistro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

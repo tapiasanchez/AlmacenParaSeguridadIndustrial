@@ -36,8 +36,10 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_GETULTIMADOTACION", oconexion);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("SP_GETULTIMADOTACION", oconexion)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     oconexion.Open();
 
                     using (SqlDataReader reader = cmd.ExecuteReader())

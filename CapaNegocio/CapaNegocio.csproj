@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_CambioDeDotacion.cs" />
     <Compile Include="CN_Cargo.cs" />
     <Compile Include="CN_DetalleDotacion.cs" />
     <Compile Include="CN_Dotacion.cs" />

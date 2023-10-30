@@ -213,11 +213,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCambioDotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambioDotacion.Designer.cs">
+      <DependentUpon>FormCambioDotacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCargo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCargo.Designer.cs">
       <DependentUpon>FormCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeFechas.Designer.cs">
+      <DependentUpon>FormDeFechas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDotacion.cs">
       <SubType>Form</SubType>
@@ -249,6 +261,12 @@
     <Compile Include="FormPuestoDeTrabajo.Designer.cs">
       <DependentUpon>FormPuestoDeTrabajo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReportePorPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportePorPersona.Designer.cs">
+      <DependentUpon>FormReportePorPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,10 +293,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DS_CambioDeDotacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_CambioDeDotacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DS_Dotacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Dotacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DS_DotacionYCambio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DotacionYCambio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DS_FechaDotacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_FechaDotacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Report_CambioDotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Report_CambioDotacion.Designer.cs">
+      <DependentUpon>Report_CambioDotacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Report_Dotacion.cs">
       <SubType>Form</SubType>
@@ -286,10 +325,34 @@
     <Compile Include="Reportes\Report_Dotacion.Designer.cs">
       <DependentUpon>Report_Dotacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Report_DotacionYCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Report_DotacionYCambio.Designer.cs">
+      <DependentUpon>Report_DotacionYCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Report_FechaCambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Report_FechaCambios.Designer.cs">
+      <DependentUpon>Report_FechaCambios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Report_FechaDotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Report_FechaDotacion.Designer.cs">
+      <DependentUpon>Report_FechaDotacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <EmbeddedResource Include="FormCambioDotacion.resx">
+      <DependentUpon>FormCambioDotacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCargo.resx">
       <DependentUpon>FormCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeFechas.resx">
+      <DependentUpon>FormDeFechas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDotacion.resx">
       <DependentUpon>FormDotacion.cs</DependentUpon>
@@ -305,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPuestoDeTrabajo.resx">
       <DependentUpon>FormPuestoDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportePorPersona.resx">
+      <DependentUpon>FormReportePorPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTallas.resx">
       <DependentUpon>FormTallas.cs</DependentUpon>
@@ -327,10 +393,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\Report_CambioDotacion.resx">
+      <DependentUpon>Report_CambioDotacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report_Dotacion.resx">
       <DependentUpon>Report_Dotacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report_DotacionYCambio.resx">
+      <DependentUpon>Report_DotacionYCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report_FechaCambios.resx">
+      <DependentUpon>Report_FechaCambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report_FechaDotacion.resx">
+      <DependentUpon>Report_FechaDotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\R_CambioDotacion.rdlc" />
     <EmbeddedResource Include="Reportes\R_Dotacion.rdlc" />
+    <EmbeddedResource Include="Reportes\R_DotacionYCambio.rdlc" />
+    <EmbeddedResource Include="Reportes\R_FechaCambios.rdlc" />
+    <EmbeddedResource Include="Reportes\R_FechaDotacion.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -341,6 +423,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\DS_CambioDeDotacion.xsc">
+      <DependentUpon>DS_CambioDeDotacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_CambioDeDotacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_CambioDeDotacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DS_CambioDeDotacion.xss">
+      <DependentUpon>DS_CambioDeDotacion.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\DS_Dotacion.xsc">
       <DependentUpon>DS_Dotacion.xsd</DependentUpon>
     </None>
@@ -351,6 +444,28 @@
     </None>
     <None Include="Reportes\DS_Dotacion.xss">
       <DependentUpon>DS_Dotacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_DotacionYCambio.xsc">
+      <DependentUpon>DS_DotacionYCambio.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_DotacionYCambio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DotacionYCambio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DS_DotacionYCambio.xss">
+      <DependentUpon>DS_DotacionYCambio.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_FechaDotacion.xsc">
+      <DependentUpon>DS_FechaDotacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_FechaDotacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_FechaDotacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DS_FechaDotacion.xss">
+      <DependentUpon>DS_FechaDotacion.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

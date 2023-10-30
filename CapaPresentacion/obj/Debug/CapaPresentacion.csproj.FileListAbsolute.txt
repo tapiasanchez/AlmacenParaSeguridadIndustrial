@@ -153,3 +153,10 @@ C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\bin\Debug\ru\Microsoft
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_Dotacion.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormCambioDotacion.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_CambioDotacion.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormReportePorPersona.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_DotacionYCambio.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormDeFechas.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_FechaCambios.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_FechaDotacion.resources

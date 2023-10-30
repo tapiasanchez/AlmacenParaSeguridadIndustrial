@@ -22,8 +22,10 @@ namespace CapaDatos
                     query.AppendLine("select  p.IDProducto,p.Codigo, p.NombreProducto, p.Color, p.Unidad, p.Descripcion,p.Cantidad, t.NombreTalla from Product p");
                     query.AppendLine("inner join Talla t on t.IDTalla = p.IdTalla ");
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
                     oconexion.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -92,8 +94,10 @@ namespace CapaDatos
                     query.AppendLine("Select * from Product ");
                     query.AppendLine("Where IDProducto = '" + id + "'");
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
                     oconexion.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
