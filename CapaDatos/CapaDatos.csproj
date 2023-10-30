@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_CambioDeDotacion.cs" />
     <Compile Include="CD_Cargo.cs" />
     <Compile Include="CD_DetalleDotacion.cs" />
     <Compile Include="CD_Dotacion.cs" />

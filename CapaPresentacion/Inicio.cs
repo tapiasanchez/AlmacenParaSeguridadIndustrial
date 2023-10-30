@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using CapaPresentacion.Reportes;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
@@ -76,6 +77,21 @@ namespace CapaPresentacion
         private void subMenuDotacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuDotacion, new FormDotacion());
+        }
+
+        private void menuCambio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new FormCambioDotacion());
+        }
+
+        private void subMenuReporteDotacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuReporteDotacion, new FormReportePorPersona());
+        }
+
+        private void subMenuFechaDotacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuFechaDotacion, new FormDeFechas());
         }
     }
 }

@@ -16,10 +16,10 @@ namespace CapaPresentacion
 
         private void FormListaDotacion_Load(object sender, EventArgs e)
         {
-            cargarPuestoDeTrabajo();
-            cargarProductos();
+            CargarPuestoDeTrabajo();
+            CargarProductos();
         }
-        private void cargarPuestoDeTrabajo()
+        private void CargarPuestoDeTrabajo()
         {
             comboBoxPuesto.Items.Clear();
             comboBoxList.Items.Clear();
@@ -43,7 +43,7 @@ namespace CapaPresentacion
                 comboBoxList.ValueMember = "Valor";
             }
         }
-        private void cargarProductos()
+        private void CargarProductos()
         {
             comboBoxProductos.Items.Clear();
             List<Producto> productos = new CN_Producto().Listar();
@@ -61,22 +61,24 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            ListaDotacion listaDeDotacion = new ListaDotacion();
-            listaDeDotacion.NombreProducto = new Producto() { IdProducto = Convert.ToInt32(((OpcionCombo)comboBoxProductos.SelectedItem).Valor) };
-            listaDeDotacion.NombrePuesto = new PuestoDeTrabajo() { IdPuestoDeTrabajo = Convert.ToInt32(((OpcionCombo)comboBoxPuesto.SelectedItem).Valor) };
+            ListaDotacion listaDeDotacion = new ListaDotacion
+            {
+                NombreProducto = new Producto() { IdProducto = Convert.ToInt32(((OpcionCombo)comboBoxProductos.SelectedItem).Valor) },
+                NombrePuesto = new PuestoDeTrabajo() { IdPuestoDeTrabajo = Convert.ToInt32(((OpcionCombo)comboBoxPuesto.SelectedItem).Valor) }
+            };
 
-            registrarListaDotacion(listaDeDotacion);
+            RegistrarListaDotacion(listaDeDotacion);
             FormListaDotacion_Load(sender,e);
 
         }
 
-        private void registrarListaDotacion(ListaDotacion lista)
+        private void RegistrarListaDotacion(ListaDotacion lista)
         {
             new CN_ListaDotacion().Registrar(lista);
         }
-        private void comboBoxList_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string puesto = ((OpcionCombo)comboBoxList.SelectedItem).Texto;
             dgvListaPorPuesto.Rows.Clear();

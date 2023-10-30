@@ -70,5 +70,51 @@ namespace CapaDatos
             }
             return lista;
         }
+        public List<DetalleDotacion> GetDetalleDotacionPorUsuario(int id)
+        {
+            List<DetalleDotacion> lista = new List<DetalleDotacion>();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_GETDOTACIONPORUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("idUsuario", id);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new DetalleDotacion()
+                            {
+                                dotacion = new Dotacion() 
+                                { 
+                                    FechaDotacion = DateTime.Parse(reader["FechaDotacion"].ToString()),
+                                    Comentario = reader["Comentario"].ToString()
+
+                                },
+                                producto = new Producto()
+                                {
+                                    NombreProducto = reader["NombreProducto"].ToString(),
+                                    Talla = new Talla()
+                                    {
+                                        Nombre = reader["NombreTalla"].ToString()
+                                    },
+                                    Color = reader["Color"].ToString(),
+                                    Unidad = reader["Unidad"].ToString()
+                                },
+                                Cantidad = Convert.ToInt32(reader["Cantidad"]),
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return lista;
+        }
     }
 }

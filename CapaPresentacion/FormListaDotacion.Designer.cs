@@ -100,7 +100,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // dgvListaPorPuesto
             // 
@@ -129,7 +129,7 @@
             this.comboBoxList.Name = "comboBoxList";
             this.comboBoxList.Size = new System.Drawing.Size(211, 21);
             this.comboBoxList.TabIndex = 7;
-            this.comboBoxList.SelectedIndexChanged += new System.EventHandler(this.comboBoxList_SelectedIndexChanged);
+            this.comboBoxList.SelectedIndexChanged += new System.EventHandler(this.ComboBoxList_SelectedIndexChanged);
             // 
             // label4
             // 

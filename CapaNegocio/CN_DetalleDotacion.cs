@@ -17,5 +17,10 @@ namespace CapaNegocio
         {
             return objcd_detalleDotacion.GetListaDotacionById(id);
         }
+
+        public List<DetalleDotacion> GetDetalleDeDotacionByIdUsuario(int idUser)
+        {
+            return objcd_detalleDotacion.GetDetalleDotacionPorUsuario(idUser);
+        }
     }
 }
