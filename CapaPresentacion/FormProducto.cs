@@ -10,7 +10,9 @@ namespace CapaPresentacion
     public partial class FormProducto : Form
     {
         private Producto producto = new Producto();
+        private Inventario inventario = new Inventario();
         public CN_Producto cn_Producto = new CN_Producto();
+        public CN_Inventario cn_Inventario = new CN_Inventario();
         public FormProducto()
         {
             InitializeComponent();
@@ -62,6 +64,12 @@ namespace CapaPresentacion
             producto.Fecha = dtpRegistro.Value;
             cn_Producto.Registrar(producto);
             cargarDGVProducto();
+            //limpiarText();
+            producto = cn_Producto.GetProducto();
+            inventario.Ingreso = Convert.ToInt32(textCantidad.Text);
+            inventario.Fecha = dtpRegistro.Value;
+            inventario.Producto = producto;
+            cn_Inventario.Registrar(inventario);
             limpiarText();
         }
         private void limpiarText()

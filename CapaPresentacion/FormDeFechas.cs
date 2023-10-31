@@ -38,5 +38,13 @@ namespace CapaPresentacion
             report.dtpFin.Value = dTPFin.Value;
             report.ShowDialog();
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            Report_Inventario report = new Report_Inventario();
+            report.dtpInicio.Value = dTPInicio.Value;
+            report.dtpFin.Value = dTPFin.Value;
+            report.ShowDialog();
+        }
     }
 }

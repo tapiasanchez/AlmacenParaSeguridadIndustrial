@@ -664,7 +664,8 @@
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
-              <Style>None</Style>
+              <Style>Solid</Style>
+              <Width>1.5pt</Width>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>

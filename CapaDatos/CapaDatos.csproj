@@ -46,6 +46,7 @@
     <Compile Include="CD_Cargo.cs" />
     <Compile Include="CD_DetalleDotacion.cs" />
     <Compile Include="CD_Dotacion.cs" />
+    <Compile Include="CD_Inventario.cs" />
     <Compile Include="CD_ListaDotacion.cs" />
     <Compile Include="CD_Producto.cs" />
     <Compile Include="CD_PuestoDeTrabajo.cs" />

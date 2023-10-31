@@ -84,6 +84,7 @@ namespace CapaPresentacion
         private void BtnRegistrarCambioDeDotacion_Click(object sender, EventArgs e)
         {
             RegistrarCambioDeDotacion();
+            RegistrarInventario();
             ActualizarStockProducto();
             LimpiarFormCambioDeDotacion();
             ObtenerListCambioDeDotacion();
@@ -100,6 +101,16 @@ namespace CapaPresentacion
                 Fecha = dtpCambio.Value
             };
             new CN_CambioDeDotacion().Registrar(cambioDotacion);
+        }
+        private void RegistrarInventario()
+        {
+            Inventario inventario = new Inventario
+            {
+                Producto = new Producto() { IdProducto = Convert.ToInt32(((OpcionCombo)comboBoxProducto.SelectedItem).Valor) },
+                Salida = Convert.ToInt32(textBoxCantidad.Text),
+                Fecha = dtpCambio.Value
+            };
+            new CN_Inventario().Registrar(inventario);
         }
         private void ActualizarStockProducto()
         {

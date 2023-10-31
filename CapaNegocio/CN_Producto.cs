@@ -26,5 +26,9 @@ namespace CapaNegocio
         {
             objcd_producto.UpdateStock(obj);
         }
+        public Producto GetProducto()
+        {
+            return objcd_producto.GetProducto();
+        }
     }
 }
