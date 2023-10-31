@@ -313,6 +313,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_FechaDotacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\DS_Inventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Inventario.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Report_CambioDotacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +347,12 @@
     </Compile>
     <Compile Include="Reportes\Report_FechaDotacion.Designer.cs">
       <DependentUpon>Report_FechaDotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Report_Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Report_Inventario.Designer.cs">
+      <DependentUpon>Report_Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
@@ -408,11 +419,15 @@
     <EmbeddedResource Include="Reportes\Report_FechaDotacion.resx">
       <DependentUpon>Report_FechaDotacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report_Inventario.resx">
+      <DependentUpon>Report_Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\R_CambioDotacion.rdlc" />
     <EmbeddedResource Include="Reportes\R_Dotacion.rdlc" />
     <EmbeddedResource Include="Reportes\R_DotacionYCambio.rdlc" />
     <EmbeddedResource Include="Reportes\R_FechaCambios.rdlc" />
     <EmbeddedResource Include="Reportes\R_FechaDotacion.rdlc" />
+    <EmbeddedResource Include="Reportes\R_Inventario.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -466,6 +481,17 @@
     </None>
     <None Include="Reportes\DS_FechaDotacion.xss">
       <DependentUpon>DS_FechaDotacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_Inventario.xsc">
+      <DependentUpon>DS_Inventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_Inventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Inventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DS_Inventario.xss">
+      <DependentUpon>DS_Inventario.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

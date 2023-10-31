@@ -314,6 +314,8 @@ namespace CapaPresentacion.Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SP_GETDOTACIONPORUSUARIODataTable : global::System.Data.TypedTableBase<SP_GETDOTACIONPORUSUARIORow> {
             
+            private global::System.Data.DataColumn columnCodigo;
+            
             private global::System.Data.DataColumn columnNombreProducto;
             
             private global::System.Data.DataColumn columnCantidad;
@@ -359,6 +361,14 @@ namespace CapaPresentacion.Reportes {
             protected SP_GETDOTACIONPORUSUARIODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -454,9 +464,10 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GETDOTACIONPORUSUARIORow AddSP_GETDOTACIONPORUSUARIORow(string NombreProducto, int Cantidad, string NombreTalla, string Color, string Unidad, System.DateTime FechaDotacion, string Comentario) {
+            public SP_GETDOTACIONPORUSUARIORow AddSP_GETDOTACIONPORUSUARIORow(string Codigo, string NombreProducto, int Cantidad, string NombreTalla, string Color, string Unidad, System.DateTime FechaDotacion, string Comentario) {
                 SP_GETDOTACIONPORUSUARIORow rowSP_GETDOTACIONPORUSUARIORow = ((SP_GETDOTACIONPORUSUARIORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Codigo,
                         NombreProducto,
                         Cantidad,
                         NombreTalla,
@@ -486,6 +497,7 @@ namespace CapaPresentacion.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnCodigo = base.Columns["Codigo"];
                 this.columnNombreProducto = base.Columns["NombreProducto"];
                 this.columnCantidad = base.Columns["Cantidad"];
                 this.columnNombreTalla = base.Columns["NombreTalla"];
@@ -498,6 +510,8 @@ namespace CapaPresentacion.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
                 this.columnNombreProducto = new global::System.Data.DataColumn("NombreProducto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreProducto);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
@@ -512,6 +526,7 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnFechaDotacion);
                 this.columnComentario = new global::System.Data.DataColumn("Comentario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComentario);
+                this.columnCodigo.MaxLength = 100;
                 this.columnNombreProducto.MaxLength = 100;
                 this.columnNombreTalla.MaxLength = 50;
                 this.columnColor.MaxLength = 100;
@@ -664,6 +679,8 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnNombrePuesto;
             
+            private global::System.Data.DataColumn columnCodigo;
+            
             private global::System.Data.DataColumn columnNombreProducto;
             
             private global::System.Data.DataColumn columnColor;
@@ -769,6 +786,14 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn NombreProductoColumn {
                 get {
                     return this.columnNombreProducto;
@@ -860,7 +885,7 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GETCAMBIODEDOTACIONRow AddSP_GETCAMBIODEDOTACIONRow(string Item, string Nombre, string Apellido, string CI, string NombreCargo, string NombreUnidad, string NombrePuesto, string NombreProducto, string Color, string Unidad, string NombreTalla, int Cantidad, string Comentario, System.DateTime Fecha) {
+            public SP_GETCAMBIODEDOTACIONRow AddSP_GETCAMBIODEDOTACIONRow(string Item, string Nombre, string Apellido, string CI, string NombreCargo, string NombreUnidad, string NombrePuesto, string Codigo, string NombreProducto, string Color, string Unidad, string NombreTalla, int Cantidad, string Comentario, System.DateTime Fecha) {
                 SP_GETCAMBIODEDOTACIONRow rowSP_GETCAMBIODEDOTACIONRow = ((SP_GETCAMBIODEDOTACIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Item,
@@ -870,6 +895,7 @@ namespace CapaPresentacion.Reportes {
                         NombreCargo,
                         NombreUnidad,
                         NombrePuesto,
+                        Codigo,
                         NombreProducto,
                         Color,
                         Unidad,
@@ -906,6 +932,7 @@ namespace CapaPresentacion.Reportes {
                 this.columnNombreCargo = base.Columns["NombreCargo"];
                 this.columnNombreUnidad = base.Columns["NombreUnidad"];
                 this.columnNombrePuesto = base.Columns["NombrePuesto"];
+                this.columnCodigo = base.Columns["Codigo"];
                 this.columnNombreProducto = base.Columns["NombreProducto"];
                 this.columnColor = base.Columns["Color"];
                 this.columnUnidad = base.Columns["Unidad"];
@@ -936,6 +963,8 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnNombreUnidad);
                 this.columnNombrePuesto = new global::System.Data.DataColumn("NombrePuesto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombrePuesto);
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
                 this.columnNombreProducto = new global::System.Data.DataColumn("NombreProducto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreProducto);
                 this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
@@ -957,6 +986,7 @@ namespace CapaPresentacion.Reportes {
                 this.columnNombreCargo.MaxLength = 100;
                 this.columnNombreUnidad.MaxLength = 100;
                 this.columnNombrePuesto.MaxLength = 100;
+                this.columnCodigo.MaxLength = 100;
                 this.columnNombreProducto.MaxLength = 100;
                 this.columnColor.MaxLength = 100;
                 this.columnUnidad.MaxLength = 100;
@@ -1104,6 +1134,23 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GETDOTACIONPORUSUARIO.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'SP_GETDOTACIONPORUSUARIO\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GETDOTACIONPORUSUARIO.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string NombreProducto {
                 get {
                     try {
@@ -1218,6 +1265,18 @@ namespace CapaPresentacion.Reportes {
                 set {
                     this[this.tableSP_GETDOTACIONPORUSUARIO.ComentarioColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tableSP_GETDOTACIONPORUSUARIO.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tableSP_GETDOTACIONPORUSUARIO.CodigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1437,6 +1496,22 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GETCAMBIODEDOTACION.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'SP_GETCAMBIODEDOTACION\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GETCAMBIODEDOTACION.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string NombreProducto {
                 get {
                     try {
@@ -1633,6 +1708,18 @@ namespace CapaPresentacion.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNombrePuestoNull() {
                 this[this.tableSP_GETCAMBIODEDOTACION.NombrePuestoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tableSP_GETCAMBIODEDOTACION.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tableSP_GETCAMBIODEDOTACION.CodigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1913,6 +2000,7 @@ namespace CapaPresentacion.Reportes.DS_DotacionYCambioTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SP_GETDOTACIONPORUSUARIO";
+            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("NombreProducto", "NombreProducto");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             tableMapping.ColumnMappings.Add("NombreTalla", "NombreTalla");
@@ -2122,6 +2210,7 @@ namespace CapaPresentacion.Reportes.DS_DotacionYCambioTableAdapters {
             tableMapping.ColumnMappings.Add("NombreCargo", "NombreCargo");
             tableMapping.ColumnMappings.Add("NombreUnidad", "NombreUnidad");
             tableMapping.ColumnMappings.Add("NombrePuesto", "NombrePuesto");
+            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("NombreProducto", "NombreProducto");
             tableMapping.ColumnMappings.Add("Color", "Color");
             tableMapping.ColumnMappings.Add("Unidad", "Unidad");

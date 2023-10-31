@@ -97,6 +97,13 @@ namespace CapaPresentacion
                         Cantidad = Convert.ToInt32(row.Cells["textboxCantidad"].Value)
                     };
                     new CN_DetalleDotacion().Registrar(detalle);
+                    Inventario inventario = new Inventario() 
+                    { 
+                       Producto = new Producto() { IdProducto = (int)row.Cells["idProducto"].Value },
+                       Salida = Convert.ToInt32(row.Cells["textboxCantidad"].Value),
+                       Fecha = dtpDotacion.Value
+                    };
+                    new CN_Inventario().Registrar(inventario);
                     ActualizarStockProducto(detalle);
                 }
             }

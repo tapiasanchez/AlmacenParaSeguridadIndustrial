@@ -147,5 +147,37 @@ namespace CapaDatos
             }
 
         }
+        public Producto GetProducto()
+        {
+            Producto producto = new Producto();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_GETPRODUCTO", oconexion)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    oconexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            producto.IdProducto = Convert.ToInt32(reader["IDProducto"]);
+                            //producto = new Usuario() { IdUsuario = Convert.ToInt32(reader["IdUsuario"]) };
+                            //producto.Comentario = reader["Comentario"].ToString();
+                            //dotacion.FechaDotacion = DateTime.Parse(reader["FechaDotacion"].ToString());
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return producto;
+        }
     }
 }
