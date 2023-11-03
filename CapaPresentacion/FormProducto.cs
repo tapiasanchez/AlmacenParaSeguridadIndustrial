@@ -20,6 +20,14 @@ namespace CapaPresentacion
 
         private void FormProducto_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn columna in dgvProducto.Columns)
+            {
+                comboBoxBuscar.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+            }
+            comboBoxBuscar.DisplayMember = "Texto";
+            comboBoxBuscar.ValueMember = "Value";
+            comboBoxBuscar.SelectedIndex = 0;
+
             dtpRegistro.Value = DateTime.Now;
             dtpRegistro.Format = DateTimePickerFormat.Custom;
             dtpRegistro.CustomFormat = "dd/MM/yyyy hh:mm";
@@ -64,7 +72,6 @@ namespace CapaPresentacion
             producto.Fecha = dtpRegistro.Value;
             cn_Producto.Registrar(producto);
             cargarDGVProducto();
-            //limpiarText();
             producto = cn_Producto.GetProducto();
             inventario.Ingreso = Convert.ToInt32(textCantidad.Text);
             inventario.Fecha = dtpRegistro.Value;
@@ -80,6 +87,37 @@ namespace CapaPresentacion
             textCantidad.Text = "";
             textColor.Text = "";
             textUnidad.Text = "";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string columFiltro = ((OpcionCombo)comboBoxBuscar.SelectedItem).Valor.ToString();
+            if (dgvProducto.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvProducto.Rows)
+                {
+                    if (row.Cells[columFiltro].Value.ToString().Trim().ToUpper().Contains(textBuscar.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            foreach (DataGridViewRow row in dgvProducto.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(textBuscar.Text))
+                    {
+                        row.Selected = true;
+                        textBuscar.Text = "";
+                        return;
+                    }
+                }
+            }
         }
     }
 }

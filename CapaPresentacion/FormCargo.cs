@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Utilidades;
 using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
@@ -15,54 +16,52 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             cargo.Nombre = textNombre.Text;
-            registrarCargo(cargo);
-            limpiar();
+            RegistrarCargo(cargo);
+            Limpiar();
             FormCargo_Load(sender, e);
         }
 
-        private void registrarCargo(Cargo cargo)
+        private void RegistrarCargo(Cargo cargo)
         {
-            string mensaje = String.Empty;
-            int idUsuarioGenerado = new CN_Cargo().Registrar(cargo, out mensaje);
+            _ = new CN_Cargo().Registrar(cargo, out _);
 
         }
-        private void limpiar()
+        private void Limpiar()
         {
             textNombre.Text = "";
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
-            List<Cargo> listaDeCargos = leerDatosDeExel();
+            List<Cargo> listaDeCargos = LeerDatosDeExel();
             foreach (Cargo item in listaDeCargos)
             {
-                string mensaje = String.Empty;
-                int idCargoGenerado = new CN_Cargo().Registrar(item, out mensaje);
+                _ = new CN_Cargo().Registrar(item, out _);
                 FormCargo_Load(sender, e);
 
             }
         }
 
-        public List<Cargo> leerDatosDeExel()
+        public List<Cargo> LeerDatosDeExel()
         {
-            string rutaArchivo = string.Empty;
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                rutaArchivo = openFileDialog.FileName;
+                string rutaArchivo = openFileDialog.FileName;
                 SLDocument documento = new SLDocument(rutaArchivo);
                 int indiceRow = 2;
                 List<Cargo> listCargo = new List<Cargo>();
 
                 while (!string.IsNullOrEmpty(documento.GetCellValueAsString(indiceRow, 1)))
                 {
-                    Cargo cargo = new Cargo();
-
-                    cargo.Nombre = documento.GetCellValueAsString(indiceRow, 1);
+                    Cargo cargo = new Cargo
+                    {
+                        Nombre = documento.GetCellValueAsString(indiceRow, 1)
+                    };
 
                     listCargo.Add(cargo);
                     indiceRow++;
@@ -80,6 +79,37 @@ namespace CapaPresentacion
             {
                 dgvCargo.Rows.Add(cargo.IdCargo, cargo.Nombre);
 
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string columFiltro = "NombreCargo";
+            if (dgvCargo.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvCargo.Rows)
+                {
+                    if (row.Cells[columFiltro].Value.ToString().Trim().ToUpper().Contains(textBuscar.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            foreach (DataGridViewRow row in dgvCargo.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(textBuscar.Text))
+                    {
+                        row.Selected = true;
+                        textBuscar.Text = "";
+                        return;
+                    }
+                }
             }
         }
     }

@@ -93,5 +93,11 @@ namespace CapaPresentacion
         {
             AbrirFormulario(subMenuFechaDotacion, new FormDeFechas());
         }
+
+        private void iconMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuActualizarStock, new FormActualizarStock());
+
+        }
     }
 }

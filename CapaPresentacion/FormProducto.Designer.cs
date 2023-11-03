@@ -57,6 +57,10 @@
             this.descripcionP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.textBuscar = new System.Windows.Forms.TextBox();
+            this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,10 +197,10 @@
             // 
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(252, 30);
+            this.label7.Location = new System.Drawing.Point(232, 30);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(543, 40);
+            this.label7.Size = new System.Drawing.Size(700, 40);
             this.label7.TabIndex = 12;
             this.label7.Text = "Lista de Productos existentes";
             // 
@@ -318,12 +322,56 @@
             this.NombreTalla.HeaderText = "Talla";
             this.NombreTalla.Name = "NombreTalla";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 28;
+            this.btnBuscar.Location = new System.Drawing.Point(864, 37);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(61, 29);
+            this.btnBuscar.TabIndex = 23;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(708, 42);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(151, 21);
+            this.textBuscar.TabIndex = 22;
+            // 
+            // comboBoxBuscar
+            // 
+            this.comboBoxBuscar.FormattingEnabled = true;
+            this.comboBoxBuscar.Location = new System.Drawing.Point(549, 41);
+            this.comboBoxBuscar.Name = "comboBoxBuscar";
+            this.comboBoxBuscar.Size = new System.Drawing.Size(153, 23);
+            this.comboBoxBuscar.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(463, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 17);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Buscar por:";
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(809, 587);
+            this.ClientSize = new System.Drawing.Size(959, 587);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.textBuscar);
+            this.Controls.Add(this.comboBoxBuscar);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.textColor);
             this.Controls.Add(this.label9);
@@ -385,5 +433,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionP;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTalla;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.ComboBox comboBoxBuscar;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -213,6 +213,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormActualizarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActualizarStock.Designer.cs">
+      <DependentUpon>FormActualizarStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCambioDotacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <EmbeddedResource Include="FormActualizarStock.resx">
+      <DependentUpon>FormActualizarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCambioDotacion.resx">
       <DependentUpon>FormCambioDotacion.cs</DependentUpon>
     </EmbeddedResource>
