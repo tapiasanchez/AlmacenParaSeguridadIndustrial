@@ -56,7 +56,7 @@
         <Top>3.90674cm</Top>
         <Left>0.57891cm</Left>
         <Height>1.1027cm</Height>
-        <Width>2.79104cm</Width>
+        <Width>2.8616cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -86,7 +86,7 @@
         <Top>3.90674cm</Top>
         <Left>3.44051cm</Left>
         <Height>1.10271cm</Height>
-        <Width>9.45854cm</Width>
+        <Width>9.92944cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -300,7 +300,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NombreProducto</rd:DefaultName>
@@ -330,7 +332,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -360,7 +364,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NombreTalla</rd:DefaultName>
@@ -390,7 +396,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Color</rd:DefaultName>
@@ -420,7 +428,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Unidad</rd:DefaultName>
@@ -476,7 +486,7 @@
     <Height>2.00689in</Height>
     <Style />
   </Body>
-  <Width>8.72234in</Width>
+  <Width>7.38901in</Width>
   <Page>
     <PageHeader>
       <Height>3.13724cm</Height>
@@ -552,7 +562,7 @@
           <Top>0.57891cm</Top>
           <Left>11.40037cm</Left>
           <Height>0.6cm</Height>
-          <Width>1.96958cm</Width>
+          <Width>2.11069cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -639,7 +649,9 @@
                   <Style />
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -669,7 +681,9 @@
                   <Style />
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>

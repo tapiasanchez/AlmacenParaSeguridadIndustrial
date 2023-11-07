@@ -22,5 +22,9 @@ namespace CapaNegocio
         {
             return objcd_detalleDotacion.GetDetalleDotacionPorUsuario(idUser);
         }
+        public string VerificarProducto(int id)
+        {
+            return objcd_detalleDotacion.VerificarProducto(id);
+        }
     }
 }
