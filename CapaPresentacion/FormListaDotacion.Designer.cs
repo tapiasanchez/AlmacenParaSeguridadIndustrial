@@ -151,7 +151,7 @@
             this.iconButton1.Text = "Eliminar";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // idProducto
             // 

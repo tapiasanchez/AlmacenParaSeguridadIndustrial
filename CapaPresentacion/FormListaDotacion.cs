@@ -89,7 +89,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             if(dgvListaPorPuesto.SelectedRows.Count > 0)
             {

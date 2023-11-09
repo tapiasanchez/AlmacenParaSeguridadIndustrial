@@ -162,5 +162,32 @@ namespace CapaDatos
             }
             return usuario;
         }
+        public void Update(Usuario obj)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("SP_UPDATEUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("idUsuario", obj.IdUsuario);
+                    cmd.Parameters.AddWithValue("item", obj.Item);
+                    cmd.Parameters.AddWithValue("ci", obj.Ci);
+                    cmd.Parameters.AddWithValue("nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("apellido", obj.Apellido);
+                    cmd.Parameters.AddWithValue("idCargo", obj.NombreCargo.IdCargo);
+                    cmd.Parameters.AddWithValue("idUnidad", obj.NombreUnidad.IdUnidad);
+                    cmd.Parameters.AddWithValue("idPuesto", obj.NombrePuesto.IdPuestoDeTrabajo);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

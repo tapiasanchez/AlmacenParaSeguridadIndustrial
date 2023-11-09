@@ -46,6 +46,11 @@
             this.comboBoxUnidad = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxPuestoDeTrabajo = new System.Windows.Forms.ComboBox();
+            this.textId = new System.Windows.Forms.TextBox();
+            this.textPuesto = new System.Windows.Forms.TextBox();
+            this.textUnidad = new System.Windows.Forms.TextBox();
+            this.textCargo = new System.Windows.Forms.TextBox();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // modalMenu
@@ -167,7 +172,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -186,7 +191,7 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // comboBoxCargo
             // 
@@ -239,11 +244,68 @@
             this.comboBoxPuestoDeTrabajo.Size = new System.Drawing.Size(144, 24);
             this.comboBoxPuestoDeTrabajo.TabIndex = 16;
             // 
+            // textId
+            // 
+            this.textId.Location = new System.Drawing.Point(12, 104);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 23);
+            this.textId.TabIndex = 18;
+            this.textId.Visible = false;
+            // 
+            // textPuesto
+            // 
+            this.textPuesto.Location = new System.Drawing.Point(12, 190);
+            this.textPuesto.Name = "textPuesto";
+            this.textPuesto.Size = new System.Drawing.Size(100, 23);
+            this.textPuesto.TabIndex = 19;
+            this.textPuesto.Visible = false;
+            // 
+            // textUnidad
+            // 
+            this.textUnidad.Location = new System.Drawing.Point(12, 161);
+            this.textUnidad.Name = "textUnidad";
+            this.textUnidad.Size = new System.Drawing.Size(100, 23);
+            this.textUnidad.TabIndex = 20;
+            this.textUnidad.Visible = false;
+            // 
+            // textCargo
+            // 
+            this.textCargo.Location = new System.Drawing.Point(12, 132);
+            this.textCargo.Name = "textCargo";
+            this.textCargo.Size = new System.Drawing.Size(100, 23);
+            this.textCargo.TabIndex = 21;
+            this.textCargo.Visible = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEditar.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 30;
+            this.btnEditar.Location = new System.Drawing.Point(309, 384);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(110, 34);
+            this.btnEditar.TabIndex = 22;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
             // FormModalUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 430);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.textCargo);
+            this.Controls.Add(this.textUnidad);
+            this.Controls.Add(this.textPuesto);
+            this.Controls.Add(this.textId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBoxPuestoDeTrabajo);
             this.Controls.Add(this.label7);
@@ -281,17 +343,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textItem;
-        private System.Windows.Forms.TextBox textCi;
-        private System.Windows.Forms.TextBox textNombre;
-        private System.Windows.Forms.TextBox textApellido;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnCancelar;
-        private System.Windows.Forms.ComboBox comboBoxCargo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxUnidad;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBoxPuestoDeTrabajo;
+        public System.Windows.Forms.TextBox textId;
+        public System.Windows.Forms.TextBox textItem;
+        public System.Windows.Forms.TextBox textCi;
+        public System.Windows.Forms.TextBox textNombre;
+        public System.Windows.Forms.TextBox textApellido;
+        public System.Windows.Forms.ComboBox comboBoxCargo;
+        public System.Windows.Forms.ComboBox comboBoxUnidad;
+        public System.Windows.Forms.ComboBox comboBoxPuestoDeTrabajo;
+        public System.Windows.Forms.TextBox textPuesto;
+        public System.Windows.Forms.TextBox textUnidad;
+        public System.Windows.Forms.TextBox textCargo;
+        private FontAwesome.Sharp.IconButton btnEditar;
     }
 }

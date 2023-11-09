@@ -26,5 +26,9 @@ namespace CapaNegocio
         {
             return objcd_usuario.GetByIdUsuario(id);
         }
+        public void Update(Usuario obj)
+        {
+            objcd_usuario.Update(obj);
+        }
     }
 }

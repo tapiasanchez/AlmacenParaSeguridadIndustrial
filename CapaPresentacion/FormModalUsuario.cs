@@ -9,15 +9,14 @@ namespace CapaPresentacion
 {
     public partial class FormModalUsuario : Form
     {
-        private Usuario usuario = new Usuario();
+        private readonly Usuario usuario = new Usuario();
         public FormModalUsuario()
         {
             InitializeComponent();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {   
             usuario.Item = textItem.Text;
             usuario.Ci = textCi.Text;
             usuario.Nombre = textNombre.Text;   
@@ -26,24 +25,38 @@ namespace CapaPresentacion
             usuario.NombreUnidad = new Unidad() {  IdUnidad = Convert.ToInt32(((OpcionCombo)comboBoxUnidad.SelectedItem).Valor) };
             usuario.NombrePuesto = new PuestoDeTrabajo() { IdPuestoDeTrabajo = Convert.ToInt32(((OpcionCombo)comboBoxPuestoDeTrabajo.SelectedItem).Valor) };
 
-            registrarUsuario(usuario);
+            RegistrarUsuario(usuario);
             this.Close();
         }
 
-        private void registrarUsuario(Usuario usuario){
-            string mensaje = String.Empty;
-            int idUsuarioGenerado = new CN_Usuario().Registrar(usuario, out mensaje);
+        private void RegistrarUsuario(Usuario usuario){
+            _ = new CN_Usuario().Registrar(usuario, out _);
 
         }
        
         private void FormModalUsuario_Load(object sender, EventArgs e)
         {
+            
             CargarCargos();
             CargarUnidades();
             CargarPuestosDeTrabajo();
+            if (!string.IsNullOrEmpty(textId.Text))
+            {
+                SetCargoToUser();
+                SetUnidadToUser();
+                SetPuestoToUser();
+                btnEditar.Enabled = true;
+                btnGuardar.Enabled = false;
+
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+                btnGuardar.Enabled = true;
+            }
         }
 
-        private void CargarCargos()
+        public void CargarCargos()
         {
             List<Cargo> cargos = new CN_Cargo().Listar();
             foreach(Cargo cargo in cargos)
@@ -53,10 +66,10 @@ namespace CapaPresentacion
                     Texto = cargo.Nombre,
                     Valor = cargo.IdCargo
                 });
-                comboBoxCargo.DisplayMember = "Texto";
-                comboBoxCargo.ValueMember = "Valor";
-                comboBoxCargo.SelectedIndex = 0;
             }
+            comboBoxCargo.DisplayMember = "Texto";
+            comboBoxCargo.ValueMember = "Valor";
+            comboBoxCargo.SelectedIndex = 0;
 
         }
         private void CargarUnidades()
@@ -69,10 +82,10 @@ namespace CapaPresentacion
                     Texto = unidad.Nombre,
                     Valor = unidad.IdUnidad
                 });
-                comboBoxUnidad.DisplayMember = "Texto";
-                comboBoxUnidad.ValueMember = "Valor";
-                comboBoxUnidad.SelectedIndex = 0;
             }
+            comboBoxUnidad.DisplayMember = "Texto";
+            comboBoxUnidad.ValueMember = "Valor";
+            comboBoxUnidad.SelectedIndex = 0;
         }
 
         private void CargarPuestosDeTrabajo()
@@ -85,15 +98,65 @@ namespace CapaPresentacion
                     Texto = item.Nombre,
                     Valor = item.IdPuestoDeTrabajo
                 });
-                comboBoxPuestoDeTrabajo.DisplayMember = "Texto";
-                comboBoxPuestoDeTrabajo.ValueMember = "Valor";
-                comboBoxPuestoDeTrabajo.SelectedIndex = 0;
             }
-
+            comboBoxPuestoDeTrabajo.DisplayMember = "Texto";
+            comboBoxPuestoDeTrabajo.ValueMember = "Valor";
+            comboBoxPuestoDeTrabajo.SelectedIndex = 0;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+        public void SetCargoToUser()
+        {
+            foreach (OpcionCombo item in comboBoxCargo.Items)
+            {
+                if (item.Texto == textCargo.Text)
+                {
+                    comboBoxCargo.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+        private void SetUnidadToUser()
+        {
+            foreach (OpcionCombo item in comboBoxUnidad.Items)
+            {
+               if (item.Texto == textUnidad.Text)
+               {
+                    comboBoxUnidad.SelectedItem = item;
+                    break;
+               }
+            }
+        }
+        private void SetPuestoToUser()
+        {
+            foreach (OpcionCombo item in comboBoxPuestoDeTrabajo.Items)
+            {
+                if (item.Texto == textPuesto.Text)
+                {
+                    comboBoxPuestoDeTrabajo.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textId.Text))
+            {
+
+                usuario.IdUsuario = Convert.ToInt32(textId.Text);
+            }
+            usuario.Item = textItem.Text;
+            usuario.Ci = textCi.Text;
+            usuario.Nombre = textNombre.Text;
+            usuario.Apellido = textApellido.Text;
+            usuario.NombreCargo = new Cargo() { IdCargo = Convert.ToInt32(((OpcionCombo)comboBoxCargo.SelectedItem).Valor) };
+            usuario.NombreUnidad = new Unidad() { IdUnidad = Convert.ToInt32(((OpcionCombo)comboBoxUnidad.SelectedItem).Valor) };
+            usuario.NombrePuesto = new PuestoDeTrabajo() { IdPuestoDeTrabajo = Convert.ToInt32(((OpcionCombo)comboBoxPuestoDeTrabajo.SelectedItem).Valor) };
+            new CN_Usuario().Update(usuario);
             this.Close();
         }
     }
