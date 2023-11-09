@@ -179,5 +179,33 @@ namespace CapaDatos
             }
             return producto;
         }
+        public void ActualizarProducto(Producto obj)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("SP_ACTUALIZARPRODUCTO", oconexion);
+                    cmd.Parameters.AddWithValue("idProducto", obj.IdProducto);
+                    cmd.Parameters.AddWithValue("codigo", obj.Codigo);
+                    cmd.Parameters.AddWithValue("nombreProducto", obj.NombreProducto);
+                    cmd.Parameters.AddWithValue("color", obj.Color);
+                    cmd.Parameters.AddWithValue("unidad", obj.Unidad);
+                    cmd.Parameters.AddWithValue("descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("cantidad", obj.Cantidad);
+                    cmd.Parameters.AddWithValue("idTalla", obj.Talla.IdTalla);
+                    cmd.Parameters.AddWithValue("fecha", obj.Fecha);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

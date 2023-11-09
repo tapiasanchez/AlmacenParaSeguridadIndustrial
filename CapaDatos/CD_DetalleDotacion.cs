@@ -116,5 +116,34 @@ namespace CapaDatos
             }
             return lista;
         }
+        public string VerificarProducto(int id)
+        {
+            string result = "";
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_VERIFICARTRANSACCIONDEPRODUCTO", oconexion);
+                    cmd.Parameters.AddWithValue("idProducto", id);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                             result = reader["Resultado"].ToString();
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return result;
+        }
     }
 }

@@ -25,53 +25,51 @@ namespace CapaPresentacion
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             unidad.Nombre = textNombre.Text;
-            registrarUnidad(unidad);
-            limpiar();
+            RegistrarUnidad(unidad);
+            Limpiar();
             FormUnidad_Load(sender, e);
         }
 
-        private void registrarUnidad(Unidad unidad)
+        private void RegistrarUnidad(Unidad unidad)
         {
-            string mensaje = String.Empty;
-            int idUnidadGenerado = new CN_Unidad().Registrar(unidad, out mensaje);
+            _ = new CN_Unidad().Registrar(unidad, out _);
 
         }
-        private void limpiar()
+        private void Limpiar()
         {
             textNombre.Text = "";
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
-            List<Unidad> listaDeUnidades = leerDatosDeExel();
+            List<Unidad> listaDeUnidades = LeerDatosDeExel();
             foreach (Unidad item in listaDeUnidades)
             {
-                string mensaje = String.Empty;
-                int idUnidadGenerado = new CN_Unidad().Registrar(item, out mensaje);
+                _ = new CN_Unidad().Registrar(item, out _);
                 FormUnidad_Load(sender, e);
 
             }
         }
-        public List<Unidad> leerDatosDeExel()
+        public List<Unidad> LeerDatosDeExel()
         {
-            string rutaArchivo = string.Empty;
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                rutaArchivo = openFileDialog.FileName;
+                string rutaArchivo = openFileDialog.FileName;
                 SLDocument documento = new SLDocument(rutaArchivo);
                 int indiceRow = 2;
                 List<Unidad> listUnidades = new List<Unidad>();
 
                 while (!string.IsNullOrEmpty(documento.GetCellValueAsString(indiceRow, 1)))
                 {
-                    Unidad unidad = new Unidad();
-
-                    unidad.Nombre = documento.GetCellValueAsString(indiceRow, 1);
+                    Unidad unidad = new Unidad
+                    {
+                        Nombre = documento.GetCellValueAsString(indiceRow, 1)
+                    };
 
                     listUnidades.Add(unidad);
                     indiceRow++;
@@ -81,5 +79,35 @@ namespace CapaPresentacion
             return null;
         }
 
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string columFiltro = "Nombre";
+            if (dgvUnidad.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvUnidad.Rows)
+                {
+                    if (row.Cells[columFiltro].Value.ToString().Trim().ToUpper().Contains(textBuscar.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            foreach (DataGridViewRow row in dgvUnidad.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(textBuscar.Text))
+                    {
+                        row.Selected = true;
+                        textBuscar.Text = "";
+                        return;
+                    }
+                }
+            }
+        }
     }
 }

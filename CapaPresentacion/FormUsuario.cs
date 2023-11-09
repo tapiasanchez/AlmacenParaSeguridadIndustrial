@@ -31,7 +31,7 @@ namespace CapaPresentacion
             List<Usuario> listaUsuarios = new CN_Usuario().Listar();
             foreach (Usuario item in listaUsuarios)
             {
-                dGVData.Rows.Add(item.Item, item.Ci, item.Nombre, item.Apellido, item.NombreCargo.Nombre ,item.NombreUnidad.Nombre,item.NombrePuesto.Nombre);
+                dGVData.Rows.Add(item.IdUsuario,item.Item, item.Ci, item.Nombre, item.Apellido, item.NombreCargo.Nombre ,item.NombreUnidad.Nombre,item.NombrePuesto.Nombre);
             }
 
         }
@@ -121,6 +121,26 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dGVData.Rows[e.RowIndex];
+                FormModalUsuario modal = new FormModalUsuario();
+                modal.textId.Text = row.Cells["IdUsuario"].Value.ToString();
+                modal.textItem.Text = row.Cells["Item"].Value.ToString();
+                modal.textCi.Text = row.Cells["CI"].Value.ToString();
+                modal.textNombre.Text = row.Cells["Nombre"].Value.ToString();
+                modal.textApellido.Text = row.Cells["Apellido"].Value.ToString();
+                modal.textCargo.Text = row.Cells["cargo"].Value.ToString();
+                modal.textUnidad.Text = row.Cells["unidad"].Value.ToString();
+                modal.textPuesto.Text = row.Cells["PuestoDeTrabajo"].Value.ToString();
+                modal.ShowDialog();
+
+            }
+            
         }
     }
 }

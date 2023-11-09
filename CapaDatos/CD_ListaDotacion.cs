@@ -77,6 +77,27 @@ namespace CapaDatos
             }
             return lista;
         }
+        public void Eliminar(int id, int idPuesto)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_ELIMINARLISTADOTACION", oconexion);
+
+                    cmd.Parameters.AddWithValue("idProducto", id);
+                    cmd.Parameters.AddWithValue("idPuesto", idPuesto);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
     }
 }

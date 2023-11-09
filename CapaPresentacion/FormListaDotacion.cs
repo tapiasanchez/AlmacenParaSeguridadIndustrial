@@ -85,8 +85,22 @@ namespace CapaPresentacion
             List<Producto> listaProductos = new CN_ListaDotacion().GetListProductByPuesto(puesto);
             foreach (Producto item in listaProductos)
             {
-                dgvListaPorPuesto.Rows.Add(item.NombreProducto);
+                dgvListaPorPuesto.Rows.Add(item.IdProducto, item.NombreProducto);
             }
+        }
+
+        private void IconButton1_Click(object sender, EventArgs e)
+        {
+            if(dgvListaPorPuesto.SelectedRows.Count > 0)
+            {
+                DataGridViewCell celdaSeleccionada = dgvListaPorPuesto.SelectedCells[0];
+
+                
+                int idProducto = Convert.ToInt32(celdaSeleccionada.Value);
+                int puesto = Convert.ToInt32(((OpcionCombo)comboBoxList.SelectedItem).Valor);
+                new CN_ListaDotacion().Eliminar(idProducto, puesto);
+            }
+
         }
     }
 }

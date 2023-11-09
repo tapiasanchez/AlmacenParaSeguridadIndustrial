@@ -37,6 +37,8 @@
             this.dgvTalla = new System.Windows.Forms.DataGridView();
             this.idtalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.textBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTalla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             this.btnGuardarTalla.Text = "Guardar";
             this.btnGuardarTalla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardarTalla.UseVisualStyleBackColor = true;
-            this.btnGuardarTalla.Click += new System.EventHandler(this.btnGuardarTalla_Click);
+            this.btnGuardarTalla.Click += new System.EventHandler(this.BtnGuardarTalla_Click);
             // 
             // iconButton2
             // 
@@ -98,7 +100,7 @@
             this.iconButton2.Text = "Cargar";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.Click += new System.EventHandler(this.IconButton2_Click);
             // 
             // label3
             // 
@@ -106,7 +108,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(219, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(350, 36);
+            this.label3.Size = new System.Drawing.Size(350, 48);
             this.label3.TabIndex = 5;
             this.label3.Text = "Lista de Tallas";
             // 
@@ -133,12 +135,35 @@
             this.NombreTalla.HeaderText = "Talla";
             this.NombreTalla.Name = "NombreTalla";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.btnSearch.IconColor = System.Drawing.Color.Black;
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 28;
+            this.btnSearch.Location = new System.Drawing.Point(517, 62);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(42, 32);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(414, 69);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(100, 20);
+            this.textBuscar.TabIndex = 10;
+            // 
             // FormTallas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(598, 370);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dgvTalla);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.iconButton2);
@@ -166,5 +191,7 @@
         private System.Windows.Forms.DataGridView dgvTalla;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtalla;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTalla;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private System.Windows.Forms.TextBox textBuscar;
     }
 }

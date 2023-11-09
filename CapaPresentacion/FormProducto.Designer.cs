@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTalla = new System.Windows.Forms.ComboBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpRegistro = new System.Windows.Forms.DateTimePicker();
             this.textUnidad = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +58,12 @@
             this.descripcionP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.textBuscar = new System.Windows.Forms.TextBox();
+            this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,31 +179,31 @@
             this.comboBoxTalla.Size = new System.Drawing.Size(172, 24);
             this.comboBoxTalla.TabIndex = 10;
             // 
-            // iconButton1
+            // btnGuardar
             // 
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Download;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 38;
-            this.iconButton1.Location = new System.Drawing.Point(29, 468);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(169, 45);
-            this.iconButton1.TabIndex = 11;
-            this.iconButton1.Text = "Guardar";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 38;
+            this.btnGuardar.Location = new System.Drawing.Point(29, 468);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(169, 45);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(252, 30);
+            this.label7.Location = new System.Drawing.Point(232, 30);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(543, 40);
+            this.label7.Size = new System.Drawing.Size(700, 40);
             this.label7.TabIndex = 12;
             this.label7.Text = "Lista de Productos existentes";
             // 
@@ -268,8 +275,10 @@
             // dgvProducto
             // 
             this.dgvProducto.AllowUserToAddRows = false;
+            this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idProducto,
             this.codigoProducto,
             this.NombreProducto,
             this.colorProducto,
@@ -277,53 +286,138 @@
             this.descripcionP,
             this.cantidadProducto,
             this.NombreTalla});
-            this.dgvProducto.Location = new System.Drawing.Point(254, 90);
+            this.dgvProducto.Location = new System.Drawing.Point(231, 88);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.Size = new System.Drawing.Size(541, 150);
+            this.dgvProducto.Size = new System.Drawing.Size(552, 150);
             this.dgvProducto.TabIndex = 19;
+            this.dgvProducto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "Id";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.Visible = false;
             // 
             // codigoProducto
             // 
             this.codigoProducto.HeaderText = "Codigo";
             this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.Width = 71;
             // 
             // NombreProducto
             // 
             this.NombreProducto.HeaderText = "Producto";
             this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.Width = 81;
             // 
             // colorProducto
             // 
             this.colorProducto.HeaderText = "Color";
             this.colorProducto.Name = "colorProducto";
+            this.colorProducto.Width = 61;
             // 
             // unidadProducto
             // 
             this.unidadProducto.HeaderText = "Unidad";
             this.unidadProducto.Name = "unidadProducto";
+            this.unidadProducto.Width = 72;
             // 
             // descripcionP
             // 
             this.descripcionP.HeaderText = "Descripcion";
             this.descripcionP.Name = "descripcionP";
+            this.descripcionP.Width = 97;
             // 
             // cantidadProducto
             // 
             this.cantidadProducto.HeaderText = "Stock";
             this.cantidadProducto.Name = "cantidadProducto";
+            this.cantidadProducto.Width = 62;
             // 
             // NombreTalla
             // 
             this.NombreTalla.HeaderText = "Talla";
             this.NombreTalla.Name = "NombreTalla";
+            this.NombreTalla.Width = 59;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 28;
+            this.btnBuscar.Location = new System.Drawing.Point(864, 37);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(61, 29);
+            this.btnBuscar.TabIndex = 23;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(708, 42);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(151, 21);
+            this.textBuscar.TabIndex = 22;
+            // 
+            // comboBoxBuscar
+            // 
+            this.comboBoxBuscar.FormattingEnabled = true;
+            this.comboBoxBuscar.Location = new System.Drawing.Point(549, 41);
+            this.comboBoxBuscar.Name = "comboBoxBuscar";
+            this.comboBoxBuscar.Size = new System.Drawing.Size(153, 23);
+            this.comboBoxBuscar.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(463, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 17);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Buscar por:";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Marker;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 38;
+            this.btnEditar.Location = new System.Drawing.Point(27, 519);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(169, 45);
+            this.btnEditar.TabIndex = 24;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // textBoxId
+            // 
+            this.textBoxId.Location = new System.Drawing.Point(14, 18);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(41, 21);
+            this.textBoxId.TabIndex = 25;
+            this.textBoxId.Visible = false;
             // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(809, 587);
+            this.ClientSize = new System.Drawing.Size(959, 587);
+            this.Controls.Add(this.textBoxId);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.textBuscar);
+            this.Controls.Add(this.comboBoxBuscar);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.textColor);
             this.Controls.Add(this.label9);
@@ -331,7 +425,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpRegistro);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.comboBoxTalla);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textCantidad);
@@ -367,7 +461,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxTalla;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpRegistro;
         private System.Windows.Forms.TextBox textUnidad;
@@ -378,6 +472,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn color;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidad;
         private System.Windows.Forms.DataGridView dgvProducto;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.ComboBox comboBoxBuscar;
+        private System.Windows.Forms.Label label10;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colorProducto;
@@ -385,5 +485,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionP;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTalla;
+        private System.Windows.Forms.TextBox textBoxId;
     }
 }

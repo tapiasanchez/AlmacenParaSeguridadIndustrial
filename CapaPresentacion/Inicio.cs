@@ -25,10 +25,7 @@ namespace CapaPresentacion
             menu.BackColor = Color.Silver;
             MenuActivo = menu;
 
-            if(FormulariActivo != null)
-            {
-                FormulariActivo.Close();
-            }
+            FormulariActivo?.Close();
             FormulariActivo = formulario;
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
@@ -45,53 +42,59 @@ namespace CapaPresentacion
 
         }
 
-        private void subMenuCargo_Click(object sender, EventArgs e)
+        private void SubMenuCargo_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuAjustes, new FormCargo());
         }
 
-        private void subMenuUnidad_Click(object sender, EventArgs e)
+        private void SubMenuUnidad_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuAjustes, new FormUnidad());
         }
 
-        private void subMenuPuestoDeTrabajo_Click(object sender, EventArgs e)
+        private void SubMenuPuestoDeTrabajo_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuAjustes, new FormPuestoDeTrabajo());
         }
 
-        private void subMenuTalla_Click(object sender, EventArgs e)
+        private void SubMenuTalla_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuTalla, new FormTallas());
         }
 
-        private void iconMenuItem1_Click(object sender, EventArgs e)
+        private void IconMenuItem1_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuRegistro, new FormProducto());
         }
-        private void subMenuListaDotacion_Click(object sender, EventArgs e)
+        private void SubMenuListaDotacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuListaDotacion, new FormListaDotacion());
         }
 
-        private void subMenuDotacion_Click(object sender, EventArgs e)
+        private void SubMenuDotacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuDotacion, new FormDotacion());
         }
 
-        private void menuCambio_Click(object sender, EventArgs e)
+        private void MenuCambio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new FormCambioDotacion());
         }
 
-        private void subMenuReporteDotacion_Click(object sender, EventArgs e)
+        private void SubMenuReporteDotacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuReporteDotacion, new FormReportePorPersona());
         }
 
-        private void subMenuFechaDotacion_Click(object sender, EventArgs e)
+        private void SubMenuFechaDotacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(subMenuFechaDotacion, new FormDeFechas());
+        }
+
+        private void IconMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(subMenuActualizarStock, new FormActualizarStock());
+
         }
     }
 }

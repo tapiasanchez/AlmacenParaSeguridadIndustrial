@@ -15,52 +15,50 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             puestoDeTrabajo.Nombre = textNombre.Text;
-            registrarPuestoDeTrabajo(puestoDeTrabajo);
-            limpiar();
+            RegistrarPuestoDeTrabajo(puestoDeTrabajo);
+            Limpiar();
             FormPuestoDeTrabajo_Load(sender,e);
         }
-        private void registrarPuestoDeTrabajo(PuestoDeTrabajo puestoDeTrabajo)
+        private void RegistrarPuestoDeTrabajo(PuestoDeTrabajo puestoDeTrabajo)
         {
-            string mensaje = String.Empty;
-            int idPuestodeTrabajoGenerado = new CN_PuestoDeTrabajo().Registrar(puestoDeTrabajo, out mensaje);
+            _ = new CN_PuestoDeTrabajo().Registrar(puestoDeTrabajo, out _);
 
         }
-        private void limpiar()
+        private void Limpiar()
         {
             textNombre.Text = "";
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
-            List<PuestoDeTrabajo> listaDePuesto = leerDatosDeExel();
+            List<PuestoDeTrabajo> listaDePuesto = LeerDatosDeExel();
             foreach (PuestoDeTrabajo item in listaDePuesto)
             {
-                string mensaje = String.Empty;
-                int idPuestodeTrabajoGenerado = new CN_PuestoDeTrabajo().Registrar(item, out mensaje);
+                _ = new CN_PuestoDeTrabajo().Registrar(item, out _);
                 FormPuestoDeTrabajo_Load(sender, e);
 
             }
         }
-        public List<PuestoDeTrabajo> leerDatosDeExel()
+        public List<PuestoDeTrabajo> LeerDatosDeExel()
         {
-            string rutaArchivo = string.Empty;
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                rutaArchivo = openFileDialog.FileName;
+                string rutaArchivo = openFileDialog.FileName;
                 SLDocument documento = new SLDocument(rutaArchivo);
                 int indiceRow = 2;
                 List<PuestoDeTrabajo> listPuestoDeTrabajo = new List<PuestoDeTrabajo>();
 
                 while (!string.IsNullOrEmpty(documento.GetCellValueAsString(indiceRow, 1)))
                 {
-                    PuestoDeTrabajo puestoDeTrabajo = new PuestoDeTrabajo();
-
-                    puestoDeTrabajo.Nombre = documento.GetCellValueAsString(indiceRow, 1);
+                    PuestoDeTrabajo puestoDeTrabajo = new PuestoDeTrabajo
+                    {
+                        Nombre = documento.GetCellValueAsString(indiceRow, 1)
+                    };
 
                     listPuestoDeTrabajo.Add(puestoDeTrabajo);
                     indiceRow++;
@@ -78,6 +76,37 @@ namespace CapaPresentacion
             {
                 dgvPuestoDeTrabajo.Rows.Add(puesto.IdPuestoDeTrabajo, puesto.Nombre);
 
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string columFiltro = "NombrePuesto";
+            if (dgvPuestoDeTrabajo.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvPuestoDeTrabajo.Rows)
+                {
+                    if (row.Cells[columFiltro].Value.ToString().Trim().ToUpper().Contains(textBuscar.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            foreach (DataGridViewRow row in dgvPuestoDeTrabajo.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(textBuscar.Text))
+                    {
+                        row.Selected = true;
+                        textBuscar.Text = "";
+                        return;
+                    }
+                }
             }
         }
     }

@@ -36,10 +36,12 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.dgvCargo = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textiDCargo = new System.Windows.Forms.TextBox();
             this.IdCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textiDCargo = new System.Windows.Forms.TextBox();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.textBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +86,7 @@
             this.iconButton1.Text = "Guardar";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // iconButton2
             // 
@@ -100,7 +102,7 @@
             this.iconButton2.Text = "Cargar";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.Click += new System.EventHandler(this.IconButton2_Click);
             // 
             // dgvCargo
             // 
@@ -129,6 +131,19 @@
             this.dgvCargo.Size = new System.Drawing.Size(362, 220);
             this.dgvCargo.TabIndex = 5;
             // 
+            // IdCargo
+            // 
+            this.IdCargo.HeaderText = "Nro";
+            this.IdCargo.Name = "IdCargo";
+            this.IdCargo.ReadOnly = true;
+            // 
+            // NombreCargo
+            // 
+            this.NombreCargo.HeaderText = "Nombre";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.ReadOnly = true;
+            this.NombreCargo.Width = 200;
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
@@ -149,18 +164,26 @@
             this.textiDCargo.TabIndex = 7;
             this.textiDCargo.Visible = false;
             // 
-            // IdCargo
+            // btnSearch
             // 
-            this.IdCargo.HeaderText = "Nro";
-            this.IdCargo.Name = "IdCargo";
-            this.IdCargo.ReadOnly = true;
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.btnSearch.IconColor = System.Drawing.Color.Black;
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 28;
+            this.btnSearch.Location = new System.Drawing.Point(497, 31);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(42, 32);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // NombreCargo
+            // textBuscar
             // 
-            this.NombreCargo.HeaderText = "Nombre";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.ReadOnly = true;
-            this.NombreCargo.Width = 200;
+            this.textBuscar.Location = new System.Drawing.Point(394, 38);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(100, 20);
+            this.textBuscar.TabIndex = 12;
             // 
             // FormCargo
             // 
@@ -168,6 +191,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(637, 364);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.textiDCargo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvCargo);
@@ -197,5 +222,7 @@
         private System.Windows.Forms.TextBox textiDCargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private System.Windows.Forms.TextBox textBuscar;
     }
 }

@@ -63,6 +63,7 @@
             // 
             // dtpDotacion
             // 
+            this.dtpDotacion.Enabled = false;
             this.dtpDotacion.Location = new System.Drawing.Point(507, 29);
             this.dtpDotacion.Name = "dtpDotacion";
             this.dtpDotacion.Size = new System.Drawing.Size(154, 20);

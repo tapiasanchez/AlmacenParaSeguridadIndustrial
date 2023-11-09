@@ -16,5 +16,9 @@ namespace CapaNegocio
         {
             return objcd_lista.GetListProducts(puesto);
         }
+        public void Eliminar(int id, int idPuesto)
+        {
+            objcd_lista.Eliminar(id, idPuesto);
+        }
     }
 }

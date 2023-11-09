@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class CN_Producto
     {
-        private CD_Producto objcd_producto = new CD_Producto();
+        private readonly CD_Producto objcd_producto = new CD_Producto();
         public List<Producto> Listar()
         {
             return objcd_producto.Listar();
@@ -29,6 +29,10 @@ namespace CapaNegocio
         public Producto GetProducto()
         {
             return objcd_producto.GetProducto();
+        }
+        public void Actualizar(Producto obj)
+        {
+            objcd_producto.ActualizarProducto(obj);
         }
     }
 }

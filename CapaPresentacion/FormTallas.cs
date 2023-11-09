@@ -15,20 +15,19 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void btnGuardarTalla_Click(object sender, EventArgs e)
+        private void BtnGuardarTalla_Click(object sender, EventArgs e)
         {
             talla.Nombre = textNombre.Text;
-            registrarTalla(talla);
-            limpiar();
+            RegistrarTalla(talla);
+            Limpiar();
             FormTallas_Load(sender, e);
         }
-        private void registrarTalla(Talla talla)
+        private void RegistrarTalla(Talla talla)
         {
-            string mensaje = String.Empty;
-            int idTallaGenerado = new CN_Talla().Registrar(talla, out mensaje);
+            _ = new CN_Talla().Registrar(talla, out _);
 
         }
-        private void limpiar()
+        private void Limpiar()
         {
             textNombre.Text = "";
         }
@@ -45,35 +44,34 @@ namespace CapaPresentacion
 
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
-            List<Talla> listaDeTallas = leerDatosDeExel();
+            List<Talla> listaDeTallas = LeerDatosDeExel();
             foreach (Talla item in listaDeTallas)
             {
-                string mensaje = String.Empty;
-                int idCargoGenerado = new CN_Talla().Registrar(item, out mensaje);
+                _ = new CN_Talla().Registrar(item, out _);
                 FormTallas_Load(sender, e);
 
             }
         }
 
-        public List<Talla> leerDatosDeExel()
+        public List<Talla> LeerDatosDeExel()
         {
-            string rutaArchivo = string.Empty;
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                rutaArchivo = openFileDialog.FileName;
+                string rutaArchivo = openFileDialog.FileName;
                 SLDocument documento = new SLDocument(rutaArchivo);
                 int indiceRow = 2;
                 List<Talla> listTalla = new List<Talla>();
 
                 while (!string.IsNullOrEmpty(documento.GetCellValueAsString(indiceRow, 1)))
                 {
-                    Talla talla = new Talla();
-
-                    talla.Nombre = documento.GetCellValueAsString(indiceRow, 1);
+                    Talla talla = new Talla
+                    {
+                        Nombre = documento.GetCellValueAsString(indiceRow, 1)
+                    };
 
                     listTalla.Add(talla);
                     indiceRow++;
@@ -81,6 +79,37 @@ namespace CapaPresentacion
                 return listTalla;
             }
             return null;
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string columFiltro = "NombreTalla";
+            if (dgvTalla.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvTalla.Rows)
+                {
+                    if (row.Cells[columFiltro].Value.ToString().Trim().ToUpper().Contains(textBuscar.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            foreach (DataGridViewRow row in dgvTalla.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(textBuscar.Text))
+                    {
+                        row.Selected = true;
+                        textBuscar.Text = "";
+                        return;
+                    }
+                }
+            }
         }
 
     }

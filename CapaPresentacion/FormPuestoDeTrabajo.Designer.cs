@@ -37,6 +37,8 @@
             this.dgvPuestoDeTrabajo = new System.Windows.Forms.DataGridView();
             this.IdPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombrePuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.textBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuestoDeTrabajo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             this.iconButton1.Text = "Registrar";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // iconButton2
             // 
@@ -98,7 +100,7 @@
             this.iconButton2.Text = "Cargar";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.Click += new System.EventHandler(this.IconButton2_Click);
             // 
             // label3
             // 
@@ -106,12 +108,13 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(203, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(357, 39);
+            this.label3.Size = new System.Drawing.Size(384, 39);
             this.label3.TabIndex = 5;
             this.label3.Text = "Lista de Puestos de Trabajo";
             // 
             // dgvPuestoDeTrabajo
             // 
+            this.dgvPuestoDeTrabajo.AllowUserToAddRows = false;
             this.dgvPuestoDeTrabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPuestoDeTrabajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdPuesto,
@@ -131,12 +134,35 @@
             this.NombrePuesto.HeaderText = "Nombre";
             this.NombrePuesto.Name = "NombrePuesto";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.btnSearch.IconColor = System.Drawing.Color.Black;
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 28;
+            this.btnSearch.Location = new System.Drawing.Point(533, 52);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(42, 32);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(408, 59);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(122, 20);
+            this.textBuscar.TabIndex = 12;
+            // 
             // FormPuestoDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(606, 372);
+            this.ClientSize = new System.Drawing.Size(677, 372);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dgvPuestoDeTrabajo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.iconButton2);
@@ -164,5 +190,7 @@
         private System.Windows.Forms.DataGridView dgvPuestoDeTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombrePuesto;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private System.Windows.Forms.TextBox textBuscar;
     }
 }

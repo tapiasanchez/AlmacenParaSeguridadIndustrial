@@ -151,6 +151,7 @@
             // 
             // dgvDotacion
             // 
+            this.dgvDotacion.AllowUserToAddRows = false;
             this.dgvDotacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDotacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreProducto,
@@ -211,6 +212,7 @@
             // 
             // dgvCambioDotacion
             // 
+            this.dgvCambioDotacion.AllowUserToAddRows = false;
             this.dgvCambioDotacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCambioDotacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreP,
