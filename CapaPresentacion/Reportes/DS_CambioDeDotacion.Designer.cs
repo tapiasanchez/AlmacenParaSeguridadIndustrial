@@ -293,6 +293,8 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnNombrePuesto;
             
+            private global::System.Data.DataColumn columnCodigo;
+            
             private global::System.Data.DataColumn columnNombreProducto;
             
             private global::System.Data.DataColumn columnColor;
@@ -306,6 +308,8 @@ namespace CapaPresentacion.Reportes {
             private global::System.Data.DataColumn columnComentario;
             
             private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnCodigoFormulario;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -398,6 +402,14 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn NombreProductoColumn {
                 get {
                     return this.columnNombreProducto;
@@ -454,6 +466,14 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoFormularioColumn {
+                get {
+                    return this.columnCodigoFormulario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +509,23 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GETCAMBIODEDOTACIONRow AddSP_GETCAMBIODEDOTACIONRow(string Item, string Nombre, string Apellido, string CI, string NombreCargo, string NombreUnidad, string NombrePuesto, string NombreProducto, string Color, string Unidad, string NombreTalla, int Cantidad, string Comentario, System.DateTime Fecha) {
+            public SP_GETCAMBIODEDOTACIONRow AddSP_GETCAMBIODEDOTACIONRow(
+                        string Item, 
+                        string Nombre, 
+                        string Apellido, 
+                        string CI, 
+                        string NombreCargo, 
+                        string NombreUnidad, 
+                        string NombrePuesto, 
+                        string Codigo, 
+                        string NombreProducto, 
+                        string Color, 
+                        string Unidad, 
+                        string NombreTalla, 
+                        int Cantidad, 
+                        string Comentario, 
+                        System.DateTime Fecha, 
+                        string CodigoFormulario) {
                 SP_GETCAMBIODEDOTACIONRow rowSP_GETCAMBIODEDOTACIONRow = ((SP_GETCAMBIODEDOTACIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Item,
@@ -499,13 +535,15 @@ namespace CapaPresentacion.Reportes {
                         NombreCargo,
                         NombreUnidad,
                         NombrePuesto,
+                        Codigo,
                         NombreProducto,
                         Color,
                         Unidad,
                         NombreTalla,
                         Cantidad,
                         Comentario,
-                        Fecha};
+                        Fecha,
+                        CodigoFormulario};
                 rowSP_GETCAMBIODEDOTACIONRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_GETCAMBIODEDOTACIONRow);
                 return rowSP_GETCAMBIODEDOTACIONRow;
@@ -535,6 +573,7 @@ namespace CapaPresentacion.Reportes {
                 this.columnNombreCargo = base.Columns["NombreCargo"];
                 this.columnNombreUnidad = base.Columns["NombreUnidad"];
                 this.columnNombrePuesto = base.Columns["NombrePuesto"];
+                this.columnCodigo = base.Columns["Codigo"];
                 this.columnNombreProducto = base.Columns["NombreProducto"];
                 this.columnColor = base.Columns["Color"];
                 this.columnUnidad = base.Columns["Unidad"];
@@ -542,6 +581,7 @@ namespace CapaPresentacion.Reportes {
                 this.columnCantidad = base.Columns["Cantidad"];
                 this.columnComentario = base.Columns["Comentario"];
                 this.columnFecha = base.Columns["Fecha"];
+                this.columnCodigoFormulario = base.Columns["CodigoFormulario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -565,6 +605,8 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnNombreUnidad);
                 this.columnNombrePuesto = new global::System.Data.DataColumn("NombrePuesto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombrePuesto);
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
                 this.columnNombreProducto = new global::System.Data.DataColumn("NombreProducto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreProducto);
                 this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
@@ -579,6 +621,8 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnComentario);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
+                this.columnCodigoFormulario = new global::System.Data.DataColumn("CodigoFormulario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoFormulario);
                 this.columnItem.MaxLength = 100;
                 this.columnNombre.MaxLength = 100;
                 this.columnApellido.MaxLength = 100;
@@ -586,11 +630,13 @@ namespace CapaPresentacion.Reportes {
                 this.columnNombreCargo.MaxLength = 100;
                 this.columnNombreUnidad.MaxLength = 100;
                 this.columnNombrePuesto.MaxLength = 100;
+                this.columnCodigo.MaxLength = 100;
                 this.columnNombreProducto.MaxLength = 100;
                 this.columnColor.MaxLength = 100;
                 this.columnUnidad.MaxLength = 100;
                 this.columnNombreTalla.MaxLength = 50;
                 this.columnComentario.MaxLength = 200;
+                this.columnCodigoFormulario.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,6 +895,22 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GETCAMBIODEDOTACION.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'SP_GETCAMBIODEDOTACION\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GETCAMBIODEDOTACION.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string NombreProducto {
                 get {
                     try {
@@ -965,6 +1027,23 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CodigoFormulario {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GETCAMBIODEDOTACION.CodigoFormularioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CodigoFormulario\' de la tabla \'SP_GETCAMBIODEDOTACION\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GETCAMBIODEDOTACION.CodigoFormularioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsItemNull() {
                 return this.IsNull(this.tableSP_GETCAMBIODEDOTACION.ItemColumn);
             }
@@ -1049,6 +1128,18 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tableSP_GETCAMBIODEDOTACION.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tableSP_GETCAMBIODEDOTACION.CodigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNombreProductoNull() {
                 return this.IsNull(this.tableSP_GETCAMBIODEDOTACION.NombreProductoColumn);
             }
@@ -1129,6 +1220,18 @@ namespace CapaPresentacion.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetFechaNull() {
                 this[this.tableSP_GETCAMBIODEDOTACION.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoFormularioNull() {
+                return this.IsNull(this.tableSP_GETCAMBIODEDOTACION.CodigoFormularioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoFormularioNull() {
+                this[this.tableSP_GETCAMBIODEDOTACION.CodigoFormularioColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1298,6 +1401,7 @@ namespace CapaPresentacion.Reportes.DS_CambioDeDotacionTableAdapters {
             tableMapping.ColumnMappings.Add("NombreCargo", "NombreCargo");
             tableMapping.ColumnMappings.Add("NombreUnidad", "NombreUnidad");
             tableMapping.ColumnMappings.Add("NombrePuesto", "NombrePuesto");
+            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("NombreProducto", "NombreProducto");
             tableMapping.ColumnMappings.Add("Color", "Color");
             tableMapping.ColumnMappings.Add("Unidad", "Unidad");
@@ -1305,6 +1409,7 @@ namespace CapaPresentacion.Reportes.DS_CambioDeDotacionTableAdapters {
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             tableMapping.ColumnMappings.Add("Comentario", "Comentario");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("CodigoFormulario", "CodigoFormulario");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

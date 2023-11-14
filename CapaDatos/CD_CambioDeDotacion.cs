@@ -20,6 +20,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("cantidad", obj.Cantidad);
                     cmd.Parameters.AddWithValue("comentario", obj.Comentario);
                     cmd.Parameters.AddWithValue("fechaCambioDeDotacion", obj.Fecha);
+                    cmd.Parameters.AddWithValue("codigoFormulario", obj.CodFormulario);
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
 

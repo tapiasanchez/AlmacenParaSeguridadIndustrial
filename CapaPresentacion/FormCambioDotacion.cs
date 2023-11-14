@@ -98,7 +98,8 @@ namespace CapaPresentacion
                 Producto = new Producto() { IdProducto = Convert.ToInt32(((OpcionCombo)comboBoxProducto.SelectedItem).Valor) },
                 Cantidad = Convert.ToInt32(textBoxCantidad.Text),
                 Comentario = textBoxComentario.Text,
-                Fecha = dtpCambio.Value
+                Fecha = dtpCambio.Value,
+                CodFormulario = codForm.Text
             };
             new CN_CambioDeDotacion().Registrar(cambioDotacion);
         }

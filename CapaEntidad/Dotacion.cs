@@ -8,5 +8,6 @@ namespace CapaEntidad
         public Usuario usuario { get; set; }
         public string Comentario { get; set; }
         public DateTime FechaDotacion { get; set; }
+        public string CodigoFormulario { get; set; }
     }
 }

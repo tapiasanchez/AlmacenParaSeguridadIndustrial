@@ -51,6 +51,8 @@
             this.textUnidad = new System.Windows.Forms.TextBox();
             this.textCargo = new System.Windows.Forms.TextBox();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.textObservaciones = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // modalMenu
@@ -61,7 +63,7 @@
             this.modalMenu.Name = "modalMenu";
             this.modalMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.modalMenu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.modalMenu.Size = new System.Drawing.Size(933, 55);
+            this.modalMenu.Size = new System.Drawing.Size(802, 55);
             this.modalMenu.TabIndex = 0;
             this.modalMenu.Text = "menuStrip1";
             // 
@@ -296,11 +298,34 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
+            // textObservaciones
+            // 
+            this.textObservaciones.Location = new System.Drawing.Point(515, 132);
+            this.textObservaciones.Multiline = true;
+            this.textObservaciones.Name = "textObservaciones";
+            this.textObservaciones.Size = new System.Drawing.Size(225, 108);
+            this.textObservaciones.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(512, 115);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 17);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Observaciones:";
+            // 
             // FormModalUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 430);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(802, 430);
+            this.Controls.Add(this.textObservaciones);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.textCargo);
             this.Controls.Add(this.textUnidad);
@@ -328,6 +353,7 @@
             this.MainMenuStrip = this.modalMenu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormModalUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormModalUsuario";
             this.Load += new System.EventHandler(this.FormModalUsuario_Load);
             this.ResumeLayout(false);
@@ -360,5 +386,7 @@
         public System.Windows.Forms.TextBox textUnidad;
         public System.Windows.Forms.TextBox textCargo;
         private FontAwesome.Sharp.IconButton btnEditar;
+        public System.Windows.Forms.TextBox textObservaciones;
+        private System.Windows.Forms.Label label9;
     }
 }

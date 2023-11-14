@@ -213,6 +213,7 @@
             // dgvCambioDotacion
             // 
             this.dgvCambioDotacion.AllowUserToAddRows = false;
+            this.dgvCambioDotacion.AllowUserToDeleteRows = false;
             this.dgvCambioDotacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCambioDotacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreP,

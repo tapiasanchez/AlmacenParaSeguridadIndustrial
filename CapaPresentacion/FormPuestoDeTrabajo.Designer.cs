@@ -49,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(176, 372);
+            this.label1.Size = new System.Drawing.Size(176, 327);
             this.label1.TabIndex = 0;
             // 
             // label2
@@ -57,7 +57,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 165);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(12, 194);
+            this.textNombre.Location = new System.Drawing.Point(12, 97);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(146, 20);
             this.textNombre.TabIndex = 2;
@@ -76,8 +76,8 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 38;
-            this.iconButton1.Location = new System.Drawing.Point(12, 254);
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.Location = new System.Drawing.Point(12, 157);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(146, 44);
             this.iconButton1.TabIndex = 3;
@@ -92,8 +92,8 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 38;
-            this.iconButton2.Location = new System.Drawing.Point(15, 304);
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.Location = new System.Drawing.Point(15, 207);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(143, 40);
             this.iconButton2.TabIndex = 4;
@@ -121,25 +121,27 @@
             this.NombrePuesto});
             this.dgvPuestoDeTrabajo.Location = new System.Drawing.Point(207, 117);
             this.dgvPuestoDeTrabajo.Name = "dgvPuestoDeTrabajo";
-            this.dgvPuestoDeTrabajo.Size = new System.Drawing.Size(353, 195);
+            this.dgvPuestoDeTrabajo.Size = new System.Drawing.Size(345, 195);
             this.dgvPuestoDeTrabajo.TabIndex = 6;
             // 
             // IdPuesto
             // 
             this.IdPuesto.HeaderText = "Nro";
             this.IdPuesto.Name = "IdPuesto";
+            this.IdPuesto.Width = 50;
             // 
             // NombrePuesto
             // 
             this.NombrePuesto.HeaderText = "Nombre";
             this.NombrePuesto.Name = "NombrePuesto";
+            this.NombrePuesto.Width = 250;
             // 
             // btnSearch
             // 
             this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.btnSearch.IconColor = System.Drawing.Color.Black;
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 28;
+            this.btnSearch.IconSize = 30;
             this.btnSearch.Location = new System.Drawing.Point(533, 52);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(42, 32);
@@ -160,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(677, 372);
+            this.ClientSize = new System.Drawing.Size(600, 327);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dgvPuestoDeTrabajo);
@@ -188,9 +190,9 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvPuestoDeTrabajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePuesto;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePuesto;
     }
 }

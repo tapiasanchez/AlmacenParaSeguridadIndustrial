@@ -1215,7 +1215,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Dotacion</Value>
+                <Value>Dotacion     CodForm:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1225,10 +1225,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>1.80729cm</Top>
-        <Left>5.57953cm</Left>
+        <Top>1.9834cm</Top>
+        <Left>1.74307cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>3.9118cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1247,7 +1247,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Cambios</Value>
+                <Value>Cambios CodForm:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1258,10 +1258,70 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>4.59031cm</Top>
-        <Left>5.47529cm</Left>
+        <Left>2.17091cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>3.48396cm</Width>
         <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CodigoFormulario.Value, "DataSetDotacionYCambio")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>1.9834cm</Top>
+        <Left>5.72543cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.04689cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CodigoFormulario.Value, "DataSetCambio")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>4.59031cm</Top>
+        <Left>5.76071cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.01162cm</Width>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1329,68 +1389,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Codigo.Fol.:</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.34078cm</Top>
-          <Left>9.6012cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox3">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.34078cm</Top>
-          <Left>12.17176cm</Left>
-          <Height>0.6cm</Height>
-          <Width>4.02111cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox4">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1412,7 +1410,7 @@
           <Left>9.6012cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -1445,7 +1443,7 @@
           <Left>12.13648cm</Left>
           <Height>0.6cm</Height>
           <Width>4.05639cm</Width>
-          <ZIndex>5</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -1478,7 +1476,7 @@
           <Left>9.59717cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -1509,7 +1507,7 @@
           <Left>12.09717cm</Left>
           <Height>0.6cm</Height>
           <Width>4.0957cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -1850,6 +1848,10 @@
           <DataField>Comentario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CodigoFormulario">
+          <DataField>CodigoFormulario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DS_DotacionYCambio</rd:DataSetName>
@@ -1925,6 +1927,10 @@
         <Field Name="Fecha">
           <DataField>Fecha</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CodigoFormulario">
+          <DataField>CodigoFormulario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
