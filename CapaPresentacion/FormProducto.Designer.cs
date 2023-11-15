@@ -50,20 +50,20 @@
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.textBoxId = new System.Windows.Forms.TextBox();
+            this.NombreTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,7 +275,8 @@
             // dgvProducto
             // 
             this.dgvProducto.AllowUserToAddRows = false;
-            this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
@@ -289,57 +290,9 @@
             this.dgvProducto.Location = new System.Drawing.Point(231, 88);
             this.dgvProducto.MultiSelect = false;
             this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.Size = new System.Drawing.Size(552, 150);
+            this.dgvProducto.Size = new System.Drawing.Size(701, 150);
             this.dgvProducto.TabIndex = 19;
             this.dgvProducto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "Id";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.Visible = false;
-            // 
-            // codigoProducto
-            // 
-            this.codigoProducto.HeaderText = "Codigo";
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.Width = 71;
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.HeaderText = "Producto";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.Width = 81;
-            // 
-            // colorProducto
-            // 
-            this.colorProducto.HeaderText = "Color";
-            this.colorProducto.Name = "colorProducto";
-            this.colorProducto.Width = 61;
-            // 
-            // unidadProducto
-            // 
-            this.unidadProducto.HeaderText = "Unidad";
-            this.unidadProducto.Name = "unidadProducto";
-            this.unidadProducto.Width = 72;
-            // 
-            // descripcionP
-            // 
-            this.descripcionP.HeaderText = "Descripcion";
-            this.descripcionP.Name = "descripcionP";
-            this.descripcionP.Width = 97;
-            // 
-            // cantidadProducto
-            // 
-            this.cantidadProducto.HeaderText = "Stock";
-            this.cantidadProducto.Name = "cantidadProducto";
-            this.cantidadProducto.Width = 62;
-            // 
-            // NombreTalla
-            // 
-            this.NombreTalla.HeaderText = "Talla";
-            this.NombreTalla.Name = "NombreTalla";
-            this.NombreTalla.Width = 59;
             // 
             // btnBuscar
             // 
@@ -405,6 +358,62 @@
             this.textBoxId.Size = new System.Drawing.Size(41, 21);
             this.textBoxId.TabIndex = 25;
             this.textBoxId.Visible = false;
+            // 
+            // NombreTalla
+            // 
+            this.NombreTalla.FillWeight = 98.31138F;
+            this.NombreTalla.HeaderText = "Talla";
+            this.NombreTalla.Name = "NombreTalla";
+            this.NombreTalla.Width = 59;
+            // 
+            // cantidadProducto
+            // 
+            this.cantidadProducto.FillWeight = 96.75226F;
+            this.cantidadProducto.HeaderText = "Stock";
+            this.cantidadProducto.Name = "cantidadProducto";
+            this.cantidadProducto.Width = 62;
+            // 
+            // descripcionP
+            // 
+            this.descripcionP.FillWeight = 148.7801F;
+            this.descripcionP.HeaderText = "Descripcion";
+            this.descripcionP.Name = "descripcionP";
+            this.descripcionP.Width = 97;
+            // 
+            // unidadProducto
+            // 
+            this.unidadProducto.FillWeight = 103.5644F;
+            this.unidadProducto.HeaderText = "Unidad";
+            this.unidadProducto.Name = "unidadProducto";
+            this.unidadProducto.Width = 72;
+            // 
+            // colorProducto
+            // 
+            this.colorProducto.FillWeight = 79.7099F;
+            this.colorProducto.HeaderText = "Color";
+            this.colorProducto.Name = "colorProducto";
+            this.colorProducto.Width = 61;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.FillWeight = 97.35019F;
+            this.NombreProducto.HeaderText = "Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.Width = 81;
+            // 
+            // codigoProducto
+            // 
+            this.codigoProducto.FillWeight = 75.53193F;
+            this.codigoProducto.HeaderText = "Codigo";
+            this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.Width = 71;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "Id";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.Visible = false;
+            this.idProducto.Width = 42;
             // 
             // FormProducto
             // 
@@ -477,6 +486,7 @@
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton btnEditar;
+        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
@@ -485,6 +495,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionP;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTalla;
-        private System.Windows.Forms.TextBox textBoxId;
     }
 }

@@ -54,6 +54,8 @@
             this.textBoxComentario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.codForm = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCambioDotacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,7 +265,7 @@
             this.btnRegistrarCambioDeDotacion.IconColor = System.Drawing.Color.Black;
             this.btnRegistrarCambioDeDotacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarCambioDeDotacion.IconSize = 28;
-            this.btnRegistrarCambioDeDotacion.Location = new System.Drawing.Point(12, 313);
+            this.btnRegistrarCambioDeDotacion.Location = new System.Drawing.Point(12, 356);
             this.btnRegistrarCambioDeDotacion.Name = "btnRegistrarCambioDeDotacion";
             this.btnRegistrarCambioDeDotacion.Size = new System.Drawing.Size(120, 34);
             this.btnRegistrarCambioDeDotacion.TabIndex = 18;
@@ -299,7 +301,7 @@
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 28;
-            this.iconButton2.Location = new System.Drawing.Point(15, 353);
+            this.iconButton2.Location = new System.Drawing.Point(12, 396);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(118, 31);
             this.iconButton2.TabIndex = 21;
@@ -308,12 +310,32 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
+            // codForm
+            // 
+            this.codForm.Location = new System.Drawing.Point(7, 329);
+            this.codForm.Name = "codForm";
+            this.codForm.Size = new System.Drawing.Size(120, 20);
+            this.codForm.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 309);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(112, 15);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Codigo Formulario:";
+            // 
             // FormCambioDotacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.codForm);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.textBoxComentario);
             this.Controls.Add(this.label8);
@@ -371,5 +393,7 @@
         private System.Windows.Forms.TextBox textBoxComentario;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.TextBox codForm;
+        private System.Windows.Forms.Label label9;
     }
 }

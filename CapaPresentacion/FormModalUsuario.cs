@@ -21,6 +21,7 @@ namespace CapaPresentacion
             usuario.Ci = textCi.Text;
             usuario.Nombre = textNombre.Text;   
             usuario.Apellido = textApellido.Text;
+            usuario.Observaciones = textObservaciones.Text;
             usuario.NombreCargo = new Cargo() {IdCargo =  Convert.ToInt32(((OpcionCombo)comboBoxCargo.SelectedItem).Valor) };
             usuario.NombreUnidad = new Unidad() {  IdUnidad = Convert.ToInt32(((OpcionCombo)comboBoxUnidad.SelectedItem).Valor) };
             usuario.NombrePuesto = new PuestoDeTrabajo() { IdPuestoDeTrabajo = Convert.ToInt32(((OpcionCombo)comboBoxPuestoDeTrabajo.SelectedItem).Valor) };
@@ -153,6 +154,7 @@ namespace CapaPresentacion
             usuario.Ci = textCi.Text;
             usuario.Nombre = textNombre.Text;
             usuario.Apellido = textApellido.Text;
+            usuario.Observaciones = textObservaciones.Text;
             usuario.NombreCargo = new Cargo() { IdCargo = Convert.ToInt32(((OpcionCombo)comboBoxCargo.SelectedItem).Valor) };
             usuario.NombreUnidad = new Unidad() { IdUnidad = Convert.ToInt32(((OpcionCombo)comboBoxUnidad.SelectedItem).Valor) };
             usuario.NombrePuesto = new PuestoDeTrabajo() { IdPuestoDeTrabajo = Convert.ToInt32(((OpcionCombo)comboBoxPuestoDeTrabajo.SelectedItem).Valor) };

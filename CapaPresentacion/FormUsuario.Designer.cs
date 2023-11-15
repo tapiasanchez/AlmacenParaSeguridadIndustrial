@@ -41,6 +41,7 @@
             this.CI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PuestoDeTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,14 +53,15 @@
             this.btnRegistrar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
             this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             this.btnRegistrar.IconColor = System.Drawing.Color.White;
             this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegistrar.IconSize = 35;
+            this.btnRegistrar.IconSize = 30;
             this.btnRegistrar.Location = new System.Drawing.Point(88, 21);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(96, 42);
+            this.btnRegistrar.Size = new System.Drawing.Size(111, 42);
             this.btnRegistrar.TabIndex = 0;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -72,6 +74,7 @@
             this.btnCargar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnCargar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.ForeColor = System.Drawing.Color.White;
             this.btnCargar.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
             this.btnCargar.IconColor = System.Drawing.Color.White;
@@ -98,13 +101,14 @@
             this.CI,
             this.Nombre,
             this.Apellido,
+            this.Observaciones,
             this.cargo,
             this.unidad,
             this.PuestoDeTrabajo});
             this.dGVData.Location = new System.Drawing.Point(23, 126);
             this.dGVData.MultiSelect = false;
             this.dGVData.Name = "dGVData";
-            this.dGVData.Size = new System.Drawing.Size(753, 312);
+            this.dGVData.Size = new System.Drawing.Size(514, 266);
             this.dGVData.TabIndex = 2;
             this.dGVData.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
@@ -121,7 +125,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 94);
+            this.label2.Location = new System.Drawing.Point(245, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 4;
@@ -130,14 +134,14 @@
             // comboBoxBuscar
             // 
             this.comboBoxBuscar.FormattingEnabled = true;
-            this.comboBoxBuscar.Location = new System.Drawing.Point(400, 94);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(331, 94);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(153, 21);
             this.comboBoxBuscar.TabIndex = 5;
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(559, 95);
+            this.textBuscar.Location = new System.Drawing.Point(490, 95);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(151, 20);
             this.textBuscar.TabIndex = 6;
@@ -149,7 +153,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.White;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 28;
-            this.btnBuscar.Location = new System.Drawing.Point(715, 90);
+            this.btnBuscar.Location = new System.Drawing.Point(646, 90);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(61, 29);
             this.btnBuscar.TabIndex = 7;
@@ -187,6 +191,13 @@
             this.Apellido.Name = "Apellido";
             this.Apellido.Width = 69;
             // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.Visible = false;
+            this.Observaciones.Width = 103;
+            // 
             // cargo
             // 
             this.cargo.HeaderText = "Cargo";
@@ -209,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(718, 450);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.comboBoxBuscar);
@@ -242,6 +253,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PuestoDeTrabajo;

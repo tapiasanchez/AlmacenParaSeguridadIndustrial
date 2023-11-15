@@ -29,6 +29,7 @@
               <Mapping SourceColumn="NombreCargo" DataSetColumn="NombreCargo" />
               <Mapping SourceColumn="NombreUnidad" DataSetColumn="NombreUnidad" />
               <Mapping SourceColumn="NombrePuesto" DataSetColumn="NombrePuesto" />
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
               <Mapping SourceColumn="NombreProducto" DataSetColumn="NombreProducto" />
               <Mapping SourceColumn="Color" DataSetColumn="Color" />
               <Mapping SourceColumn="Unidad" DataSetColumn="Unidad" />
@@ -36,6 +37,7 @@
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
               <Mapping SourceColumn="Comentario" DataSetColumn="Comentario" />
               <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="CodigoFormulario" DataSetColumn="CodigoFormulario" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -44,7 +46,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DS_CambioDeDotacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DS_CambioDeDotacion" msprop:Generator_DataSetName="DS_CambioDeDotacion">
+  <xs:element name="DS_CambioDeDotacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DS_CambioDeDotacion" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_CambioDeDotacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="SP_GETCAMBIODEDOTACION" msprop:Generator_RowEvHandlerName="SP_GETCAMBIODEDOTACIONRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_GETCAMBIODEDOTACIONRowDeleted" msprop:Generator_RowDeletingName="SP_GETCAMBIODEDOTACIONRowDeleting" msprop:Generator_RowEvArgName="SP_GETCAMBIODEDOTACIONRowChangeEvent" msprop:Generator_TablePropName="SP_GETCAMBIODEDOTACION" msprop:Generator_RowChangedName="SP_GETCAMBIODEDOTACIONRowChanged" msprop:Generator_RowChangingName="SP_GETCAMBIODEDOTACIONRowChanging" msprop:Generator_TableClassName="SP_GETCAMBIODEDOTACIONDataTable" msprop:Generator_RowClassName="SP_GETCAMBIODEDOTACIONRow" msprop:Generator_TableVarName="tableSP_GETCAMBIODEDOTACION" msprop:Generator_UserTableName="SP_GETCAMBIODEDOTACION">
@@ -99,6 +101,13 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Codigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_UserColumnName="Codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="NombreProducto" msprop:Generator_ColumnPropNameInRow="NombreProducto" msprop:Generator_ColumnPropNameInTable="NombreProductoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreProducto" msprop:Generator_UserColumnName="NombreProducto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -136,6 +145,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CodigoFormulario" msprop:Generator_ColumnPropNameInRow="CodigoFormulario" msprop:Generator_ColumnPropNameInTable="CodigoFormularioColumn" msprop:Generator_ColumnVarNameInTable="columnCodigoFormulario" msprop:Generator_UserColumnName="CodigoFormulario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

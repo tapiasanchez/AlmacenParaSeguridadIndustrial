@@ -47,6 +47,8 @@
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textboxCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkList = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.codForm = new System.Windows.Forms.TextBox();
+            this.codigoFormulario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDotacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // dtpDotacion
             // 
             this.dtpDotacion.Enabled = false;
-            this.dtpDotacion.Location = new System.Drawing.Point(507, 29);
+            this.dtpDotacion.Location = new System.Drawing.Point(570, 29);
             this.dtpDotacion.Name = "dtpDotacion";
             this.dtpDotacion.Size = new System.Drawing.Size(154, 20);
             this.dtpDotacion.TabIndex = 1;
@@ -244,12 +246,32 @@
             this.checkList.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.checkList.Width = 50;
             // 
+            // codForm
+            // 
+            this.codForm.Location = new System.Drawing.Point(422, 32);
+            this.codForm.Name = "codForm";
+            this.codForm.Size = new System.Drawing.Size(128, 20);
+            this.codForm.TabIndex = 17;
+            // 
+            // codigoFormulario
+            // 
+            this.codigoFormulario.AutoSize = true;
+            this.codigoFormulario.BackColor = System.Drawing.Color.White;
+            this.codigoFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoFormulario.Location = new System.Drawing.Point(274, 33);
+            this.codigoFormulario.Name = "codigoFormulario";
+            this.codigoFormulario.Size = new System.Drawing.Size(147, 17);
+            this.codigoFormulario.TabIndex = 18;
+            this.codigoFormulario.Text = "Codigo de Formulario:";
+            // 
             // FormDotacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(756, 413);
+            this.Controls.Add(this.codigoFormulario);
+            this.Controls.Add(this.codForm);
             this.Controls.Add(this.dgvListaDotacion);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
@@ -295,5 +317,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn textboxCantidad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkList;
+        private System.Windows.Forms.TextBox codForm;
+        private System.Windows.Forms.Label codigoFormulario;
     }
 }

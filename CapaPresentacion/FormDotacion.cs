@@ -78,7 +78,8 @@ namespace CapaPresentacion
             {
                 usuario = new Usuario() { IdUsuario = usuario.IdUsuario },
                 Comentario = textBoxComentario.Text,
-                FechaDotacion = dtpDotacion.Value
+                FechaDotacion = dtpDotacion.Value,
+                CodigoFormulario = codForm.Text
             };
             new CN_Dotacion().Registrar(dotacion);
 

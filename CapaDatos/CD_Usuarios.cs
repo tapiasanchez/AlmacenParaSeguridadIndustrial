@@ -17,7 +17,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select  us.IDUsuario,us.Item, us.CI, us.Nombre,us.Apellido, c.NombreCargo, u.NombreUnidad, p.NombrePuesto from Usuario us ");
+                    query.AppendLine("select  us.IDUsuario,us.Item, us.CI, us.Nombre,us.Apellido,us.Observaciones, c.NombreCargo, u.NombreUnidad, p.NombrePuesto from Usuario us ");
                     query.AppendLine("inner join Cargo c on c.IDCargo = us.IdCargo ");
                     query.AppendLine("inner join Unidad u on u.IDUnidad = us.IdUnidad");
                     query.AppendLine("inner join PuestoDeTrabajo p on p.IDPuestoDeTrabajo = us.IdPuestoDeTrabajo");
@@ -38,6 +38,7 @@ namespace CapaDatos
                                 Ci = reader["CI"].ToString(),
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
+                                Observaciones = reader["Observaciones"].ToString(),
                                 NombreCargo = new Cargo() { Nombre = reader["NombreCargo"].ToString() },
                                 NombreUnidad = new Unidad() { Nombre = reader["NombreUnidad"].ToString() },
                                 NombrePuesto = new PuestoDeTrabajo() { Nombre = reader["NombrePuesto"].ToString() }, 
@@ -64,6 +65,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("ci", obj.Ci);
                     cmd.Parameters.AddWithValue("nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("apellido", obj.Apellido);
+                    cmd.Parameters.AddWithValue("observaciones", obj.Observaciones);
                     cmd.Parameters.AddWithValue("idCargo", obj.NombreCargo.IdCargo);
                     cmd.Parameters.AddWithValue("idUnidad", obj.NombreUnidad.IdUnidad);
                     cmd.Parameters.AddWithValue("idPuestoDeTrabajo", obj.NombrePuesto.IdPuestoDeTrabajo);
@@ -175,6 +177,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("ci", obj.Ci);
                     cmd.Parameters.AddWithValue("nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("apellido", obj.Apellido);
+                    cmd.Parameters.AddWithValue("observaciones", obj.Observaciones);
                     cmd.Parameters.AddWithValue("idCargo", obj.NombreCargo.IdCargo);
                     cmd.Parameters.AddWithValue("idUnidad", obj.NombreUnidad.IdUnidad);
                     cmd.Parameters.AddWithValue("idPuesto", obj.NombrePuesto.IdPuestoDeTrabajo);

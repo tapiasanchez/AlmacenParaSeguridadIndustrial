@@ -1,6 +1,5 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
-using CapaPresentacion.Utilidades;
 using SpreadsheetLight;
 using System;
 using System.Collections.Generic;

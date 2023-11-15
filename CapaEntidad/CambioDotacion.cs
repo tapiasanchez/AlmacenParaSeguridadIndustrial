@@ -14,5 +14,6 @@ namespace CapaEntidad
         public int Cantidad { get; set; }
         public string Comentario { get; set; }
         public DateTime Fecha { get; set; }
+        public string CodFormulario { get; set; }
     }
 }
