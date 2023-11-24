@@ -11,8 +11,10 @@ namespace CapaPresentacion
 {
     public partial class FormDotacion : Form
     {
-        public FormDotacion()
+        private Personal usuarioPersonal;
+        public FormDotacion(Personal objPersonal = null)
         {
+            usuarioPersonal = objPersonal;
             InitializeComponent();
         }
 
@@ -77,6 +79,7 @@ namespace CapaPresentacion
             Dotacion dotacion = new Dotacion
             {
                 usuario = new Usuario() { IdUsuario = usuario.IdUsuario },
+                personal = new Personal() { IdPersona = usuarioPersonal.IdPersona},
                 Comentario = textBoxComentario.Text,
                 FechaDotacion = dtpDotacion.Value,
                 CodigoFormulario = codForm.Text

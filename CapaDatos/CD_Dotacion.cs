@@ -15,6 +15,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARDOTACION", oconexion);
                     cmd.Parameters.AddWithValue("idUsuario", obj.usuario.IdUsuario);
+                    cmd.Parameters.AddWithValue("idPersonal", obj.personal.IdPersona);
                     cmd.Parameters.AddWithValue("comentario", obj.Comentario);
                     cmd.Parameters.AddWithValue("fechaDotacion", obj.FechaDotacion);
                     cmd.Parameters.AddWithValue("codigoFromulario", obj.CodigoFormulario);

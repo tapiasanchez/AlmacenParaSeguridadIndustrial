@@ -3,6 +3,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using CapaPresentacion.Reportes;
 using FontAwesome.Sharp;
+using CapaEntidad;
+using System.Collections.Generic;
+using CapaNegocio;
+using System.Linq;
 
 namespace CapaPresentacion
 {
@@ -10,9 +14,11 @@ namespace CapaPresentacion
     {
         private static IconMenuItem MenuActivo = null;
         private static Form FormulariActivo = null;
+        private static Personal usuarioActual;
 
-        public Inicio()
+        public Inicio(Personal objUsuario)
         {
+            usuarioActual = objUsuario;
             InitializeComponent();
         }
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
@@ -44,7 +50,7 @@ namespace CapaPresentacion
 
         private void SubMenuCargo_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuAjustes, new FormCargo());
+            AbrirFormulario(menuAjustes, new FormCargo(menu));
         }
 
         private void SubMenuUnidad_Click(object sender, EventArgs e)
@@ -73,12 +79,12 @@ namespace CapaPresentacion
 
         private void SubMenuDotacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(subMenuDotacion, new FormDotacion());
+            AbrirFormulario(subMenuDotacion, new FormDotacion(usuarioActual));
         }
 
         private void MenuCambio_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new FormCambioDotacion());
+            AbrirFormulario((IconMenuItem)sender, new FormCambioDotacion(usuarioActual));
         }
 
         private void SubMenuReporteDotacion_Click(object sender, EventArgs e)
@@ -95,6 +101,37 @@ namespace CapaPresentacion
         {
             AbrirFormulario(subMenuActualizarStock, new FormActualizarStock());
 
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            List<Permiso> permisos = new CN_Permiso().Listar(usuarioActual.IdPersona);
+            foreach(IconMenuItem iconMenu in menu.Items)
+            {
+                bool encontrado = permisos.Any(m => m.NombreMenu ==  iconMenu.Name);
+                if(encontrado == false)
+                {
+                    iconMenu.Visible = false;
+                }
+            }
+            lblUsuario.Text = usuarioActual.NombreCompleto.ToString();
+        }
+
+        private void subMenuRDotacion_Click(object sender, EventArgs e)
+        {
+            Report_RDotacion report = new Report_RDotacion();
+            report.ShowDialog();
+        }
+
+        private void subMenuRCambio_Click(object sender, EventArgs e)
+        {
+            Report_RCambios report = new Report_RCambios();
+            report.ShowDialog();
+        }
+
+        private void menuPersonal_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new FormPersonal());
         }
     }
 }
