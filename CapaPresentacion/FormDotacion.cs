@@ -11,7 +11,7 @@ namespace CapaPresentacion
 {
     public partial class FormDotacion : Form
     {
-        private Personal usuarioPersonal;
+        private readonly Personal usuarioPersonal;
         public FormDotacion(Personal objPersonal = null)
         {
             usuarioPersonal = objPersonal;
@@ -78,8 +78,8 @@ namespace CapaPresentacion
             Usuario usuario = new CN_Usuario().GetByCiAndNombre(textCi.Text, textNombre.Text);
             Dotacion dotacion = new Dotacion
             {
-                usuario = new Usuario() { IdUsuario = usuario.IdUsuario },
-                personal = new Personal() { IdPersona = usuarioPersonal.IdPersona},
+                Usuario = new Usuario() { IdUsuario = usuario.IdUsuario },
+                Personal = new Personal() { IdPersona = usuarioPersonal.IdPersona},
                 Comentario = textBoxComentario.Text,
                 FechaDotacion = dtpDotacion.Value,
                 CodigoFormulario = codForm.Text
@@ -96,8 +96,8 @@ namespace CapaPresentacion
                     Dotacion dotacion = new CN_Dotacion().GetUltimaDotacion();
                     DetalleDotacion detalle = new DetalleDotacion
                     {
-                        dotacion = dotacion,
-                        producto = new Producto() { IdProducto = (int)row.Cells["idProducto"].Value },
+                        Dotacion = dotacion,
+                        Producto = new Producto() { IdProducto = (int)row.Cells["idProducto"].Value },
                         Cantidad = Convert.ToInt32(row.Cells["textboxCantidad"].Value)
                     };
                     new CN_DetalleDotacion().Registrar(detalle);
@@ -115,7 +115,7 @@ namespace CapaPresentacion
         }
         private void ActualizarStockProducto(DetalleDotacion detalle)
         {
-            Producto producto = new CN_Producto().GetByID(detalle.producto.IdProducto);
+            Producto producto = new CN_Producto().GetByID(detalle.Producto.IdProducto);
             producto.Cantidad -= detalle.Cantidad;
             new CN_Producto().UpdateStock(producto);
         }

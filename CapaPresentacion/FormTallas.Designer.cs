@@ -48,7 +48,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 284);
+            this.label1.Size = new System.Drawing.Size(175, 561);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -162,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(598, 284);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dgvTalla);

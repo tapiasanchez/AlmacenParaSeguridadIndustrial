@@ -21,6 +21,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
               <Mapping SourceColumn="NombreProducto" DataSetColumn="NombreProducto" />
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
               <Mapping SourceColumn="Apellido" DataSetColumn="Apellido" />
@@ -41,6 +42,13 @@
         <xs:element name="SP_GETDOTACIONES" msprop:Generator_RowEvHandlerName="SP_GETDOTACIONESRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_GETDOTACIONESRowDeleted" msprop:Generator_RowDeletingName="SP_GETDOTACIONESRowDeleting" msprop:Generator_RowEvArgName="SP_GETDOTACIONESRowChangeEvent" msprop:Generator_TablePropName="SP_GETDOTACIONES" msprop:Generator_RowChangedName="SP_GETDOTACIONESRowChanged" msprop:Generator_RowChangingName="SP_GETDOTACIONESRowChanging" msprop:Generator_TableClassName="SP_GETDOTACIONESDataTable" msprop:Generator_RowClassName="SP_GETDOTACIONESRow" msprop:Generator_TableVarName="tableSP_GETDOTACIONES" msprop:Generator_UserTableName="SP_GETDOTACIONES">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="Codigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_UserColumnName="Codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="NombreProducto" msprop:Generator_ColumnPropNameInRow="NombreProducto" msprop:Generator_ColumnPropNameInTable="NombreProductoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreProducto" msprop:Generator_UserColumnName="NombreProducto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

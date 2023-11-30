@@ -93,6 +93,7 @@
             this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_FechaDotacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_FechaDotacion";
             this.Load += new System.EventHandler(this.Report_FechaDotacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sPGETDOTACIONPORFECHASBindingSource)).EndInit();

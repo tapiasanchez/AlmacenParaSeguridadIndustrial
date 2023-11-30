@@ -36,12 +36,13 @@
             this.dgvCargo = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.textBuscar = new System.Windows.Forms.TextBox();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.IdCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPermisos = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnCancelar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 353);
+            this.label1.Size = new System.Drawing.Size(167, 369);
             this.label1.TabIndex = 0;
             // 
             // label2
@@ -75,6 +76,7 @@
             // dgvCargo
             // 
             this.dgvCargo.AllowUserToAddRows = false;
+            this.dgvCargo.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,7 +90,8 @@
             this.dgvCargo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCargo,
             this.NombreCargo,
-            this.btnPermisos});
+            this.btnPermisos,
+            this.btnCancelar});
             this.dgvCargo.Location = new System.Drawing.Point(197, 83);
             this.dgvCargo.MultiSelect = false;
             this.dgvCargo.Name = "dgvCargo";
@@ -97,10 +100,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCargo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCargo.RowTemplate.Height = 28;
-            this.dgvCargo.Size = new System.Drawing.Size(400, 220);
+            this.dgvCargo.Size = new System.Drawing.Size(446, 220);
             this.dgvCargo.TabIndex = 5;
-            this.dgvCargo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargo_CellContentClick_1);
-            this.dgvCargo.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCargo_CellPainting);
+            this.dgvCargo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCargo_CellContentClick_1);
+            this.dgvCargo.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvCargo_CellPainting);
             // 
             // label3
             // 
@@ -109,7 +112,7 @@
             this.label3.Location = new System.Drawing.Point(197, 27);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(394, 53);
+            this.label3.Size = new System.Drawing.Size(446, 53);
             this.label3.TabIndex = 6;
             this.label3.Text = "Lista De Cargos Existente";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,6 +123,37 @@
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(139, 20);
             this.textBuscar.TabIndex = 12;
+            // 
+            // IdCargo
+            // 
+            this.IdCargo.FillWeight = 127.1574F;
+            this.IdCargo.HeaderText = "Nro";
+            this.IdCargo.Name = "IdCargo";
+            this.IdCargo.ReadOnly = true;
+            this.IdCargo.Visible = false;
+            this.IdCargo.Width = 195;
+            // 
+            // NombreCargo
+            // 
+            this.NombreCargo.FillWeight = 127.1574F;
+            this.NombreCargo.HeaderText = "Nombre";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.ReadOnly = true;
+            this.NombreCargo.Width = 195;
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.FillWeight = 45.68528F;
+            this.btnPermisos.HeaderText = "";
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.ReadOnly = true;
+            this.btnPermisos.Width = 70;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.HeaderText = "Quitar Permisos";
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.ReadOnly = true;
             // 
             // btnSearch
             // 
@@ -167,37 +201,12 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
             // 
-            // IdCargo
-            // 
-            this.IdCargo.FillWeight = 127.1574F;
-            this.IdCargo.HeaderText = "Nro";
-            this.IdCargo.Name = "IdCargo";
-            this.IdCargo.ReadOnly = true;
-            this.IdCargo.Visible = false;
-            this.IdCargo.Width = 195;
-            // 
-            // NombreCargo
-            // 
-            this.NombreCargo.FillWeight = 127.1574F;
-            this.NombreCargo.HeaderText = "Nombre";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.ReadOnly = true;
-            this.NombreCargo.Width = 195;
-            // 
-            // btnPermisos
-            // 
-            this.btnPermisos.FillWeight = 45.68528F;
-            this.btnPermisos.HeaderText = "";
-            this.btnPermisos.Name = "btnPermisos";
-            this.btnPermisos.ReadOnly = true;
-            this.btnPermisos.Width = 70;
-            // 
             // FormCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(738, 353);
+            this.ClientSize = new System.Drawing.Size(738, 369);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.label3);
@@ -230,5 +239,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
         private System.Windows.Forms.DataGridViewButtonColumn btnPermisos;
+        private System.Windows.Forms.DataGridViewButtonColumn btnCancelar;
     }
 }

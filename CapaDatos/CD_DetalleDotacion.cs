@@ -15,8 +15,8 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARDETALLEDOTACION", oconexion);
-                    cmd.Parameters.AddWithValue("idDotacion", obj.dotacion.IdDotacion);
-                    cmd.Parameters.AddWithValue("idProducto", obj.producto.IdProducto);
+                    cmd.Parameters.AddWithValue("idDotacion", obj.Dotacion.IdDotacion);
+                    cmd.Parameters.AddWithValue("idProducto", obj.Producto.IdProducto);
                     cmd.Parameters.AddWithValue("cantidad", obj.Cantidad);
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
@@ -47,7 +47,7 @@ namespace CapaDatos
                         while (reader.Read())
                         {
                             lista.Add(new DetalleDotacion() { 
-                                producto = new Producto()
+                                Producto = new Producto()
                                 {
                                     NombreProducto = reader["NombreProducto"].ToString(),
                                     Talla = new Talla()
@@ -88,13 +88,13 @@ namespace CapaDatos
                         {
                             lista.Add(new DetalleDotacion()
                             {
-                                dotacion = new Dotacion() 
+                                Dotacion = new Dotacion() 
                                 { 
                                     FechaDotacion = DateTime.Parse(reader["FechaDotacion"].ToString()),
                                     Comentario = reader["Comentario"].ToString()
 
                                 },
-                                producto = new Producto()
+                                Producto = new Producto()
                                 {
                                     NombreProducto = reader["NombreProducto"].ToString(),
                                     Talla = new Talla()
@@ -144,6 +144,52 @@ namespace CapaDatos
                 Console.WriteLine(ex.Message);
             }
             return result;
+        }
+        public List<DetalleDotacion> GetDotacionesList(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<DetalleDotacion> lista = new List<DetalleDotacion>();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_GETDOTACIONPORFECHAS", oconexion);
+                    cmd.Parameters.AddWithValue("FechaInicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("FechaFin", fechaFin);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new DetalleDotacion()
+                            {
+                                Producto = new Producto()
+                                {
+                                    Codigo = reader["Codigo"].ToString(),
+                                    NombreProducto = reader["NombreProducto"].ToString(),
+                                    Talla = new Talla()
+                                    {
+                                        Nombre = reader["NombreTalla"].ToString()
+                                    },
+                                    Color = reader["Color"].ToString(),
+                                    Unidad = reader["Unidad"].ToString(),
+                                    Cantidad = Convert.ToInt32(reader["Cantidad"])
+                                },
+                                Cantidad = Convert.ToInt32(reader["CantidadTotal"])
+                            });
+
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return lista;
         }
     }
 }

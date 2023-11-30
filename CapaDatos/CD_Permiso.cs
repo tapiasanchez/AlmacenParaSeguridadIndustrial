@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using CapaEntidad;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
 
 namespace CapaDatos
 {
     public class CD_Permiso
     {
-        public List<Permiso> getPermisos()
+        public List<Permiso> GetPermisos()
         {
             List<Permiso> lista = new List<Permiso>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
@@ -101,6 +98,26 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARPERMISO", oconexion);
                     cmd.Parameters.AddWithValue("idCargo", obj.Cargo.IdCargo);
                     cmd.Parameters.AddWithValue("nombreMenu", obj.NombreMenu);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void Delete(Permiso obj)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_ELINARPERMISO", oconexion);
+                    cmd.Parameters.AddWithValue("idPermiso", obj.IdPermiso);
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
 

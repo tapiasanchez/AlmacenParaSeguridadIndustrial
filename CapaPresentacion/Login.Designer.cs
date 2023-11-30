@@ -124,7 +124,7 @@
             this.iconButton1.Text = "Ingresar";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // iconButton2
             // 
@@ -140,7 +140,7 @@
             this.iconButton2.Text = "Cerrar";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.Click += new System.EventHandler(this.IconButton2_Click);
             // 
             // Login
             // 

@@ -49,7 +49,6 @@
             this.menuReporte = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuRDotacion = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuRCambio = new FontAwesome.Sharp.IconMenuItem();
-            this.subMenuRFecha = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuRPersonal = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@
             this.menuReporte});
             this.menu.Location = new System.Drawing.Point(0, 48);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(800, 73);
+            this.menu.Size = new System.Drawing.Size(834, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -137,7 +136,7 @@
             this.menuPersonal.Size = new System.Drawing.Size(64, 69);
             this.menuPersonal.Text = "Personal";
             this.menuPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuPersonal.Click += new System.EventHandler(this.menuPersonal_Click);
+            this.menuPersonal.Click += new System.EventHandler(this.MenuPersonal_Click);
             // 
             // Usuarios
             // 
@@ -281,7 +280,7 @@
             // 
             // subMenuFechaDotacion
             // 
-            this.subMenuFechaDotacion.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.subMenuFechaDotacion.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
             this.subMenuFechaDotacion.IconColor = System.Drawing.Color.Black;
             this.subMenuFechaDotacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuFechaDotacion.Name = "subMenuFechaDotacion";
@@ -294,7 +293,6 @@
             this.menuReporte.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subMenuRDotacion,
             this.subMenuRCambio,
-            this.subMenuRFecha,
             this.subMenuRPersonal});
             this.menuReporte.IconChar = FontAwesome.Sharp.IconChar.SquarePollHorizontal;
             this.menuReporte.IconColor = System.Drawing.Color.Black;
@@ -314,7 +312,7 @@
             this.subMenuRDotacion.Name = "subMenuRDotacion";
             this.subMenuRDotacion.Size = new System.Drawing.Size(133, 22);
             this.subMenuRDotacion.Text = "Dotaciones";
-            this.subMenuRDotacion.Click += new System.EventHandler(this.subMenuRDotacion_Click);
+            this.subMenuRDotacion.Click += new System.EventHandler(this.SubMenuRDotacion_Click);
             // 
             // subMenuRCambio
             // 
@@ -324,16 +322,7 @@
             this.subMenuRCambio.Name = "subMenuRCambio";
             this.subMenuRCambio.Size = new System.Drawing.Size(133, 22);
             this.subMenuRCambio.Text = "Cambios";
-            this.subMenuRCambio.Click += new System.EventHandler(this.subMenuRCambio_Click);
-            // 
-            // subMenuRFecha
-            // 
-            this.subMenuRFecha.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
-            this.subMenuRFecha.IconColor = System.Drawing.Color.Black;
-            this.subMenuRFecha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.subMenuRFecha.Name = "subMenuRFecha";
-            this.subMenuRFecha.Size = new System.Drawing.Size(133, 22);
-            this.subMenuRFecha.Text = "Por Fechas";
+            this.subMenuRCambio.Click += new System.EventHandler(this.SubMenuRCambio_Click);
             // 
             // subMenuRPersonal
             // 
@@ -343,6 +332,7 @@
             this.subMenuRPersonal.Name = "subMenuRPersonal";
             this.subMenuRPersonal.Size = new System.Drawing.Size(133, 22);
             this.subMenuRPersonal.Text = "Personal";
+            this.subMenuRPersonal.Click += new System.EventHandler(this.SubMenuRPersonal_Click);
             // 
             // menuTitulo
             // 
@@ -351,7 +341,7 @@
             this.menuTitulo.Location = new System.Drawing.Point(0, 0);
             this.menuTitulo.Name = "menuTitulo";
             this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitulo.Size = new System.Drawing.Size(800, 48);
+            this.menuTitulo.Size = new System.Drawing.Size(834, 48);
             this.menuTitulo.TabIndex = 1;
             this.menuTitulo.Text = "menuStrip2";
             // 
@@ -372,7 +362,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 121);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(800, 429);
+            this.contenedor.Size = new System.Drawing.Size(834, 540);
             this.contenedor.TabIndex = 3;
             // 
             // label2
@@ -403,7 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 550);
+            this.ClientSize = new System.Drawing.Size(834, 661);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.contenedor);
@@ -446,7 +436,6 @@
         private FontAwesome.Sharp.IconMenuItem menuReporte;
         private FontAwesome.Sharp.IconMenuItem subMenuRDotacion;
         private FontAwesome.Sharp.IconMenuItem subMenuRCambio;
-        private FontAwesome.Sharp.IconMenuItem subMenuRFecha;
         private FontAwesome.Sharp.IconMenuItem subMenuRPersonal;
         private FontAwesome.Sharp.IconMenuItem menuPersonal;
         public System.Windows.Forms.MenuStrip menu;

@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_ReporteDotacion = new CapaPresentacion.Reportes.DS_ReporteDotacion();
             this.sPGETDOTACIONESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_ReporteDotacion = new CapaPresentacion.Reportes.DS_ReporteDotacion();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sP_GETDOTACIONESTableAdapter = new CapaPresentacion.Reportes.DS_ReporteDotacionTableAdapters.SP_GETDOTACIONESTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteDotacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETDOTACIONESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteDotacion)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sPGETDOTACIONESBindingSource
+            // 
+            this.sPGETDOTACIONESBindingSource.DataMember = "SP_GETDOTACIONES";
+            this.sPGETDOTACIONESBindingSource.DataSource = this.dS_ReporteDotacion;
+            // 
+            // dS_ReporteDotacion
+            // 
+            this.dS_ReporteDotacion.DataSetName = "DS_ReporteDotacion";
+            this.dS_ReporteDotacion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -48,18 +58,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(600, 271);
+            this.reportViewer1.Size = new System.Drawing.Size(648, 316);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dS_ReporteDotacion
-            // 
-            this.dS_ReporteDotacion.DataSetName = "DS_ReporteDotacion";
-            this.dS_ReporteDotacion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPGETDOTACIONESBindingSource
-            // 
-            this.sPGETDOTACIONESBindingSource.DataMember = "SP_GETDOTACIONES";
-            this.sPGETDOTACIONESBindingSource.DataSource = this.dS_ReporteDotacion;
             // 
             // sP_GETDOTACIONESTableAdapter
             // 
@@ -69,13 +69,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 271);
+            this.ClientSize = new System.Drawing.Size(648, 316);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_RDotacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_DotacionPersonal";
             this.Load += new System.EventHandler(this.Report_RDotacion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteDotacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETDOTACIONESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteDotacion)).EndInit();
             this.ResumeLayout(false);
 
         }

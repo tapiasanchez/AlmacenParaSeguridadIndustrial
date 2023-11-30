@@ -14,7 +14,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             Personal persona = new CN_Personal().Listar().Where(
                 u => u.Contrasena == textBoxPassword.Text && u.UserName == textBoxUserName.Text).FirstOrDefault();
@@ -37,7 +37,7 @@ namespace CapaPresentacion
             this.Show();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }

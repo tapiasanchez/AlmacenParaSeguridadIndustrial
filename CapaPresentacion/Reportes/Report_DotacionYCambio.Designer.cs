@@ -31,19 +31,39 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.sPGETDOTACIONPORUSUARIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSDotacionYCambioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_DotacionYCambio = new CapaPresentacion.Reportes.DS_DotacionYCambio();
+            this.sPGETCAMBIODEDOTACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.textBoxIdUsuario = new System.Windows.Forms.TextBox();
-            this.dS_DotacionYCambio = new CapaPresentacion.Reportes.DS_DotacionYCambio();
-            this.dSDotacionYCambioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPGETDOTACIONPORUSUARIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_GETDOTACIONPORUSUARIOTableAdapter = new CapaPresentacion.Reportes.DS_DotacionYCambioTableAdapters.SP_GETDOTACIONPORUSUARIOTableAdapter();
-            this.sPGETCAMBIODEDOTACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_GETCAMBIODEDOTACIONTableAdapter = new CapaPresentacion.Reportes.DS_DotacionYCambioTableAdapters.SP_GETCAMBIODEDOTACIONTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_DotacionYCambio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSDotacionYCambioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETDOTACIONPORUSUARIOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSDotacionYCambioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_DotacionYCambio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETCAMBIODEDOTACIONBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sPGETDOTACIONPORUSUARIOBindingSource
+            // 
+            this.sPGETDOTACIONPORUSUARIOBindingSource.DataMember = "SP_GETDOTACIONPORUSUARIO";
+            this.sPGETDOTACIONPORUSUARIOBindingSource.DataSource = this.dSDotacionYCambioBindingSource;
+            // 
+            // dSDotacionYCambioBindingSource
+            // 
+            this.dSDotacionYCambioBindingSource.DataSource = this.dS_DotacionYCambio;
+            this.dSDotacionYCambioBindingSource.Position = 0;
+            // 
+            // dS_DotacionYCambio
+            // 
+            this.dS_DotacionYCambio.DataSetName = "DS_DotacionYCambio";
+            this.dS_DotacionYCambio.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPGETCAMBIODEDOTACIONBindingSource
+            // 
+            this.sPGETCAMBIODEDOTACIONBindingSource.DataMember = "SP_GETCAMBIODEDOTACION";
+            this.sPGETCAMBIODEDOTACIONBindingSource.DataSource = this.dSDotacionYCambioBindingSource;
             // 
             // reportViewer1
             // 
@@ -70,29 +90,9 @@
             this.textBoxIdUsuario.TabIndex = 1;
             this.textBoxIdUsuario.Visible = false;
             // 
-            // dS_DotacionYCambio
-            // 
-            this.dS_DotacionYCambio.DataSetName = "DS_DotacionYCambio";
-            this.dS_DotacionYCambio.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSDotacionYCambioBindingSource
-            // 
-            this.dSDotacionYCambioBindingSource.DataSource = this.dS_DotacionYCambio;
-            this.dSDotacionYCambioBindingSource.Position = 0;
-            // 
-            // sPGETDOTACIONPORUSUARIOBindingSource
-            // 
-            this.sPGETDOTACIONPORUSUARIOBindingSource.DataMember = "SP_GETDOTACIONPORUSUARIO";
-            this.sPGETDOTACIONPORUSUARIOBindingSource.DataSource = this.dSDotacionYCambioBindingSource;
-            // 
             // sP_GETDOTACIONPORUSUARIOTableAdapter
             // 
             this.sP_GETDOTACIONPORUSUARIOTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPGETCAMBIODEDOTACIONBindingSource
-            // 
-            this.sPGETCAMBIODEDOTACIONBindingSource.DataMember = "SP_GETCAMBIODEDOTACION";
-            this.sPGETCAMBIODEDOTACIONBindingSource.DataSource = this.dSDotacionYCambioBindingSource;
             // 
             // sP_GETCAMBIODEDOTACIONTableAdapter
             // 
@@ -106,11 +106,12 @@
             this.Controls.Add(this.textBoxIdUsuario);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_DotacionYCambio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_DotacionYCambio";
             this.Load += new System.EventHandler(this.Report_DotacionYCambio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_DotacionYCambio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSDotacionYCambioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETDOTACIONPORUSUARIOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSDotacionYCambioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_DotacionYCambio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETCAMBIODEDOTACIONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

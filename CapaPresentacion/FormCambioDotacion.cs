@@ -11,7 +11,7 @@ namespace CapaPresentacion
     public partial class FormCambioDotacion : Form
     {
         int userId = 0;
-        private Personal usuarioPersonal;
+        private readonly Personal usuarioPersonal;
         public FormCambioDotacion(Personal objPersonal = null)
         {
             usuarioPersonal = objPersonal;
@@ -132,7 +132,7 @@ namespace CapaPresentacion
             textBoxComentario.Text = "";
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
             Report_CambioDotacion report = new Report_CambioDotacion();
             report.textBoxIdUsuario.Text = userId.ToString();

@@ -2,9 +2,6 @@
 using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
@@ -16,5 +13,10 @@ namespace CapaNegocio
             objcd_dotacion.Registrar(dotacion);
         }
         public List<CambioDotacion> GetCambioDeDotacion(int id) => objcd_dotacion.GetCambioDeDotacion(id);
+
+        public List<CambioDotacion> GetCambios(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return objcd_dotacion.GetCambioList(fechaInicio, fechaFin);
+        }
     }
 }

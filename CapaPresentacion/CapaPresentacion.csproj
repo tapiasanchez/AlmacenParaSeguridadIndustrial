@@ -225,6 +225,12 @@
     <Compile Include="FormCambioDotacion.Designer.cs">
       <DependentUpon>FormCambioDotacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCambiosPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambiosPF.Designer.cs">
+      <DependentUpon>FormCambiosPF.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,18 @@
     <Compile Include="FormDotacion.Designer.cs">
       <DependentUpon>FormDotacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDotacionPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDotacionPF.Designer.cs">
+      <DependentUpon>FormDotacionPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventarioPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventarioPF.Designer.cs">
+      <DependentUpon>FormInventarioPF.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaDotacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +272,12 @@
     </Compile>
     <Compile Include="FormModalPermisos.Designer.cs">
       <DependentUpon>FormModalPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModalPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModalPersonal.Designer.cs">
+      <DependentUpon>FormModalPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="FormModalUsuario.cs">
       <SubType>Form</SubType>
@@ -419,6 +443,9 @@
     <EmbeddedResource Include="FormCambioDotacion.resx">
       <DependentUpon>FormCambioDotacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCambiosPF.resx">
+      <DependentUpon>FormCambiosPF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCargo.resx">
       <DependentUpon>FormCargo.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,11 +455,20 @@
     <EmbeddedResource Include="FormDotacion.resx">
       <DependentUpon>FormDotacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDotacionPF.resx">
+      <DependentUpon>FormDotacionPF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInventarioPF.resx">
+      <DependentUpon>FormInventarioPF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListaDotacion.resx">
       <DependentUpon>FormListaDotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormModalPermisos.resx">
       <DependentUpon>FormModalPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModalPersonal.resx">
+      <DependentUpon>FormModalPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormModalUsuario.resx">
       <DependentUpon>FormModalUsuario.cs</DependentUpon>
@@ -497,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report_RDotacion.resx">
       <DependentUpon>Report_RDotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report_RPersonal.resx">
+      <DependentUpon>Report_RPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\R_CambioDotacion.rdlc" />
     <EmbeddedResource Include="Reportes\R_Dotacion.rdlc" />
@@ -621,6 +660,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkIcon.png" />
+    <None Include="Resources\Image1.png" />
+    <None Include="Resources\cancelar.png" />
+    <None Include="Resources\eliminar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

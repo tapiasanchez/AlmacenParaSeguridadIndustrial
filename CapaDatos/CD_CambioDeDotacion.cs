@@ -84,5 +84,51 @@ namespace CapaDatos
             }
             return lista;
         }
+        public List<CambioDotacion> GetCambioList(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<CambioDotacion> lista = new List<CambioDotacion>();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_GETCAMBIODOTACIONPORFECHAS", oconexion);
+                    cmd.Parameters.AddWithValue("FechaInicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("FechaFin", fechaFin);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new CambioDotacion()
+                            {
+                                Producto = new Producto()
+                                {
+                                    Codigo = reader["Codigo"].ToString(),
+                                    NombreProducto = reader["NombreProducto"].ToString(),
+                                    Talla = new Talla()
+                                    {
+                                        Nombre = reader["NombreTalla"].ToString()
+                                    },
+                                    Color = reader["Color"].ToString(),
+                                    Unidad = reader["Unidad"].ToString(),
+                                    Cantidad = Convert.ToInt32(reader["Cantidad"])
+                                },
+                                Cantidad = Convert.ToInt32(reader["CantidadTotal"])
+                            });
+
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return lista;
+        }
     }
 }

@@ -116,7 +116,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void dgvCargo_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void DgvCargo_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if(e.RowIndex < 0)
                 return;
@@ -131,10 +131,20 @@ namespace CapaPresentacion
                 e.Graphics.DrawImage(Properties.Resources.checkIcon, new Rectangle(x,y,w,h));
                 e.Handled = true;
             }
+            if (e.ColumnIndex == 3)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.cancelar.Width;
+                var h = Properties.Resources.cancelar.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
+                e.Graphics.DrawImage(Properties.Resources.cancelar, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
         }
 
-        private void dgvCargo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void DgvCargo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int idCargo = Convert.ToInt32(dgvCargo.Rows[e.RowIndex].Cells["IdCargo"].Value);
             FormModalPermisos permisos = new FormModalPermisos(idCargo);

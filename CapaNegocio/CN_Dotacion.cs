@@ -5,7 +5,7 @@ namespace CapaNegocio
 {
     public class CN_Dotacion
     {
-        private CD_Dotacion objcd_dotacion = new CD_Dotacion();
+        private readonly CD_Dotacion objcd_dotacion = new CD_Dotacion();
         public void Registrar(Dotacion dotacion)
         {
             objcd_dotacion.Registrar(dotacion);

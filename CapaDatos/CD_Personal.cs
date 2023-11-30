@@ -3,15 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
     public  class CD_Personal
     {
-        public List<Personal> getUser()
+        public List<Personal> GetUser()
         {
             List<Personal> lista = new List<Personal>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))

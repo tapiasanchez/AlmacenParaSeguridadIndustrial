@@ -15,7 +15,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             GetUsuario();
             CargarDotacion();
@@ -37,8 +37,8 @@ namespace CapaPresentacion
             List<DetalleDotacion> listaProductos = new CN_DetalleDotacion().GetDetalleDeDotacionByIdUsuario(userId);
             foreach (DetalleDotacion item in listaProductos)
             {
-                dgvDotacion.Rows.Add(item.producto.NombreProducto, item.Cantidad, item.producto.Talla.Nombre,item.producto.Color,
-                    item.producto.Unidad, item.dotacion.FechaDotacion, item.dotacion.Comentario);
+                dgvDotacion.Rows.Add(item.Producto.NombreProducto, item.Cantidad, item.Producto.Talla.Nombre,item.Producto.Color,
+                    item.Producto.Unidad, item.Dotacion.FechaDotacion, item.Dotacion.Comentario);
             }
         }
         private void CargarCambios()
@@ -52,7 +52,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
             Report_DotacionYCambio report = new Report_DotacionYCambio();
             report.textBoxIdUsuario.Text = userId.ToString();

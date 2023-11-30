@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_FechaDotacion = new CapaPresentacion.Reportes.DS_FechaDotacion();
             this.sPGETCAMBIODOTACIONPORFECHASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_FechaDotacion = new CapaPresentacion.Reportes.DS_FechaDotacion();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sP_GETCAMBIODOTACIONPORFECHASTableAdapter = new CapaPresentacion.Reportes.DS_FechaDotacionTableAdapters.SP_GETCAMBIODOTACIONPORFECHASTableAdapter();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_FechaDotacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETCAMBIODOTACIONPORFECHASBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_FechaDotacion)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sPGETCAMBIODOTACIONPORFECHASBindingSource
+            // 
+            this.sPGETCAMBIODOTACIONPORFECHASBindingSource.DataMember = "SP_GETCAMBIODOTACIONPORFECHAS";
+            this.sPGETCAMBIODOTACIONPORFECHASBindingSource.DataSource = this.dS_FechaDotacion;
+            // 
+            // dS_FechaDotacion
+            // 
+            this.dS_FechaDotacion.DataSetName = "DS_FechaDotacion";
+            this.dS_FechaDotacion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,16 +62,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dS_FechaDotacion
-            // 
-            this.dS_FechaDotacion.DataSetName = "DS_FechaDotacion";
-            this.dS_FechaDotacion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPGETCAMBIODOTACIONPORFECHASBindingSource
-            // 
-            this.sPGETCAMBIODOTACIONPORFECHASBindingSource.DataMember = "SP_GETCAMBIODOTACIONPORFECHAS";
-            this.sPGETCAMBIODOTACIONPORFECHASBindingSource.DataSource = this.dS_FechaDotacion;
             // 
             // sP_GETCAMBIODOTACIONPORFECHASTableAdapter
             // 
@@ -92,10 +92,11 @@
             this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_FechaCambios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_FechaCambios";
             this.Load += new System.EventHandler(this.Report_FechaCambios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_FechaDotacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETCAMBIODOTACIONPORFECHASBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_FechaDotacion)).EndInit();
             this.ResumeLayout(false);
 
         }

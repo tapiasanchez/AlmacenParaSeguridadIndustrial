@@ -117,21 +117,27 @@ namespace CapaPresentacion
             lblUsuario.Text = usuarioActual.NombreCompleto.ToString();
         }
 
-        private void subMenuRDotacion_Click(object sender, EventArgs e)
+        private void SubMenuRDotacion_Click(object sender, EventArgs e)
         {
             Report_RDotacion report = new Report_RDotacion();
             report.ShowDialog();
         }
 
-        private void subMenuRCambio_Click(object sender, EventArgs e)
+        private void SubMenuRCambio_Click(object sender, EventArgs e)
         {
             Report_RCambios report = new Report_RCambios();
             report.ShowDialog();
         }
 
-        private void menuPersonal_Click(object sender, EventArgs e)
+        private void MenuPersonal_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new FormPersonal());
+        }
+
+        private void SubMenuRPersonal_Click(object sender, EventArgs e)
+        {
+            FormModalPersonal personalReport = new FormModalPersonal();
+            personalReport.ShowDialog();
         }
     }
 }

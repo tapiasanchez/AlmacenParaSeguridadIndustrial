@@ -279,6 +279,8 @@ namespace CapaPresentacion.Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SP_GETDOTACIONESDataTable : global::System.Data.TypedTableBase<SP_GETDOTACIONESRow> {
             
+            private global::System.Data.DataColumn columnCodigo;
+            
             private global::System.Data.DataColumn columnNombreProducto;
             
             private global::System.Data.DataColumn columnNombre;
@@ -322,6 +324,14 @@ namespace CapaPresentacion.Reportes {
             protected SP_GETDOTACIONESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -409,9 +419,10 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SP_GETDOTACIONESRow AddSP_GETDOTACIONESRow(string NombreProducto, string Nombre, string Apellido, string NombreCompleto, int Cantidad, System.DateTime FechaDotacion) {
+            public SP_GETDOTACIONESRow AddSP_GETDOTACIONESRow(string Codigo, string NombreProducto, string Nombre, string Apellido, string NombreCompleto, int Cantidad, System.DateTime FechaDotacion) {
                 SP_GETDOTACIONESRow rowSP_GETDOTACIONESRow = ((SP_GETDOTACIONESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Codigo,
                         NombreProducto,
                         Nombre,
                         Apellido,
@@ -440,6 +451,7 @@ namespace CapaPresentacion.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnCodigo = base.Columns["Codigo"];
                 this.columnNombreProducto = base.Columns["NombreProducto"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellido = base.Columns["Apellido"];
@@ -451,6 +463,8 @@ namespace CapaPresentacion.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
                 this.columnNombreProducto = new global::System.Data.DataColumn("NombreProducto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreProducto);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
@@ -463,6 +477,7 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnCantidad);
                 this.columnFechaDotacion = new global::System.Data.DataColumn("FechaDotacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaDotacion);
+                this.columnCodigo.MaxLength = 100;
                 this.columnNombreProducto.MaxLength = 100;
                 this.columnNombre.MaxLength = 100;
                 this.columnApellido.MaxLength = 100;
@@ -609,6 +624,22 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GETDOTACIONES.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'SP_GETDOTACIONES\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GETDOTACIONES.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string NombreProducto {
                 get {
                     try {
@@ -703,6 +734,18 @@ namespace CapaPresentacion.Reportes {
                 set {
                     this[this.tableSP_GETDOTACIONES.FechaDotacionColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tableSP_GETDOTACIONES.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tableSP_GETDOTACIONES.CodigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -937,6 +980,7 @@ namespace CapaPresentacion.Reportes.DS_ReporteDotacionTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SP_GETDOTACIONES";
+            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("NombreProducto", "NombreProducto");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Apellido", "Apellido");

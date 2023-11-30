@@ -33,10 +33,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.sPGETULTIMADOTACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_Dotacion = new CapaPresentacion.Reportes.DS_Dotacion();
+            this.sPGETLISTADOTACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sP_GETULTIMADOTACIONTableAdapter = new CapaPresentacion.Reportes.DS_DotacionTableAdapters.SP_GETULTIMADOTACIONTableAdapter();
             this.textBoxIdDotacion = new System.Windows.Forms.TextBox();
-            this.sPGETLISTADOTACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_GETLISTADOTACIONTableAdapter = new CapaPresentacion.Reportes.DS_DotacionTableAdapters.SP_GETLISTADOTACIONTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETULTIMADOTACIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Dotacion)).BeginInit();
@@ -52,6 +52,11 @@
             // 
             this.dS_Dotacion.DataSetName = "DS_Dotacion";
             this.dS_Dotacion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPGETLISTADOTACIONBindingSource
+            // 
+            this.sPGETLISTADOTACIONBindingSource.DataMember = "SP_GETLISTADOTACION";
+            this.sPGETLISTADOTACIONBindingSource.DataSource = this.dS_Dotacion;
             // 
             // reportViewer1
             // 
@@ -81,11 +86,6 @@
             this.textBoxIdDotacion.TabIndex = 1;
             this.textBoxIdDotacion.Visible = false;
             // 
-            // sPGETLISTADOTACIONBindingSource
-            // 
-            this.sPGETLISTADOTACIONBindingSource.DataMember = "SP_GETLISTADOTACION";
-            this.sPGETLISTADOTACIONBindingSource.DataSource = this.dS_Dotacion;
-            // 
             // sP_GETLISTADOTACIONTableAdapter
             // 
             this.sP_GETLISTADOTACIONTableAdapter.ClearBeforeFill = true;
@@ -98,6 +98,7 @@
             this.Controls.Add(this.textBoxIdDotacion);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_Dotacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_Dotacion";
             this.Load += new System.EventHandler(this.Report_Dotacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sPGETULTIMADOTACIONBindingSource)).EndInit();

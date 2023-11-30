@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_ReporteCambios = new CapaPresentacion.Reportes.DS_ReporteCambios();
             this.sPGETCAMBIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_ReporteCambios = new CapaPresentacion.Reportes.DS_ReporteCambios();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sP_GETCAMBIOSTableAdapter = new CapaPresentacion.Reportes.DS_ReporteCambiosTableAdapters.SP_GETCAMBIOSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteCambios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETCAMBIOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteCambios)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sPGETCAMBIOSBindingSource
+            // 
+            this.sPGETCAMBIOSBindingSource.DataMember = "SP_GETCAMBIOS";
+            this.sPGETCAMBIOSBindingSource.DataSource = this.dS_ReporteCambios;
+            // 
+            // dS_ReporteCambios
+            // 
+            this.dS_ReporteCambios.DataSetName = "DS_ReporteCambios";
+            this.dS_ReporteCambios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(584, 328);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dS_ReporteCambios
-            // 
-            this.dS_ReporteCambios.DataSetName = "DS_ReporteCambios";
-            this.dS_ReporteCambios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPGETCAMBIOSBindingSource
-            // 
-            this.sPGETCAMBIOSBindingSource.DataMember = "SP_GETCAMBIOS";
-            this.sPGETCAMBIOSBindingSource.DataSource = this.dS_ReporteCambios;
-            // 
             // sP_GETCAMBIOSTableAdapter
             // 
             this.sP_GETCAMBIOSTableAdapter.ClearBeforeFill = true;
@@ -72,10 +72,11 @@
             this.ClientSize = new System.Drawing.Size(584, 328);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_RCambios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_RCambios";
             this.Load += new System.EventHandler(this.Report_RCambios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteCambios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETCAMBIOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_ReporteCambios)).EndInit();
             this.ResumeLayout(false);
 
         }

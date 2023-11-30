@@ -32,11 +32,11 @@ namespace CapaPresentacion
             List<Personal> listaUsuarios = new CN_Personal().Listar();
             foreach (Personal item in listaUsuarios)
             {
-                dGVData.Rows.Add(item.NombreCompleto, item.Ci, item.Cargo.Nombre);
+                dGVData.Rows.Add(item.NombreCompleto, item.Ci,item.UserName, item.Contrasena, item.Cargo.Nombre);
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             Personal persona = new Personal()
             {

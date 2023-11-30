@@ -1,20 +1,16 @@
 ﻿using CapaDatos;
 using CapaEntidad;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
     public class CN_Personal
     {
-        private CD_Personal objcd_person = new CD_Personal();
+        private readonly CD_Personal objcd_person = new CD_Personal();
 
         public List<Personal> Listar()
         {
-            return objcd_person.getUser();
+            return objcd_person.GetUser();
         }
         public void Registrar(Personal obj)
         {

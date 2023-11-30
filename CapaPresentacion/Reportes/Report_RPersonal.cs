@@ -16,5 +16,12 @@ namespace CapaPresentacion.Reportes
         {
             InitializeComponent();
         }
+
+        private void Report_RPersonal_Load(object sender, EventArgs e)
+        {
+            this.sP_GETDOTACIONESPORPERSONALTableAdapter.Fill(this.dS_ReportePersonal.SP_GETDOTACIONESPORPERSONAL, textBoxCI.Text);
+            this.sP_GETCAMBIOSPORPERSONALTableAdapter.Fill(this.dS_ReportePersonal.SP_GETCAMBIOSPORPERSONAL, textBoxCI.Text);
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
