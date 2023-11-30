@@ -16,8 +16,10 @@ namespace CapaDatos
                 try
                 {
                     string query = "select * from PuestoDeTrabajo";
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand(query, oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
                     oconexion.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {

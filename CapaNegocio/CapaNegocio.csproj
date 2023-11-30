@@ -47,6 +47,8 @@
     <Compile Include="CN_Dotacion.cs" />
     <Compile Include="CN_Inventario.cs" />
     <Compile Include="CN_ListaDotacion.cs" />
+    <Compile Include="CN_Permiso.cs" />
+    <Compile Include="CN_Personal.cs" />
     <Compile Include="CN_Producto.cs" />
     <Compile Include="CN_PuestoDeTrabajo.cs" />
     <Compile Include="CN_Talla.cs" />

@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class CN_Cargo
     {
-        private CD_Cargo objcd_cargo = new CD_Cargo();
+        private readonly CD_Cargo objcd_cargo = new CD_Cargo();
 
         public List<Cargo> Listar()
         {

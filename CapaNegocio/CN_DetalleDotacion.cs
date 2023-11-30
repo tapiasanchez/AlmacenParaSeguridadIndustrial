@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
+using System;
 using System.Collections.Generic;
 
 namespace CapaNegocio
@@ -25,6 +26,10 @@ namespace CapaNegocio
         public string VerificarProducto(int id)
         {
             return objcd_detalleDotacion.VerificarProducto(id);
+        }
+        public List<DetalleDotacion> GetDotacionesList(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return objcd_detalleDotacion.GetDotacionesList(fechaInicio, fechaFin);
         }
     }
 }

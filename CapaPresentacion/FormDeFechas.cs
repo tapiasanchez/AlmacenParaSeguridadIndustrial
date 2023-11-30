@@ -1,23 +1,27 @@
 ﻿using CapaPresentacion.Reportes;
 using System;
 using System.Windows.Forms;
-using System.Globalization;
+using CapaEntidad;
+using CapaNegocio;
+using System.Collections.Generic;
+using FontAwesome.Sharp;
+using System.Drawing;
 
 namespace CapaPresentacion
 {
     public partial class FormDeFechas : Form
     {
+        private static IconButton MenuActivo = null;
+        private static Form FormulariActivo = null;
         public FormDeFechas()
         {
             InitializeComponent();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
-            Report_FechaCambios report = new Report_FechaCambios();
-            report.dtpInicio.Value = dTPInicio.Value;
-            report.dtpFin.Value = dTPFin.Value;
-            report.ShowDialog();
+            AbrirFormulario((IconButton)sender, new FormCambiosPF(dTPInicio.Value, dTPFin.Value));
+            
         }
 
         private void FormDeFechas_Load(object sender, EventArgs e)
@@ -31,20 +35,37 @@ namespace CapaPresentacion
 
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
-            Report_FechaDotacion report = new Report_FechaDotacion();
-            report.dtpInicio.Value = dTPInicio.Value;
-            report.dtpFin.Value = dTPFin.Value;
-            report.ShowDialog();
+            AbrirFormulario((IconButton)sender, new FormDotacionPF(dTPInicio.Value, dTPFin.Value));
+            
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void IconButton3_Click(object sender, EventArgs e)
         {
-            Report_Inventario report = new Report_Inventario();
-            report.dtpInicio.Value = dTPInicio.Value;
-            report.dtpFin.Value = dTPFin.Value;
-            report.ShowDialog();
+            AbrirFormulario((IconButton)sender, new FormInventarioPF(dTPInicio.Value, dTPFin.Value));
+            
         }
+        private void AbrirFormulario(IconButton menu, Form formulario)
+        {
+            if (MenuActivo != null)
+            {
+                MenuActivo.BackColor = Color.White;
+            }
+
+            menu.BackColor = Color.Silver;
+            MenuActivo = menu;
+
+            FormulariActivo?.Close();
+            FormulariActivo = formulario;
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            formulario.BackColor = Color.SteelBlue;
+
+            contenedor.Controls.Add(formulario);
+            formulario.Show();
+        }
+
     }
 }

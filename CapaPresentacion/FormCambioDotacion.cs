@@ -11,8 +11,10 @@ namespace CapaPresentacion
     public partial class FormCambioDotacion : Form
     {
         int userId = 0;
-        public FormCambioDotacion()
+        private readonly Personal usuarioPersonal;
+        public FormCambioDotacion(Personal objPersonal = null)
         {
+            usuarioPersonal = objPersonal;
             InitializeComponent();
         }
 
@@ -95,6 +97,7 @@ namespace CapaPresentacion
             CambioDotacion cambioDotacion = new CambioDotacion
             {
                 Usuario = new Usuario() { IdUsuario = userId },
+                Personal = new Personal() { IdPersona = usuarioPersonal.IdPersona },
                 Producto = new Producto() { IdProducto = Convert.ToInt32(((OpcionCombo)comboBoxProducto.SelectedItem).Valor) },
                 Cantidad = Convert.ToInt32(textBoxCantidad.Text),
                 Comentario = textBoxComentario.Text,
@@ -129,7 +132,7 @@ namespace CapaPresentacion
             textBoxComentario.Text = "";
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void IconButton2_Click(object sender, EventArgs e)
         {
             Report_CambioDotacion report = new Report_CambioDotacion();
             report.textBoxIdUsuario.Text = userId.ToString();

@@ -49,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(176, 327);
+            this.label1.Size = new System.Drawing.Size(176, 561);
             this.label1.TabIndex = 0;
             // 
             // label2
@@ -162,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(600, 327);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dgvPuestoDeTrabajo);

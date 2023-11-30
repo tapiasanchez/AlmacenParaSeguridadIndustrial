@@ -6,7 +6,7 @@ namespace CapaNegocio
 {   
     public class CN_ListaDotacion
     {
-        private CD_ListaDotacion objcd_lista = new CD_ListaDotacion();
+        private readonly CD_ListaDotacion objcd_lista = new CD_ListaDotacion();
         public void Registrar(ListaDotacion obj)
         {
             objcd_lista.Registrar(obj);

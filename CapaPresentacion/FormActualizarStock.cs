@@ -40,7 +40,7 @@ namespace CapaPresentacion
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             ActualizarStock();
             RegistarInventario();

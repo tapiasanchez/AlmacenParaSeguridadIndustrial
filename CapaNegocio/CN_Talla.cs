@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class CN_Talla
     {
-        private CD_Talla objcd_talla = new CD_Talla();
+        private readonly CD_Talla objcd_talla = new CD_Talla();
 
         public List<Talla> Listar()
         {

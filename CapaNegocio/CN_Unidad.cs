@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class CN_Unidad
     {
-        private CD_Unidad objcd_unidad = new CD_Unidad();
+        private readonly CD_Unidad objcd_unidad = new CD_Unidad();
 
         public List<Unidad> Listar()
         {

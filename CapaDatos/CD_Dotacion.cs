@@ -14,7 +14,8 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) 
                 {
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARDOTACION", oconexion);
-                    cmd.Parameters.AddWithValue("idUsuario", obj.usuario.IdUsuario);
+                    cmd.Parameters.AddWithValue("idUsuario", obj.Usuario.IdUsuario);
+                    cmd.Parameters.AddWithValue("idPersonal", obj.Personal.IdPersona);
                     cmd.Parameters.AddWithValue("comentario", obj.Comentario);
                     cmd.Parameters.AddWithValue("fechaDotacion", obj.FechaDotacion);
                     cmd.Parameters.AddWithValue("codigoFromulario", obj.CodigoFormulario);
@@ -48,7 +49,7 @@ namespace CapaDatos
                         while (reader.Read())
                         {
                             dotacion.IdDotacion = Convert.ToInt32(reader["IDDotacion"]);
-                            dotacion.usuario = new Usuario() { IdUsuario = Convert.ToInt32(reader["IdUsuario"]) };
+                            dotacion.Usuario = new Usuario() { IdUsuario = Convert.ToInt32(reader["IdUsuario"]) };
                             dotacion.Comentario = reader["Comentario"].ToString();
                             dotacion.FechaDotacion = DateTime.Parse(reader["FechaDotacion"].ToString());
                             

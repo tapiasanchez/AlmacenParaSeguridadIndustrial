@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_Inventario = new CapaPresentacion.Reportes.DS_Inventario();
             this.sPGETIINVENTARIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_Inventario = new CapaPresentacion.Reportes.DS_Inventario();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sP_GETIINVENTARIOTableAdapter = new CapaPresentacion.Reportes.DS_InventarioTableAdapters.SP_GETIINVENTARIOTableAdapter();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Inventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETIINVENTARIOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Inventario)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sPGETIINVENTARIOBindingSource
+            // 
+            this.sPGETIINVENTARIOBindingSource.DataMember = "SP_GETIINVENTARIO";
+            this.sPGETIINVENTARIOBindingSource.DataSource = this.dS_Inventario;
+            // 
+            // dS_Inventario
+            // 
+            this.dS_Inventario.DataSetName = "DS_Inventario";
+            this.dS_Inventario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -53,16 +63,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // dS_Inventario
-            // 
-            this.dS_Inventario.DataSetName = "DS_Inventario";
-            this.dS_Inventario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPGETIINVENTARIOBindingSource
-            // 
-            this.sPGETIINVENTARIOBindingSource.DataMember = "SP_GETIINVENTARIO";
-            this.sPGETIINVENTARIOBindingSource.DataSource = this.dS_Inventario;
             // 
             // sP_GETIINVENTARIOTableAdapter
             // 
@@ -93,10 +93,11 @@
             this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_Inventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_Inventario";
             this.Load += new System.EventHandler(this.Report_Inventario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Inventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGETIINVENTARIOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Inventario)).EndInit();
             this.ResumeLayout(false);
 
         }

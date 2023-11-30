@@ -3,6 +3,7 @@ using CapaNegocio;
 using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -10,11 +11,14 @@ namespace CapaPresentacion
     public partial class FormCargo : Form
     {
         public Cargo cargo = new Cargo();
-        public FormCargo()
+        public MenuStrip items;
+
+        public FormCargo(MenuStrip menus)
         {
+            items = menus;
             InitializeComponent();
         }
-
+        
         private void IconButton1_Click(object sender, EventArgs e)
         {
             cargo.Nombre = textNombre.Text;
@@ -110,6 +114,42 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void DgvCargo_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if(e.RowIndex < 0)
+                return;
+            if(e.ColumnIndex == 2)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.checkIcon.Width;
+                var h = Properties.Resources.checkIcon.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.checkIcon, new Rectangle(x,y,w,h));
+                e.Handled = true;
+            }
+            if (e.ColumnIndex == 3)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.cancelar.Width;
+                var h = Properties.Resources.cancelar.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.cancelar, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void DgvCargo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int idCargo = Convert.ToInt32(dgvCargo.Rows[e.RowIndex].Cells["IdCargo"].Value);
+            FormModalPermisos permisos = new FormModalPermisos(idCargo);
+            permisos.CargarLista(items);
+            permisos.ShowDialog();
         }
     }
 }

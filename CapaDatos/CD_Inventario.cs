@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -30,10 +27,57 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                //Mensaje = ex.Message;
                 Console.WriteLine(ex.Message);
             }
 
+        }
+
+        public List<Inventario> GetInventarioList(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<Inventario> lista = new List<Inventario>();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_GETIINVENTARIO", oconexion);
+                    cmd.Parameters.AddWithValue("fechaInicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("fechaFin", fechaFin);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Inventario()
+                            {   
+                                Producto = new Producto()
+                                {
+                                   Codigo = reader["Codigo"].ToString(),
+                                   NombreProducto = reader["NombreProducto"].ToString(),
+                                   Talla = new Talla()
+                                   {
+                                       Nombre = reader["NombreTalla"].ToString()
+                                   },
+                                   Color = reader["Color"].ToString(),
+                                  Unidad = reader["Unidad"].ToString(),
+                                  Cantidad = Convert.ToInt32(reader["Cantidad"])
+                                },
+                                Ingreso = Convert.ToInt32(reader["IngresoTotal"]),
+                                Salida = Convert.ToInt32(reader["SalidasTotal"])
+                            });
+
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return lista;
         }
     }
 }

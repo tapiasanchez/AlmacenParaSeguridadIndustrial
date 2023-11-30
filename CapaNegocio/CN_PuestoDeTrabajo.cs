@@ -6,7 +6,7 @@ namespace CapaNegocio
 {
     public class CN_PuestoDeTrabajo
     {
-        private CD_PuestoDeTrabajo objcd_puestoDeTrabajo = new CD_PuestoDeTrabajo();
+        private readonly CD_PuestoDeTrabajo objcd_puestoDeTrabajo = new CD_PuestoDeTrabajo();
 
         public List<PuestoDeTrabajo> Listar()
         {

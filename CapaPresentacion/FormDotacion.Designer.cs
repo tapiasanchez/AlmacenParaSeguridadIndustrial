@@ -49,6 +49,7 @@
             this.checkList = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.codForm = new System.Windows.Forms.TextBox();
             this.codigoFormulario = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDotacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,9 +57,9 @@
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 17);
+            this.label1.Location = new System.Drawing.Point(157, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(655, 41);
+            this.label1.Size = new System.Drawing.Size(619, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro de Dotacion";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -66,7 +67,7 @@
             // dtpDotacion
             // 
             this.dtpDotacion.Enabled = false;
-            this.dtpDotacion.Location = new System.Drawing.Point(570, 29);
+            this.dtpDotacion.Location = new System.Drawing.Point(609, 29);
             this.dtpDotacion.Name = "dtpDotacion";
             this.dtpDotacion.Size = new System.Drawing.Size(154, 20);
             this.dtpDotacion.TabIndex = 1;
@@ -76,7 +77,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 68);
+            this.label2.Location = new System.Drawing.Point(162, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 17);
             this.label2.TabIndex = 2;
@@ -96,9 +97,9 @@
             // textCi
             // 
             this.textCi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCi.Location = new System.Drawing.Point(120, 67);
+            this.textCi.Location = new System.Drawing.Point(192, 64);
             this.textCi.Name = "textCi";
-            this.textCi.Size = new System.Drawing.Size(147, 21);
+            this.textCi.Size = new System.Drawing.Size(128, 21);
             this.textCi.TabIndex = 4;
             // 
             // textNombre
@@ -128,9 +129,9 @@
             // infoUsuario
             // 
             this.infoUsuario.BackColor = System.Drawing.Color.White;
-            this.infoUsuario.Location = new System.Drawing.Point(80, 98);
+            this.infoUsuario.Location = new System.Drawing.Point(160, 98);
             this.infoUsuario.Name = "infoUsuario";
-            this.infoUsuario.Size = new System.Drawing.Size(640, 36);
+            this.infoUsuario.Size = new System.Drawing.Size(560, 36);
             this.infoUsuario.TabIndex = 7;
             // 
             // label4
@@ -138,7 +139,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(80, 142);
+            this.label4.Location = new System.Drawing.Point(160, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(269, 17);
             this.label4.TabIndex = 8;
@@ -148,7 +149,7 @@
             // 
             this.comboBoxPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPuesto.FormattingEnabled = true;
-            this.comboBoxPuesto.Location = new System.Drawing.Point(355, 141);
+            this.comboBoxPuesto.Location = new System.Drawing.Point(435, 141);
             this.comboBoxPuesto.Name = "comboBoxPuesto";
             this.comboBoxPuesto.Size = new System.Drawing.Size(157, 23);
             this.comboBoxPuesto.TabIndex = 9;
@@ -159,7 +160,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(536, 145);
+            this.label5.Location = new System.Drawing.Point(616, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 17);
             this.label5.TabIndex = 11;
@@ -214,9 +215,9 @@
             this.NombreProducto,
             this.textboxCantidad,
             this.checkList});
-            this.dgvListaDotacion.Location = new System.Drawing.Point(77, 182);
+            this.dgvListaDotacion.Location = new System.Drawing.Point(165, 182);
             this.dgvListaDotacion.Name = "dgvListaDotacion";
-            this.dgvListaDotacion.Size = new System.Drawing.Size(451, 175);
+            this.dgvListaDotacion.Size = new System.Drawing.Size(363, 175);
             this.dgvListaDotacion.TabIndex = 15;
             // 
             // idProducto
@@ -231,7 +232,7 @@
             this.NombreProducto.HeaderText = "Producto";
             this.NombreProducto.Name = "NombreProducto";
             this.NombreProducto.ReadOnly = true;
-            this.NombreProducto.Width = 300;
+            this.NombreProducto.Width = 200;
             // 
             // textboxCantidad
             // 
@@ -248,7 +249,7 @@
             // 
             // codForm
             // 
-            this.codForm.Location = new System.Drawing.Point(422, 32);
+            this.codForm.Location = new System.Drawing.Point(461, 32);
             this.codForm.Name = "codForm";
             this.codForm.Size = new System.Drawing.Size(128, 20);
             this.codForm.TabIndex = 17;
@@ -258,18 +259,28 @@
             this.codigoFormulario.AutoSize = true;
             this.codigoFormulario.BackColor = System.Drawing.Color.White;
             this.codigoFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoFormulario.Location = new System.Drawing.Point(274, 33);
+            this.codigoFormulario.Location = new System.Drawing.Point(313, 33);
             this.codigoFormulario.Name = "codigoFormulario";
             this.codigoFormulario.Size = new System.Drawing.Size(147, 17);
             this.codigoFormulario.TabIndex = 18;
             this.codigoFormulario.Text = "Codigo de Formulario:";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 413);
+            this.label6.TabIndex = 19;
             // 
             // FormDotacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(756, 413);
+            this.ClientSize = new System.Drawing.Size(788, 413);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.codigoFormulario);
             this.Controls.Add(this.codForm);
             this.Controls.Add(this.dgvListaDotacion);
@@ -313,11 +324,12 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.DataGridView dgvListaDotacion;
+        private System.Windows.Forms.TextBox codForm;
+        private System.Windows.Forms.Label codigoFormulario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn textboxCantidad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkList;
-        private System.Windows.Forms.TextBox codForm;
-        private System.Windows.Forms.Label codigoFormulario;
+        private System.Windows.Forms.Label label6;
     }
 }

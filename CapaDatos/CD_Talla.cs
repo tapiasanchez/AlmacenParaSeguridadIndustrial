@@ -17,8 +17,10 @@ namespace CapaDatos
                 {
                     string query = "select * from Talla";
 
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand(query, oconexion)
+                    {
+                        CommandType = CommandType.Text
+                    };
                     oconexion.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {

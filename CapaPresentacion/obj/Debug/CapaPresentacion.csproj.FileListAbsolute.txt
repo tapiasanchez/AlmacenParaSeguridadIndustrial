@@ -162,3 +162,13 @@ C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresenta
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_FechaDotacion.resources
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_Inventario.resources
 C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormActualizarStock.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_RCambios.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_RDotacion.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormPersonal.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormModalPermisos.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormModalPersonal.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.Report_RPersonal.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormCambiosPF.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormInventarioPF.resources
+C:\workspace1\AlmacenSeguridadIndustrial\CapaPresentacion\obj\Debug\CapaPresentacion.FormDotacionPF.resources
