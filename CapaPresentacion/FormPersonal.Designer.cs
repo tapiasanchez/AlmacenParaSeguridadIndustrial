@@ -42,11 +42,16 @@
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
             this.dGVData = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
+            this.textBoxIDPersonal = new System.Windows.Forms.TextBox();
+            this.btnEditarPersonal = new FontAwesome.Sharp.IconButton();
+            this.ibPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,45 +187,109 @@
             this.dGVData.AllowUserToDeleteRows = false;
             this.dGVData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ibPersonal,
             this.NombreCompleto,
             this.CI,
             this.userName,
             this.contrasena,
-            this.NombreCargo});
+            this.NombreCargo,
+            this.btnEditar});
             this.dGVData.Location = new System.Drawing.Point(206, 79);
             this.dGVData.Name = "dGVData";
+            this.dGVData.ReadOnly = true;
             this.dGVData.Size = new System.Drawing.Size(605, 150);
             this.dGVData.TabIndex = 13;
+            this.dGVData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVData_CellContentClick);
+            this.dGVData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvData_CellPainting);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            this.btnDelete.IconColor = System.Drawing.Color.Black;
+            this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelete.IconSize = 38;
+            this.btnDelete.Location = new System.Drawing.Point(12, 388);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(131, 38);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // textBoxIDPersonal
+            // 
+            this.textBoxIDPersonal.Location = new System.Drawing.Point(55, 15);
+            this.textBoxIDPersonal.Name = "textBoxIDPersonal";
+            this.textBoxIDPersonal.Size = new System.Drawing.Size(131, 20);
+            this.textBoxIDPersonal.TabIndex = 15;
+            this.textBoxIDPersonal.Visible = false;
+            // 
+            // btnEditarPersonal
+            // 
+            this.btnEditarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarPersonal.IconChar = FontAwesome.Sharp.IconChar.Portrait;
+            this.btnEditarPersonal.IconColor = System.Drawing.Color.Black;
+            this.btnEditarPersonal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditarPersonal.IconSize = 38;
+            this.btnEditarPersonal.Location = new System.Drawing.Point(15, 336);
+            this.btnEditarPersonal.Name = "btnEditarPersonal";
+            this.btnEditarPersonal.Size = new System.Drawing.Size(131, 46);
+            this.btnEditarPersonal.TabIndex = 16;
+            this.btnEditarPersonal.Text = "Editar";
+            this.btnEditarPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditarPersonal.UseVisualStyleBackColor = true;
+            this.btnEditarPersonal.Click += new System.EventHandler(this.btnEditarPersonal_Click);
+            // 
+            // ibPersonal
+            // 
+            this.ibPersonal.HeaderText = "ID";
+            this.ibPersonal.Name = "ibPersonal";
+            this.ibPersonal.ReadOnly = true;
+            this.ibPersonal.Visible = false;
             // 
             // NombreCompleto
             // 
             this.NombreCompleto.HeaderText = "Nombre Completo";
             this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
             this.NombreCompleto.Width = 112;
             // 
             // CI
             // 
             this.CI.HeaderText = "Carnet";
             this.CI.Name = "CI";
+            this.CI.ReadOnly = true;
             this.CI.Width = 112;
             // 
             // userName
             // 
             this.userName.HeaderText = "User Name";
             this.userName.Name = "userName";
+            this.userName.ReadOnly = true;
             this.userName.Width = 112;
             // 
             // contrasena
             // 
             this.contrasena.HeaderText = "Contraseña";
             this.contrasena.Name = "contrasena";
+            this.contrasena.ReadOnly = true;
             this.contrasena.Width = 113;
             // 
             // NombreCargo
             // 
             this.NombreCargo.HeaderText = "Cargo";
             this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.ReadOnly = true;
             this.NombreCargo.Width = 113;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ReadOnly = true;
             // 
             // FormPersonal
             // 
@@ -228,6 +297,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(834, 561);
+            this.Controls.Add(this.btnEditarPersonal);
+            this.Controls.Add(this.textBoxIDPersonal);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dGVData);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnGuardar);
@@ -268,10 +340,15 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dGVData;
+        private FontAwesome.Sharp.IconButton btnDelete;
+        private System.Windows.Forms.TextBox textBoxIDPersonal;
+        private FontAwesome.Sharp.IconButton btnEditarPersonal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ibPersonal;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CI;
         private System.Windows.Forms.DataGridViewTextBoxColumn userName;
         private System.Windows.Forms.DataGridViewTextBoxColumn contrasena;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
     }
 }

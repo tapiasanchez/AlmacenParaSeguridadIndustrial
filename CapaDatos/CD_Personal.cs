@@ -75,5 +75,30 @@ namespace CapaDatos
                 Console.WriteLine(ex.Message);
             }
         }
+        public void Actualizar(Personal obj)
+        {
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_ACTUALIZARPERSONAL", oconexion);
+                    cmd.Parameters.AddWithValue("idPersona", obj.IdPersona);
+                    cmd.Parameters.AddWithValue("nombreCompleto", obj.NombreCompleto);
+                    cmd.Parameters.AddWithValue("ci", obj.Ci);
+                    cmd.Parameters.AddWithValue("userName", obj.UserName);
+                    cmd.Parameters.AddWithValue("contrasena", obj.Contrasena);
+                    cmd.Parameters.AddWithValue("idCargo", obj.Cargo.IdCargo);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
