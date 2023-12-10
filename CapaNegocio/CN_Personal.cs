@@ -16,5 +16,9 @@ namespace CapaNegocio
         {
             objcd_person.Registrar(obj);
         }
+        public void Actualizar(Personal obj)
+        {
+            objcd_person.Actualizar(obj);
+        }
     }
 }

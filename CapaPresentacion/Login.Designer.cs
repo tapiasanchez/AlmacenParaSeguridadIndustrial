@@ -46,7 +46,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 225);
+            this.label1.Size = new System.Drawing.Size(221, 254);
             this.label1.TabIndex = 0;
             // 
             // label2
@@ -56,7 +56,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 46);
+            this.label2.Size = new System.Drawing.Size(163, 75);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sistema De Almacen Para Seguridad Industrial";
             // 
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 225);
+            this.ClientSize = new System.Drawing.Size(528, 254);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.textBoxPassword);
