@@ -35,11 +35,13 @@ namespace CapaPresentacion
         private void IconButton2_Click(object sender, EventArgs e)
         {
             List<PuestoDeTrabajo> listaDePuesto = LeerDatosDeExel();
-            foreach (PuestoDeTrabajo item in listaDePuesto)
+            if(listaDePuesto != null)
             {
-                _ = new CN_PuestoDeTrabajo().Registrar(item, out _);
-                FormPuestoDeTrabajo_Load(sender, e);
-
+                foreach (PuestoDeTrabajo item in listaDePuesto)
+                {
+                    _ = new CN_PuestoDeTrabajo().Registrar(item, out _);
+                    FormPuestoDeTrabajo_Load(sender, e);
+                }
             }
         }
         public List<PuestoDeTrabajo> LeerDatosDeExel()

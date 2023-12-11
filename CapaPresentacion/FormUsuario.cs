@@ -46,13 +46,16 @@ namespace CapaPresentacion
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             List<Usuario> listaPersonas = LeerDatosDeExel;
-            foreach(Usuario item in listaPersonas)
+            if(listaPersonas != null)
             {
-                item.NombreCargo.IdCargo = new CN_Cargo().GetId(item.NombreCargo.Nombre).IdCargo;
-                item.NombreUnidad.IdUnidad = new CN_Unidad().GetUnidad(item.NombreUnidad.Nombre).IdUnidad;
-                item.NombrePuesto.IdPuestoDeTrabajo = new CN_PuestoDeTrabajo().GetPuestoDeTrabajo(item.NombrePuesto.Nombre).IdPuestoDeTrabajo;
-                _ = new CN_Usuario().Registrar(item, out _);
+                foreach (Usuario item in listaPersonas)
+                {
+                    item.NombreCargo.IdCargo = new CN_Cargo().GetId(item.NombreCargo.Nombre).IdCargo;
+                    item.NombreUnidad.IdUnidad = new CN_Unidad().GetUnidad(item.NombreUnidad.Nombre).IdUnidad;
+                    item.NombrePuesto.IdPuestoDeTrabajo = new CN_PuestoDeTrabajo().GetPuestoDeTrabajo(item.NombrePuesto.Nombre).IdPuestoDeTrabajo;
+                    _ = new CN_Usuario().Registrar(item, out _);
 
+                }
             }
             FormUsuario_Load(sender, e);
         }

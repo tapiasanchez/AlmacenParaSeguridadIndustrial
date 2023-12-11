@@ -36,13 +36,13 @@
             this.dgvCargo = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.textBuscar = new System.Windows.Forms.TextBox();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.IdCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPermisos = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnCancelar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,37 +124,6 @@
             this.textBuscar.Size = new System.Drawing.Size(139, 20);
             this.textBuscar.TabIndex = 12;
             // 
-            // IdCargo
-            // 
-            this.IdCargo.FillWeight = 127.1574F;
-            this.IdCargo.HeaderText = "Nro";
-            this.IdCargo.Name = "IdCargo";
-            this.IdCargo.ReadOnly = true;
-            this.IdCargo.Visible = false;
-            this.IdCargo.Width = 195;
-            // 
-            // NombreCargo
-            // 
-            this.NombreCargo.FillWeight = 127.1574F;
-            this.NombreCargo.HeaderText = "Nombre";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.ReadOnly = true;
-            this.NombreCargo.Width = 195;
-            // 
-            // btnPermisos
-            // 
-            this.btnPermisos.FillWeight = 45.68528F;
-            this.btnPermisos.HeaderText = "";
-            this.btnPermisos.Name = "btnPermisos";
-            this.btnPermisos.ReadOnly = true;
-            this.btnPermisos.Width = 70;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.HeaderText = "Quitar Permisos";
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.ReadOnly = true;
-            // 
             // btnSearch
             // 
             this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
@@ -200,6 +169,37 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.IconButton1_Click);
+            // 
+            // IdCargo
+            // 
+            this.IdCargo.FillWeight = 127.1574F;
+            this.IdCargo.HeaderText = "Nro";
+            this.IdCargo.Name = "IdCargo";
+            this.IdCargo.ReadOnly = true;
+            this.IdCargo.Visible = false;
+            this.IdCargo.Width = 195;
+            // 
+            // NombreCargo
+            // 
+            this.NombreCargo.FillWeight = 127.1574F;
+            this.NombreCargo.HeaderText = "Nombre";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.ReadOnly = true;
+            this.NombreCargo.Width = 195;
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.FillWeight = 45.68528F;
+            this.btnPermisos.HeaderText = "Editar Permisos";
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.ReadOnly = true;
+            this.btnPermisos.Width = 70;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.HeaderText = "Quitar Permisos";
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.ReadOnly = true;
             // 
             // FormCargo
             // 
