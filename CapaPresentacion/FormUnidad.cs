@@ -46,11 +46,13 @@ namespace CapaPresentacion
         private void IconButton2_Click(object sender, EventArgs e)
         {
             List<Unidad> listaDeUnidades = LeerDatosDeExel();
-            foreach (Unidad item in listaDeUnidades)
+            if(listaDeUnidades != null)
             {
-                _ = new CN_Unidad().Registrar(item, out _);
-                FormUnidad_Load(sender, e);
-
+                foreach (Unidad item in listaDeUnidades)
+                {
+                    _ = new CN_Unidad().Registrar(item, out _);
+                    FormUnidad_Load(sender, e);
+                }
             }
         }
         public List<Unidad> LeerDatosDeExel()

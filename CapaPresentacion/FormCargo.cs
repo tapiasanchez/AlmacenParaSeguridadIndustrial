@@ -40,11 +40,14 @@ namespace CapaPresentacion
         private void IconButton2_Click(object sender, EventArgs e)
         {
             List<Cargo> listaDeCargos = LeerDatosDeExel();
-            foreach (Cargo item in listaDeCargos)
+            if(listaDeCargos != null)
             {
-                _ = new CN_Cargo().Registrar(item, out _);
-                FormCargo_Load(sender, e);
+                foreach (Cargo item in listaDeCargos)
+                {
+                    _ = new CN_Cargo().Registrar(item, out _);
+                    FormCargo_Load(sender, e);
 
+                }
             }
         }
 

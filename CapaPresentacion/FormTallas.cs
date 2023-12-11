@@ -47,11 +47,13 @@ namespace CapaPresentacion
         private void IconButton2_Click(object sender, EventArgs e)
         {
             List<Talla> listaDeTallas = LeerDatosDeExel();
-            foreach (Talla item in listaDeTallas)
+            if(listaDeTallas != null)
             {
-                _ = new CN_Talla().Registrar(item, out _);
-                FormTallas_Load(sender, e);
-
+                foreach (Talla item in listaDeTallas)
+                {
+                    _ = new CN_Talla().Registrar(item, out _);
+                    FormTallas_Load(sender, e);
+                }
             }
         }
 
