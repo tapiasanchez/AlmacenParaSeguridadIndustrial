@@ -82,7 +82,8 @@ namespace CapaPresentacion
                             Apellido = documento.GetCellValueAsString(indiceRow, 4),
                             NombreCargo = new Cargo() { Nombre = documento.GetCellValueAsString(indiceRow, 5) },
                             NombreUnidad = new Unidad() { Nombre = documento.GetCellValueAsString(indiceRow, 6) },
-                            NombrePuesto = new PuestoDeTrabajo() { Nombre = documento.GetCellValueAsString(indiceRow, 7) }
+                            NombrePuesto = new PuestoDeTrabajo() { Nombre = documento.GetCellValueAsString(indiceRow, 7) },
+                            Observaciones = documento.GetCellValueAsString(indiceRow, 8)
                         };
 
                         listUsuario.Add(persona);
